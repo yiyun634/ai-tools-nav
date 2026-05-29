@@ -70,12 +70,56 @@
  .res-link { color: #667eea; text-decoration: none; }
  .res-link:hover { text-decoration: underline; }
  </style>
-</head>
+
+ <div id="toolModal" class="modal">
+ <div class="modal-content">
+ <span class="close">&times;</span>
+ <h2 id="modalTitle"></h2>
+ <div id="modalStars" class="modal-stars"></div>
+ <p id="modalDesc"></p>
+ <div id="modalInstall" class="modal-install"></div>
+ <a id="modalLink" href="#" target="_blank" class="modal-link">访问GitHub →</a>
+ </div>
+ </div>
+<style>
+ .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); }
+ .modal-content { background: white; margin: 15% auto; padding: 30px; border-radius: 16px; max-width: 500px; width: 90%; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+ .modal-content h2 { color: #667eea; margin-bottom: 10px; }
+ .modal-stars { color: #f59e0b; margin-bottom: 15px; }
+ .modal-content p { color: #64748b; line-height: 1.8; margin-bottom: 20px; }
+ .modal-install { background: #1e293b; color: #10b981; padding: 12px 18px; border-radius: 8px; font-family: Monaco, monospace; font-size: 0.9rem; display: inline-block; margin-bottom: 20px; word-break: break-all; }
+ .modal-link { display: inline-block; padding: 12px 24px; background: #667eea; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; }
+ .modal-link:hover { background: #764ba2; }
+ .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+ .close:hover { color: #333; }
+ .tool-card { cursor: pointer; }
+</style><style>
+ /* 深色模式 */
+ body.dark-mode { background: #1a1a2e; color: #e0e0e0; }
+ body.dark-mode .top-nav { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); }
+ body.dark-mode .category { background: #16213e; border-color: #333; }
+ body.dark-mode .category h2 { color: #a78bfa; border-color: #333; }
+ body.dark-mode .tool-card { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-color: #333; }
+ body.dark-mode .tool-card:hover { border-color: #a78bfa; }
+ body.dark-mode .tool-card h3 { color: #e0e0e0; }
+ body.dark-mode .tool-card p { color: #94a3b8; }
+ body.dark-mode .toc { background: #16213e; }
+ body.dark-mode .toc a { background: #1e293b; color: #e0e0e0; }
+ body.dark-mode .toc a:hover { background: #a78bfa; color: white; }
+ body.dark-mode .search-bar { background: #16213e; border-color: #333; }
+ body.dark-mode .search-bar input { background: #1e293b; color: #e0e0e0; border-color: #333; }
+ body.dark-mode .filter-bar select { background: #1e293b; color: #e0e0e0; border-color: #333; }
+ body.dark-mode .stats { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); }
+ body.dark-mode .footer { background: #16213e; color: #94a3b8; }
+ body.dark-mode .footer a { color: #a78bfa; }
+ body.dark-mode .modal-content { background: #1e293b; color: #e0e0e0; }
+ .dark-toggle { cursor: pointer; }
+</style></head>
 <body>
 
-<nav class="top-nav">
+<nav class="top-nav" >
  <div class="nav-content">
- <h1>🤖 AI工具导航</h1>
+ <h1>🤖 AI工具导航</h1><a href="javascript:void(0)" onclick="toggleDarkMode()" class="dark-toggle" title="深色模式">🌙</a>
  <div class="nav-links">
  <a href="#ai-tools">AI工具</a>
  <a href="#tutorials">AI教程</a>
@@ -499,5 +543,88 @@ function toggleMenu() {
 }
 </script>
 
+<script>
+// 工具详情弹窗
+var modal = document.getElementById('toolModal');
+var modalTitle = document.getElementById('modalTitle');
+var modalStars = document.getElementById('modalStars');
+var modalDesc = document.getElementById('modalDesc');
+var modalInstall = document.getElementById('modalInstall');
+var modalLink = document.getElementById('modalLink');
+document.querySelectorAll('.tool-card h3 a').forEach(function(link) {
+ link.parentElement.parentElement.addEventListener('click', function(e) {
+ if (e.target.tagName === 'A') return;
+ var card = this;
+ var title = card.querySelector('h3 a')?.textContent || card.querySelector('h3')?.textContent || '';
+ var stars = card.querySelector('.stars')?.textContent || '';
+ var desc = card.querySelector('p')?.textContent || '';
+ var install = card.querySelector('.install')?.textContent || '';
+ var href = card.querySelector('h3 a')?.href || '';
+ modalTitle.textContent = title;
+ modalStars.textContent = stars;
+ modalDesc.textContent = desc;
+ modalInstall.textContent = install;
+ modalLink.href = href;
+ modal.style.display = 'block';
+ });
+});
+document.querySelector('.close').addEventListener('click', function() { modal.style.display = 'none'; });
+window.addEventListener('click', function(e) { if (e.target == modal) { modal.style.display = 'none'; } });
+
+// 懒加载图片
+if ('IntersectionObserver' in window) {
+ var imgObserver = new IntersectionObserver(function(entries) {
+ entries.forEach(function(entry) {
+ if (entry.isIntersecting) {
+ var img = entry.target;
+ if (img.dataset.src) {
+ img.src = img.dataset.src;
+ img.removeAttribute('data-src');
+ imgObserver.unobserve(img);
+ }
+ }
+ });
+ });
+ document.querySelectorAll('img[data-src]').forEach(function(img) { imgObserver.observe(img); });
+} else {
+ document.querySelectorAll('img[data-src]').forEach(function(img) {
+ if (img.dataset.src) { img.src = img.dataset.src; }
+ });
+}
+</script><script>
+// 深色模式
+function toggleDarkMode() {
+ document.body.classList.toggle('dark-mode');
+ var isDark = document.body.classList.contains('dark-mode');
+ localStorage.setItem('darkMode', isDark);
+ var btn = document.querySelector('.dark-toggle');
+ btn.textContent = isDark ? '☀️' : '🌙';
+}
+// 自动恢复深色模式
+if (localStorage.getItem('darkMode') === 'true') {
+ document.body.classList.add('dark-mode');
+}
+</script>
+ <!-- 网站统计 -->
+ <script src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web"></script>
+ <script>
+ // 页面加载统计
+ window.addEventListener('load', function() {
+ var stats = {
+ pageviews: localStorage.getItem('pageviews') || 0,
+ uniqueVisitors: localStorage.getItem('uniqueVisitors') || 0,
+ lastVisit: localStorage.getItem('lastVisit') || 'never'
+ };
+ stats.pageviews = parseInt(stats.pageviews) + 1;
+ var today = new Date().toDateString();
+ if (stats.lastVisit !== today) {
+ stats.uniqueVisitors = parseInt(stats.uniqueVisitors) + 1;
+ }
+ localStorage.setItem('pageviews', stats.pageviews);
+ localStorage.setItem('uniqueVisitors', stats.uniqueVisitors);
+ localStorage.setItem('lastVisit', today);
+ console.log('Page views:', stats.pageviews, 'Unique visitors:', stats.uniqueVisitors);
+ });
+ </script>
 </body>
 </html>
