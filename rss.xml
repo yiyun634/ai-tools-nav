@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+ <title>AI工具导航 - 免费开源AI工具大全</title>
+ <link>https://ai-tools-nav-psi.vercel.app/</link>
+ <description>收录最全面的免费开源AI工具、AI教程、学习资源、云服务</description>
+ <language>zh-cn</language>
+ <lastBuildDate>Fri, 29 May 2026 09:34:00 UTC</lastBuildDate>
+ <item>
+ <title>新增AI智能体工具</title>
+ <link>https://ai-tools-nav-psi.vercel.app/#ai-agent</link>
+ <description>新增AutoGPT、CrewAI、MetaGPT等热门AI智能体工具</description>
+ <pubDate>Fri, 29 May 2026 09:34:00 UTC</pubDate>
+ </item>
+ <item>
+ <title>新增脚本与自动化工具分类</title>
+ <link>https://ai-tools-nav-psi.vercel.app/#scripts</link>
+ <description>新增12个脚本工具，包括Telegram Bot、Discord Bot、量化交易等</description>
+ <pubDate>Fri, 29 May 2026 09:30:00 UTC</pubDate>
+ </item>
+</channel>
+</rss>
