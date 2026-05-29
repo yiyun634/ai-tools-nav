@@ -14,6 +14,30 @@
  .top-nav h1 { color: white; font-size: 1.5rem; font-weight: 700; }
  .top-nav .nav-links { display: flex; flex-wrap: wrap; gap: 8px; }
  .top-nav a { color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; background: rgba(255,255,255,0.15); font-size: 0.85rem; transition: all 0.3s; }
+ 
+ /* 移动端优化 */
+ @media (max-width: 768px) {
+ .top-nav .nav-content { flex-direction: column; gap: 10px; }
+ .top-nav h1 { font-size: 1.2rem; }
+ .top-nav .nav-links { justify-content: center; }
+ .top-nav a { padding: 6px 10px; font-size: 0.75rem; }
+ .container { padding: 15px 10px; }
+ .category { padding: 15px; margin-bottom: 30px; }
+ .category h2 { font-size: 1.2rem; }
+ .tools-grid { grid-template-columns: 1fr; gap: 12px; }
+ .tool-card { padding: 15px; }
+ .toc-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+ .toc a { padding: 10px; font-size: 0.85rem; }
+ .stats h2 { font-size: 1.8rem; }
+ .filter-bar { flex-direction: column; gap: 10px; }
+ .sort-select { width: 100%; }
+ }
+ @media (max-width: 480px) {
+ .top-nav .nav-links { gap: 5px; }
+ .top-nav a { padding: 5px 8px; font-size: 0.7rem; border-radius: 15px; }
+ .toc-grid { grid-template-columns: 1fr; }
+ .search-bar input { padding: 12px 15px; font-size: 0.9rem; }
+ }
  .top-nav a:hover { background: rgba(255,255,255,0.3); transform: translateY(-2px); }
  .search-bar { background: white; padding: 20px 0; border-bottom: 1px solid #e2e8f0; }
  .search-bar .search-content { max-width: 800px; margin: 0 auto; padding: 0 20px; }
@@ -67,7 +91,39 @@
 
 <div class="search-bar">
  <div class="search-content">
- <input type="text" id="searchInput" placeholder="🔍 搜索AI工具..." oninput="filterTools()">
+ 
+ <div class="filter-bar">
+ <select id="categoryFilter" onchange="filterTools()">
+ <option value="">全部分类</option>
+ <option value="ai-agent">AI智能体</option>
+ <option value="ai-chat">AI聊天对话</option>
+ <option value="ai-image">AI图像绘图</option>
+ <option value="ai-video">AI视频生成</option>
+ <option value="ai-voice">AI语音音乐</option>
+ <option value="ai-rag">RAG知识库</option>
+ <option value="ai-workflow">AI工作流</option>
+ <option value="ai-local">本地LLM</option>
+ <option value="ai-framework">AI开发框架</option>
+ <option value="ai-prompt">提示词工程</option>
+ <option value="ai-api">免费API</option>
+ <option value="ai-search">搜索爬虫</option>
+ <option value="ai-crypto">加密货币</option>
+ <option value="ai-code">AI编程</option>
+ <option value="tutorials">AI使用教程</option>
+ <option value="learning">免费学习</option>
+ <option value="cloud">免费云服务</option>
+ <option value="productivity">效率工具</option>
+ <option value="money">赚钱教程</option>
+ <option value="webdev">建站资源</option>
+ <option value="scripts">脚本工具</option>
+ </select>
+ <select id="sortSelect" onchange="sortTools()" class="sort-select">
+ <option value="stars">按⭐排序</option>
+ <option value="name">按名称排序</option>
+ <option value="category">按分类排序</option>
+ </select>
+ </div>
+<input type="text" id="searchInput" placeholder="🔍 搜索AI工具..." oninput="filterTools()">
  </div>
 </div>
 
@@ -381,7 +437,59 @@
 </footer>
 
 <script>
-function filterTools() {
+
+#FILTER#
+ var input = document.getElementById('searchInput').value.toLowerCase();
+ var category = document.getElementById('categoryFilter').value;
+ var cards = document.querySelectorAll('.tool-card');
+ var visibleCount = 0;
+ cards.forEach(card => {
+ var text = card.textContent.toLowerCase();
+ var parentCategory = card.closest('.category');
+ var categoryId = parentCategory ? parentCategory.id : '';
+ var matchesInput = text.includes(input);
+ var matchesCategory = category === '' || categoryId === category;
+ card.style.display = (matchesInput && matchesCategory) ? 'block' : 'none';
+ if (matchesInput && matchesCategory) visibleCount++;
+ });
+ updateStats(visibleCount);
+}
+
+function sortTools() {
+ var sortBy = document.getElementById('sortSelect').value;
+ var categories = document.querySelectorAll('.category');
+ categories.forEach(cat => {
+ var grid = cat.querySelector('.tools-grid');
+ var cards = Array.from(grid.querySelectorAll('.tool-card'));
+ cards.sort(function(a, b) {
+ if (sortBy === 'stars') {
+ var starsA = parseInt(a.querySelector('.stars')?.textContent.replace(/[^0-9]/g, '') || '0');
+ var starsB = parseInt(b.querySelector('.stars')?.textContent.replace(/[^0-9]/g, '') || '0');
+ return starsB - starsA;
+ } else if (sortBy === 'name') {
+ var nameA = a.querySelector('h3')?.textContent.toLowerCase() || '';
+ var nameB = b.querySelector('h3')?.textContent.toLowerCase() || '';
+ return nameA.localeCompare(nameB);
+ }
+ return 0;
+ });
+ cards.forEach(card => grid.appendChild(card));
+ });
+}
+
+function updateStats(count) {
+ var statsEl = document.querySelector('.stats p');
+ if (statsEl) {
+ statsEl.textContent = '找到 ' + count + ' 个工具';
+ }
+}
+
+// 移动端菜单
+function toggleMenu() {
+ var navLinks = document.querySelector('.top-nav .nav-links');
+ navLinks.classList.toggle('show');
+}
+
  var input = document.getElementById('searchInput').value.toLowerCase();
  var cards = document.querySelectorAll('.tool-card');
  cards.forEach(card => {
