@@ -127,10 +127,46 @@
  .search-bar input { padding: 12px 15px; font-size: 0.9rem; }
  }
  </style>
-</head>
-<body>
 
-<nav class="top-nav">
+ <!-- 百度统计 -->
+ <script>
+ var _hmt = _hmt || [];
+ (function() {
+ var hm = document.createElement("script");
+ hm.src = "https://hm.baidu.com/hm.js?YOUR_BAIDU_ID";
+ var s = document.getElementsByTagName("script")[0];
+ s.parentNode.insertBefore(hm, s);
+ })();
+ </script>
+<style>
+ .form-group { margin-bottom: 15px; }
+ .form-group label { display: block; margin-bottom: 5px; font-weight: 600; color: #1e293b; }
+ .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 10px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 0.9rem; font-family: inherit; }
+ .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: #667eea; }
+ .submit-btn { background: #10b981; color: white; padding: 12px 24px; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; width: 100%; }
+ .submit-btn:hover { background: #059669; }
+ .vote-item { display: flex; align-items: center; justify-content: space-between; padding: 15px; border-bottom: 1px solid #e2e8f0; }
+ .vote-item:last-child { border-bottom: none; }
+ .vote-name { font-weight: 600; color: #1e293b; }
+ .vote-btn { padding: 8px 16px; background: #667eea; color: white; border: none; border-radius: 20px; cursor: pointer; font-size: 0.85rem; }
+ .vote-btn:hover { background: #764ba2; }
+ .vote-btn.voted { background: #10b981; }
+
+ .ad-banner { text-align: center; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 12px; margin-bottom: 20px; }
+ .ad-banner a { color: #ffd700; text-decoration: none; }
+ .ad-banner a:hover { text-decoration: underline; }
+
+ /* 无障碍优化 */
+ .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+ .skip-link { position: absolute; top: -40px; left: 0; background: #667eea; color: white; padding: 8px 16px; z-index: 9999; }
+ .skip-link:focus { top: 0; }
+ :focus { outline: 3px solid #667eea; outline-offset: 2px; }
+ :focus:not(:focus-visible) { outline: none; }
+ :focus-visible { outline: 3px solid #667eea; outline-offset: 2px; }
+</style></head>
+<a href="#main-content" class="skip-link">跳过导航</a><body id="main-content"
+
+<nav class="top-nav" role="navigation" aria-label="主导航">
  <div class="nav-content">
  <h1>
  🤖 AI工具导航
@@ -139,7 +175,7 @@
  <button onclick="setLang('en')" class="lang-btn" id="langEn">EN</button>
  </h1>
  <div class="right-tools">
- <button onclick="toggleFavorites()" class="fav-btn">❤️ 收藏</button>
+ <button onclick="toggleFavorites()" class="fav-btn">❤️ 收藏</button><button onclick="openSubmitModal()" class="fav-btn">📝 提交工具</button><button onclick="openVoteModal()" class="fav-btn">⭐ 投票</button>
  <a href="rss.xml" target="_blank">📡 RSS</a>
  <a href="javascript:void(0)" onclick="shareToTwitter()" class="share-btn" title="Twitter">𝕏</a>
  <a href="javascript:void(0)" onclick="shareToTelegram()" class="share-btn" title="Telegram">✈️</a>
@@ -484,7 +520,7 @@
  <div id="modalInstall" class="modal-install"></div>
  <div style="display:flex;gap:10px;flex-wrap:wrap;">
  <a id="modalLink" href="#" target="_blank" class="modal-link">访问GitHub →</a>
- <button id="favAddBtn" class="modal-link fav-add-btn" style="background:#f43f5e;margin:0;">❤️ 收藏</button>
+ <button id="favAddBtn" class="modal-link fav-add-btn" style="background:#f43f5e;margin:0;">❤️ 收藏</button><button onclick="openSubmitModal()" class="fav-btn">📝 提交工具</button><button onclick="openVoteModal()" class="fav-btn">⭐ 投票</button>
  </div>
  </div>
 </div>
@@ -498,6 +534,64 @@
  </div>
 </div>
 
+
+ <!-- 工具提交弹窗 -->
+ <div id="submitModal" class="modal">
+ <div class="modal-content" style="max-width:600px;">
+ <span class="close" onclick="closeSubmitModal()">&times;</span>
+ <h2>📝 提交新工具</h2>
+ <form id="submitForm" onsubmit="submitTool(event)">
+ <div class="form-group">
+ <label>工具名称 *</label>
+ <input type="text" id="toolName" required placeholder="例如: ChatGPT">
+ </div>
+ <div class="form-group">
+ <label>GitHub链接 *</label>
+ <input type="url" id="toolUrl" required placeholder="https://github.com/...">
+ </div>
+ <div class="form-group">
+ <label>工具描述 *</label>
+ <textarea id="toolDesc" required placeholder="简要描述这个工具的功能..." rows="3"></textarea>
+ </div>
+ <div class="form-group">
+ <label>安装命令</label>
+ <input type="text" id="toolInstall" placeholder="pip install xxx 或 git clone...">
+ </div>
+ <div class="form-group">
+ <label>分类</label>
+ <select id="toolCategory">
+ <option value="ai-agent">AI智能体</option>
+ <option value="ai-chat">AI聊天对话</option>
+ <option value="ai-image">AI图像绘图</option>
+ <option value="ai-video">AI视频生成</option>
+ <option value="ai-voice">AI语音音乐</option>
+ <option value="ai-rag">RAG知识库</option>
+ <option value="ai-workflow">AI工作流</option>
+ <option value="ai-local">本地LLM</option>
+ <option value="ai-framework">AI开发框架</option>
+ <option value="ai-prompt">提示词工程</option>
+ <option value="ai-api">免费API</option>
+ <option value="ai-search">搜索爬虫</option>
+ <option value="ai-code">AI编程</option>
+ <option value="scripts">脚本工具</option>
+ </select>
+ </div>
+ <button type="submit" class="modal-link" style="width:100%;border:none;cursor:pointer;">提交工具</button>
+ </form>
+ </div>
+ </div>
+
+ <div id="voteModal" class="modal">
+ <div class="modal-content">
+ <span class="close" onclick="closeVoteModal()">&times;</span>
+ <h2>⭐ 热门工具投票</h2>
+ <div id="voteList"></div>
+ </div>
+ </div>
+
+ <div class="ad-banner">
+ <p>🌟 <a href="https://vercel.com" target="_blank">免费部署你的网站 - Vercel</a> | <a href="https://supabase.com" target="_blank">免费数据库 - Supabase</a> 🌟</p>
+ </div>
 <footer class="footer">
  <p>🚀 由 <a href="https://github.com/yiyun634" target="_blank">@yiyun634</a> 维护 | 免费开源AI工具导航</p>
  <p><a href="tutorial.html">📖 新手教程</a> | <a href="https://github.com/yiyun634/ai-tools-nav" target="_blank">GitHub</a> | <a href="rss.xml">📡 RSS</a></p>
@@ -616,5 +710,55 @@ if (localStorage.getItem('lang') === 'en') {
 }
 </script>
 
+
+<script>
+// 工具提交
+function openSubmitModal() { document.getElementById('submitModal').style.display = 'block'; }
+function closeSubmitModal() { document.getElementById('submitModal').style.display = 'none'; }
+function submitTool(e) {
+ e.preventDefault();
+ var data = {
+ name: document.getElementById('toolName').value,
+ url: document.getElementById('toolUrl').value,
+ desc: document.getElementById('toolDesc').value,
+ install: document.getElementById('toolInstall').value,
+ category: document.getElementById('toolCategory').value
+ };
+ var submissions = JSON.parse(localStorage.getItem('submissions') || '[]');
+ submissions.push({...data, date: new Date().toISOString()});
+ localStorage.setItem('submissions', JSON.stringify(submissions));
+ alert('感谢提交！工具已加入待审核列表。');
+ document.getElementById('submitForm').reset();
+ closeSubmitModal();
+}
+
+// 投票功能
+function openVoteModal() { document.getElementById('voteModal').style.display = 'block'; loadVotes(); }
+function closeVoteModal() { document.getElementById('voteModal').style.display = 'none'; }
+function loadVotes() {
+ var votes = JSON.parse(localStorage.getItem('votes') || '{}');
+ var topTools = [
+ {name: 'AutoGPT', url: 'https://github.com/Significant-Gravitas/AutoGPT'},
+ {name: 'Stable Diffusion WebUI', url: 'https://github.com/AUTOMATIC1111/stable-diffusion-webui'},
+ {name: 'Dify', url: 'https://github.com/dify/dify'},
+ {name: 'Ollama', url: 'https://github.com/ollama/ollama'},
+ {name: 'LangChain', url: 'https://github.com/langchain-ai/langchain'}
+ ];
+ var list = document.getElementById('voteList');
+ list.innerHTML = topTools.map(function(t) {
+ var count = votes[t.url] || 0;
+ var voted = localStorage.getItem('voted_' + t.url);
+ return '<div class="vote-item"><span class="vote-name">'+t.name+'</span><button class="vote-btn '+(voted?'voted':'')+'" onclick="voteTool(\''+t.url+'\')">⭐ '+count+' '+(voted?'已投票':'投票')+'</button></div>';
+ }).join('');
+}
+function voteTool(url) {
+ if (localStorage.getItem('voted_' + url)) { alert('你已经投过票了'); return; }
+ var votes = JSON.parse(localStorage.getItem('votes') || '{}');
+ votes[url] = (votes[url] || 0) + 1;
+ localStorage.setItem('votes', JSON.stringify(votes));
+ localStorage.setItem('voted_' + url, 'true');
+ loadVotes();
+}
+</script>
 </body>
 </html>
