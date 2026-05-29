@@ -3,85 +3,101 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>AI工具导航 - 600+免费开源AI工具大全</title>
- <meta name="description" content="AI工具导航 - 收录600+免费开源AI工具，包含ChatGPT、Stable Diffusion、LangChain、Midjourney等工具的安装命令和使用教程">
+ <title>AI工具导航 - 免费开源AI工具大全</title>
+ <meta name="description" content="AI工具导航 - 收录最全面的免费开源AI工具、AI教程、学习资源。包含ChatGPT、Stable Diffusion、LangChain等500+工具。">
  <meta name="keywords" content="AI工具,人工智能,ChatGPT,Midjourney,Stable Diffusion,LangChain,AI教程,免费工具,开源AI">
  <meta name="author" content="yiyun634">
  <meta name="robots" content="index, follow">
  <link rel="canonical" href="https://ai-tools-nav-psi.vercel.app/">
  <meta property="og:title" content="AI工具导航 - 免费开源AI工具大全">
- <meta property="og:description" content="600+免费AI工具，包含安装命令和详细教程">
+ <meta property="og:description" content="收录500+免费开源AI工具，包含安装命令和使用教程">
  <meta property="og:type" content="website">
  <meta property="og:url" content="https://ai-tools-nav-psi.vercel.app/">
+ <link rel="alternate" type="application/rss+xml" title="AI工具更新" href="rss.xml">
  <link rel="manifest" href="manifest.json">
- <meta name="theme-color" content="#667eea">
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+ <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
  <style>
  *{margin:0;padding:0;box-sizing:border-box}
- body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6}
- .top-nav{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);padding:15px 0;position:sticky;top:0;z-index:100;box-shadow:0 4px 20px rgba(102,126,234,0.3)}
- .top-nav .nav-content{max-width:1400px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
- .top-nav h1{color:white;font-size:1.5rem;font-weight:700;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
- .top-nav .nav-links{display:flex;flex-wrap:wrap;gap:8px}
- .top-nav a,.top-nav button{color:white;text-decoration:none;padding:8px 16px;border-radius:20px;background:rgba(255,255,255,0.15);font-size:0.85rem;transition:all 0.3s;cursor:pointer;border:none}
- .top-nav a:hover,.top-nav button:hover{background:rgba(255,255,255,0.3);transform:translateY(-2px)}
- .top-nav .right-tools{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
- .search-bar{background:white;padding:20px 0;border-bottom:1px solid #e2e8f0}
- .search-bar .search-content{max-width:800px;margin:0 auto;padding:0 20px}
- .search-bar input{width:100%;padding:15px 20px;border:2px solid #e2e8f0;border-radius:12px;font-size:1rem;transition:all 0.3s}
- .search-bar input:focus{outline:none;border-color:#667eea;box-shadow:0 0 0 4px rgba(102,126,234,0.1)}
- .container{max-width:1400px;margin:0 auto;padding:30px 20px}
- .category{margin-bottom:50px;background:white;border-radius:16px;padding:30px;box-shadow:0 4px 20px rgba(0,0,0,0.05)}
- .category h2{color:#667eea;font-size:1.5rem;margin-bottom:20px;padding-bottom:15px;border-bottom:2px solid #e2e8f0;display:flex;align-items:center;gap:10px}
- .category h2 .icon{font-size:1.8rem}
- .tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
- .tool-card{background:linear-gradient(135deg,#f8fafc 0%,#f1f5f9 100%);border:1px solid #e2e8f0;border-radius:12px;padding:20px;transition:all 0.3s;cursor:pointer}
- .tool-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(102,126,234,0.15);border-color:#667eea}
- .tool-card h3{color:#1e293b;font-size:1.1rem;margin-bottom:8px}
- .tool-card h3 a{color:inherit;text-decoration:none}
+ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;color:#1e293b}
+ .top-nav{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);padding:15px 0;position:sticky;top:0;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,0.15)}
+ .nav-content{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
+ .nav-content h1{color:white;font-size:1.5rem;font-weight:600}
+ .nav-content h1 span{font-size:0.85rem;opacity:0.9;margin-left:8px}
+ .right-tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+ .right-tools button,.right-tools a{padding:8px 14px;border-radius:20px;background:rgba(255,255,255,0.2);color:white;border:none;font-size:0.85rem;cursor:pointer;text-decoration:none;transition:all 0.3s}
+ .right-tools button:hover,.right-tools a:hover{background:rgba(255,255,255,0.35)}
+ .lang-btn{font-size:0.8rem;padding:6px 12px}
+ .nav-links{max-width:1200px;margin:0 auto;padding:10px 20px;display:flex;gap:8px;overflow-x:auto;flex-wrap:nowrap;white-space:nowrap}
+ .nav-links a{color:white;text-decoration:none;padding:6px 12px;border-radius:15px;font-size:0.8rem;transition:all 0.3s}
+ .nav-links a:hover,.nav-links a.active{background:rgba(255,255,255,0.3)}
+ .container{max-width:1200px;margin:0 auto;padding:30px 20px}
+ .search-box{background:white;border-radius:16px;padding:25px;margin-bottom:25px;box-shadow:0 4px 20px rgba(0,0,0,0.08)}
+ .search-box input{padding:12px 18px;border:2px solid #e2e8f0;border-radius:10px;font-size:1rem;width:100%;outline:none}
+ .search-box input:focus{border-color:#667eea}
+ .filter-bar{display:flex;gap:12px;margin-top:15px;flex-wrap:wrap}
+ .filter-bar select{padding:10px 15px;border:2px solid #e2e8f0;border-radius:10px;font-size:0.9rem;background:white;cursor:pointer;outline:none}
+ .filter-bar select:focus{border-color:#667eea}
+ .category{background:white;border-radius:16px;padding:25px;margin-bottom:20px;box-shadow:0 4px 20px rgba(0,0,0,0.05)}
+ .category h2{color:#667eea;margin-bottom:20px;font-size:1.2rem;display:flex;align-items:center;gap:10px}
+ .category h2 .icon{font-size:1.4rem}
+ .tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:15px}
+ .tool-card{background:#f8fafc;border-radius:12px;padding:18px;cursor:pointer;transition:all 0.3s;border:2px solid transparent}
+ .tool-card:hover{border-color:#667eea;transform:translateY(-2px);box-shadow:0 8px 25px rgba(102,126,234,0.15)}
+ .tool-card h3{font-size:1rem;margin-bottom:8px;color:#1e293b}
+ .tool-card h3 a{color:#1e293b;text-decoration:none}
  .tool-card h3 a:hover{color:#667eea}
- .tool-card .stars{color:#f59e0b;font-size:0.85rem;margin-bottom:8px}
- .tool-card p{color:#64748b;font-size:0.9rem;margin-bottom:12px}
- .tool-card .install{background:#1e293b;color:#10b981;padding:8px 14px;border-radius:8px;font-family:'Monaco','Menlo',monospace;font-size:0.8rem;display:inline-block}
- .stats{text-align:center;padding:40px 20px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;border-radius:16px;margin-bottom:40px}
- .stats h2{font-size:2.5rem;margin-bottom:10px}
- .stats p{font-size:1.1rem;opacity:0.9}
- .footer{text-align:center;padding:40px 20px;background:#1e293b;color:#94a3b8;font-size:0.9rem}
- .footer a{color:#667eea;text-decoration:none}
- .toc{background:white;border-radius:16px;padding:30px;box-shadow:0 4px 20px rgba(0,0,0,0.05);margin-bottom:30px}
- .toc h2{color:#667eea;margin-bottom:20px}
- .toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
- .toc a{display:block;padding:12px 16px;background:#f8fafc;border-radius:8px;color:#1e293b;text-decoration:none;transition:all 0.3s}
- .toc a:hover{background:#667eea;color:white}
- .filter-bar{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
- .filter-bar select{padding:10px 15px;border:2px solid #e2e8f0;border-radius:10px;font-size:0.9rem;background:white;cursor:pointer}
- .filter-bar select:focus{outline:none;border-color:#667eea}
- .fav-btn{padding:8px 16px;border-radius:20px;background:rgba(255,255,255,0.15);color:white;font-size:0.85rem}
- .fav-btn:hover{background:rgba(255,255,255,0.3)}
- .modal{display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.7)}
- .modal-content{background:white;margin:15% auto;padding:30px;border-radius:16px;max-width:500px;width:90%;box-shadow:0 20px 60px rgba(0,0,0,0.3);position:relative}
+ .stars{color:#f59e0b;font-size:0.85rem;margin-bottom:8px}
+ .tool-card p{color:#64748b;font-size:0.85rem;line-height:1.6;margin-bottom:10px}
+ .install{display:inline-block;background:#1e293b;color:#10b981;padding:6px 12px;border-radius:6px;font-size:0.75rem;font-family:Monaco,monospace}
+ .footer{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;text-align:center;padding:25px;margin-top:30px;border-radius:16px}
+ .footer a{color:white;opacity:0.9;text-decoration:none}
+ .footer a:hover{opacity:1}
+ .modal{display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.7);overflow:auto}
+ .modal-content{background:white;margin:10% auto;padding:30px;border-radius:16px;max-width:550px;width:90%;box-shadow:0 20px 60px rgba(0,0,0,0.3);position:relative}
  .modal-content h2{color:#667eea;margin-bottom:10px}
- .modal-stars{color:#f59e0b;margin-bottom:15px}
+ .modal-stars{color:#f59e0b;margin-bottom:15px;font-size:1.1rem}
  .modal-content p{color:#64748b;line-height:1.8;margin-bottom:20px}
- .modal-install{background:#1e293b;color:#10b981;padding:12px 18px;border-radius:8px;font-family:Monaco,monospace;font-size:0.9rem;display:inline-block;margin-bottom:20px;word-break:break-all}
+ .modal-install{background:#1e293b;color:#10b981;padding:12px 18px;border-radius:8px;font-family:Monaco,monospace;font-size:0.9rem;display:inline-block;margin-bottom:20px;word-break:break-all;width:100%}
  .modal-link{display:inline-block;padding:12px 24px;background:#667eea;color:white;text-decoration:none;border-radius:8px;font-weight:600}
  .modal-link:hover{background:#764ba2}
- .close{color:#aaa;float:right;font-size:28px;font-weight:bold;cursor:pointer}
+ .close{color:#aaa;float:right;font-size:28px;font-weight:bold;cursor:pointer;position:absolute;right:20px;top:15px}
  .close:hover{color:#333}
+ .fav-btn{padding:8px 16px;border-radius:20px;background:rgba(255,255,255,0.15);color:white;font-size:0.85rem;border:none;cursor:pointer}
+ .fav-btn:hover{background:rgba(255,255,255,0.3)}
+ .form-group{margin-bottom:15px}
+ .form-group label{display:block;margin-bottom:5px;font-weight:600;color:#1e293b}
+ .form-group input,.form-group textarea{width:100%;padding:10px;border:2px solid #e2e8f0;border-radius:8px;font-size:0.95rem}
+ .form-group input:focus,.form-group textarea:focus{border-color:#667eea;outline:none}
+ .vote-item{display:flex;justify-content:space-between;align-items:center;padding:12px;border-bottom:1px solid #e2e8f0}
+ .vote-item:last-child{border-bottom:none}
+ .vote-name{font-weight:600;color:#1e293b}
+ .vote-btn{padding:8px 16px;background:#667eea;color:white;border:none;border-radius:8px;cursor:pointer}
+ .vote-btn.voted{background:#10b981}
+ .vote-btn:hover{opacity:0.9}
+ #favList p{text-align:center;color:#64748b;padding:30px}
+ #favList .tool-card{margin-bottom:10px;cursor:default}
  body.dark-mode{background:#1a1a2e;color:#e0e0e0}
  body.dark-mode .top-nav{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%)}
- body.dark-mode .category{background:#16213e;border-color:#333}
- body.dark-mode .tool-card{background:linear-gradient(135deg,#1e293b 0%,#0f172a 100%);border-color:#333}
+ body.dark-mode .category{background:#16213e;border:1px solid #333}
+ body.dark-mode .tool-card{background:#1e293b;border:1px solid #333}
+ body.dark-mode .tool-card h3,.tool-card h3 a,.tool-card p{color:#e0e0e0}
+ body.dark-mode .tool-card h3 a:hover{color:#667eea}
+ body.dark-mode .modal-content{background:#1e293b}
+ body.dark-mode .form-group label{color:#e0e0e0}
+ body.dark-mode .form-group input,.form-group textarea{background:#16213e;border-color:#333;color:#e0e0e0}
+ body.dark-mode .search-box{background:#16213e}
+ body.dark-mode .search-box input{background:#1e293b;color:#e0e0e0;border-color:#333}
+ body.dark-mode .filter-bar select{background:#16213e;color:#e0e0e0;border-color:#333}
  body.dark-mode .footer{background:#16213e}
- @media(max-width:768px){.top-nav .nav-content{flex-direction:column;gap:10px}.container{padding:15px 10px}.category{padding:15px}.tools-grid{grid-template-columns:1fr;gap:12px}.toc-grid{grid-template-columns:repeat(2,1fr);gap:8px}}
+ @media(max-width:768px){.nav-content{flex-direction:column}.nav-links{justify-content:flex-start}.tools-grid{grid-template-columns:1fr}.filter-bar{flex-direction:column}.modal-content{margin:20% auto}}
  </style>
 </head>
 <body>
 <nav class="top-nav">
  <div class="nav-content">
- <h1>🤖 AI工具导航<span style="font-size:0.9rem;font-weight:400">600+工具</span>
- <button onclick="toggleDarkMode()" style="padding:5px 10px">🌙</button>
+ <h1>🤖 AI工具导航<span id="totalCount">500+工具</span>
+ <button onclick="toggleDarkMode()" style="padding:5px 10px;background:rgba(255,255,255,0.2);border:none;color:white;border-radius:8px;cursor:pointer">🌙</button>
+ <button onclick="toggleLang()" class="lang-btn" style="padding:5px 10px;background:rgba(255,255,255,0.2);border:none;color:white;border-radius:8px;cursor:pointer">EN</button>
  </h1>
  <div class="right-tools">
  <button onclick="toggleFavorites()" class="fav-btn">❤️收藏</button>
@@ -89,6 +105,7 @@
  <button onclick="openVoteModal()" class="fav-btn">⭐投票</button>
  <a href="tutorial.html">📖教程</a>
  <a href="rss.xml">📡RSS</a>
+ </div>
  </div>
  <div class="nav-links">
  <a href="#ai-agent">🤖智能体</a>
@@ -100,183 +117,345 @@
  <a href="#ai-workflow">⚙️工作流</a>
  <a href="#ai-local">💻本地LLM</a>
  <a href="#ai-framework">🔧框架</a>
+ <a href="#ai-prompt">📝提示词</a>
+ <a href="#ai-api">🔌API</a>
+ <a href="#ai-search">🔍爬虫</a>
+ <a href="#ai-crypto">💰加密</a>
+ <a href="#ai-code">💻编程</a>
+ <a href="#tutorials">📚教程</a>
+ <a href="#learning">🎓学习</a>
+ <a href="#cloud">☁️云服务</a>
+ <a href="#productivity">🛠️效率</a>
+ <a href="#money">💵赚钱</a>
+ <a href="#webdev">🌐建站</a>
  <a href="#scripts">⚡脚本</a>
  </div>
- </div>
 </nav>
-<div class="search-bar">
- <div class="search-content">
- <div class="filter-bar">
- <select id="categoryFilter" onchange="filterTools()">
- <option value="">全部分类</option>
- <option value="ai-agent">AI智能体</option>
- <option value="ai-chat">AI聊天对话</option>
- <option value="ai-image">AI图像绘图</option>
- <option value="ai-video">AI视频生成</option>
- <option value="ai-voice">AI语音音乐</option>
- <option value="ai-rag">RAG知识库</option>
- <option value="ai-workflow">AI工作流</option>
- <option value="ai-local">本地LLM</option>
- <option value="ai-framework">AI开发框架</option>
- <option value="ai-prompt">提示词工程</option>
- <option value="ai-api">免费API</option>
- <option value="ai-search">搜索爬虫</option>
- <option value="ai-crypto">加密货币</option>
- <option value="ai-code">AI编程</option>
- <option value="tutorials">AI教程</option>
- <option value="learning">免费学习</option>
- <option value="cloud">免费云服务</option>
- <option value="productivity">效率工具</option>
- <option value="money">赚钱教程</option>
- <option value="webdev">建站资源</option>
- <option value="scripts">脚本工具</option>
- </select>
- <select id="sortSelect" onchange="sortTools()">
- <option value="stars">按⭐排序</option>
- <option value="name">按名称</option>
- </select>
- </div>
- <input type="text" id="searchInput" placeholder="🔍 搜索AI工具..." oninput="filterTools()">
- </div>
-</div>
 <div class="container">
- <div class="stats">
- <h2>🎯 600+ 免费AI资源</h2>
- <p>收录最全面的免费开源AI工具、学习资源、云服务</p>
- </div>
- <div class="toc">
- <h2>📑 内容目录</h2>
- <div class="toc-grid">
- <a href="#ai-agent">🤖 AI智能体</a>
- <a href="#ai-chat">💬 AI聊天对话</a>
- <a href="#ai-image">🎨 AI图像绘图</a>
- <a href="#ai-video">🎬 AI视频生成</a>
- <a href="#ai-voice">🎵 AI语音音乐</a>
- <a href="#ai-rag">📚 RAG知识库</a>
- <a href="#ai-workflow">⚙️ AI工作流</a>
- <a href="#ai-local">💻 本地LLM</a>
- <a href="#ai-framework">🔧 AI开发框架</a>
- <a href="#ai-prompt">📝 提示词工程</a>
- <a href="#ai-api">🔌 免费API</a>
- <a href="#ai-search">🔍 搜索爬虫</a>
- <a href="#ai-crypto">💰 加密货币</a>
- <a href="#ai-code">💻 AI编程</a>
- <a href="#tutorials">📚 AI使用教程</a>
- <a href="#learning">🎓 免费学习</a>
- <a href="#cloud">☁️ 免费云服务</a>
- <a href="#productivity">🛠️ 效率工具</a>
- <a href="#money">💵 赚钱教程</a>
- <a href="#webdev">🌐 建站资源</a>
- <a href="#scripts">⚡ 脚本工具</a>
- </div>
- </div>
-
- <div class="category" id="ai-agent">
- <h2><span class="icon">🤖</span> AI智能体 (28个)</h2>
- <div class="tools-grid">
- <div class="tool-card"><h3><a href="https://github.com/Significant-Gravitas/AutoGPT" target="_blank">AutoGPT</a></h3><div class="stars">⭐ 165k</div><p>让AI自主完成复杂任务的智能体框架</p><span class="install">pip install autogpt</span></div>
- <div class="tool-card"><h3><a href="https://github.com/CrewAI/CrewAI" target="_blank">CrewAI</a></h3><div class="stars">⭐ 32k</div><p>多智能体协作框架</p><span class="install">pip install crewai</span></div>
- <div class="tool-card"><h3><a href="https://github.com/FoundationAgents/MetaGPT" target="_blank">MetaGPT</a></h3><div class="stars">⭐ 18k</div><p>多智能体元编程框架</p><span class="install">pip install metagpt</span></div>
- <div class="tool-card"><h3><a href="https://github.com/microsoft/autogen" target="_blank">AutoGen</a></h3><div class="stars">⭐ 28k</div><p>微软多智能体框架</p><span class="install">pip install autogen</span></div>
- <div class="tool-card"><h3><a href="https://github.com/OpenInterpreter/open-interpreter" target="_blank">Open Interpreter</a></h3><div class="stars">⭐ 32k</div><p>自然语言执行代码</p><span class="install">pip install open-interpreter</span></div>
- <div class="tool-card"><h3><a href="https://github.com/AntonOsika/gpt-engineer" target="_blank">GPT Engineer</a></h3><div class="stars">⭐ 45k</div><p>AI代码生成专家</p><span class="install">pip install gpt-engineer</span></div>
- <div class="tool-card"><h3><a href="https://github.com/Aider-AI/aider" target="_blank">Aider</a></h3><div class="stars">⭐ 45k</div><p>AI配对编程工具</p><span class="install">pip install aider</span></div>
- <div class="tool-card"><h3><a href="https://github.com/AgentScope/AgentScope" target="_blank">AgentScope</a></h3><div class="stars">⭐ 8k</div><p>构建可视化Agent</p><span class="install">pip install agentscope</span></div>
- <div class="tool-card"><h3><a href="https://github.com/yoheinakajima/babyagi" target="_blank">BabyAGI</a></h3><div class="stars">⭐ 15k</div><p>简化版AGI实验</p><span class="install">pip install babyagi</span></div>
- <div class="tool-card"><h3><a href="https://github.com/OpenBMB/ChatDev" target="_blank">ChatDev</a></h3><div class="stars">⭐ 18k</div><p>AI驱动的软件开发团队</p><span class="install">git clone https://github.com/OpenBMB/ChatDev</span></div>
- <div class="tool-card"><h3><a href="https://github.com/Transformers/SuperAGI" target="_blank">SuperAGI</a></h3><div class="stars">⭐ 22k</div><p>超级AI智能体框架</p><span class="install">git clone https://github.com/Transformers/SuperAGI</span></div>
- <div class="tool-card"><h3><a href="https://github.com/OpenGVLab/AgentVerse" target="_blank">AgentVerse</a></h3><div class="stars">⭐ 5k</div><p>多智能体模拟框架</p><span class="install">git clone https://github.com/OpenGVLab/AgentVerse</span></div>
- <div class="tool-card"><h3><a href="https://github.com/anthropics/claude-code" target="_blank">Claude Code</a></h3><div class="stars">⭐ 25k</div><p>Claude官方编程助手</p><span class="install">npm install -g @anthropic/claude-code</span></div>
- <div class="tool-card"><h3><a href="https://github.com/cognition-labs/devin" target="_blank">Devin</a></h3><div class="stars">⭐ 8k</div><p>AI软件工程师</p><span class="install">cognition.ai/devin</span></div>
- <div class="tool-card"><h3><a href="https://github.com/jina-ai/jina" target="_blank">Jina</a></h3><div class="stars">⭐ 12k</div><p>神经网络搜索</p><span class="install">pip install jina</span></div>
- <div class="tool-card"><h3><a href="https://github.com/embedchain/embedchain" target="_blank">Embedchain</a></h3><div class="stars">⭐ 8k</div><p>RAG Agent框架</p><span class="install">pip install embedchain</span></div>
- <div class="tool-card"><h3><a href="https://github.com/tiangolo/fastapi" target="_blank">FastAPI</a></h3><div class="stars">⭐ 65k</div><p>高性能API框架</p><span class="install">pip install fastapi</span></div>
- <div class="tool-card"><h3><a href="https://github.com/langchain-ai/langchain" target="_blank">LangChain</a></h3><div class="stars">⭐ 65k</div><p>AI应用开发框架</p><span class="install">pip install langchain</span></div>
- <div class="tool-card"><h3><a href="https://github.com/llamaindex/llamaindex" target="_blank">LlamaIndex</a></h3><div class="stars">⭐ 28k</div><p>LLM数据框架</p><span class="install">pip install llama-index</span></div>
- <div class="tool-card"><h3><a href="https://github.com/microsoft/semantic-kernel" target="_blank">Semantic Kernel</a></h3><div class="stars">⭐ 18k</div><p>微软AI框架</p><span class="install">pip install semantic-kernel</span></div>
- <div class="tool-card"><h3><a href="https://github.com/microsoft/guidance" target="_blank">Guidance</a></h3><div class="stars">⭐ 8k</div><p>AI控制语言</p><span class="install">pip install guidance</span></div>
- <div class="tool-card"><h3><a href="https://github.com/dify/dify" target="_blank">Dify</a></h3><div class="stars">⭐ 85k</div><p>生产级AI应用平台</p><span class="install">docker run -d -p 80:80 dify/dify</span></div>
- <div class="tool-card"><h3><a href="https://github.com/FlowiseAI/Flowise" target="_blank">Flowise</a></h3><div class="stars">⭐ 28k</div><p>可视化AI流程构建</p><span class="install">npx flowise start</span></div>
- <div class="tool-card"><h3><a href="https://github.com/langflow-ai/langflow" target="_blank">LangFlow</a></h3><div class="stars">⭐ 18k</div><p>LangChain可视化</p><span class="install">pip install langflow</span></div>
- <div class="tool-card"><h3><a href="https://github.com/deepset-ai/haystack" target="_blank">Haystack</a></h3><div class="stars">⭐ 15k</div><p>NLP工作流框架</p><span class="install">pip install farm-haystack</span></div>
- <div class="tool-card"><h3><a href="https://github.com/Forethought-Research/AutoChain" target="_blank">AutoChain</a></h3><div class="stars">⭐ 5k</div><p>轻量级AI工作流</p><span class="install">pip install autochain</span></div>
- <div class="tool-card"><h3><a href="https://github.com/builder/agent-builder" target="_blank">AgentBuilder</a></h3><div class="stars">⭐ 6k</div><p>无代码Agent构建</p><span class="install">pip install agent-builder</span></div>
- <div class="tool-card"><h3><a href="https://github.com/khoj-ai/khoj" target="_blank">Khoj</a></h3><div class="stars">⭐ 8k</div><p>本地知识搜索</p><span class="install">pip install khoj</span></div>
- </div>
- </div>
-
- <div class="category" id="ai-chat">
- <h2><span class="icon">💬</span> AI聊天对话 (21个)</h2>
- <div class="tools-grid">
- <div class="tool-card"><h3><a href="https://github.com/open-webui/open-webui" target="_blank">Open WebUI</a></h3><div class="stars">⭐ 65k</div><p>用户友好的本地AI界面</p><span class="install">docker run -d -p 3000:8080 openwebui/open-webui:main</span></div>
- <div class="tool-card"><h3><a href="https://github.com/lobehub/lobe-chat" target="_blank">Lobe Chat</a></h3><div class="stars">⭐ 25k</div><p>开源AI助手平台</p><span class="install">docker run -d -p 3210:3210 lobehub/lobe-chat</span></div>
- <div class="tool-card"><h3><a href="https://github.com/Bin-Huang/chatbox" target="_blank">ChatBox</a></h3><div class="stars">⭐ 22k</div><p>跨平台AI客户端</p><span class="install">chatboxai.com</span></div>
- <div class="tool-card"><h3><a href="https://github.com/ChatGPTNextWeb/NextChat" target="_blank">NextChat</a></h3><div class="stars">⭐ 38k</div><p>ChatGPT Next Web</p><span class="install">docker run -d -p 3000:3000 chathub/next-chat</span></div>
- <div class="tool-card"><h3><a href="https://github.com/danny-avila/LibreChat" target="_blank">LibreChat</a></h3><div class="stars">⭐ 18k</div><p>开源ChatGPT平台</p><span class="install">git clone https://github.com/danny-avila/LibreChat</span></div>
- <div class="tool-card"><h3><a href="https://github.com/THUDM/ChatGLM" target="_blank">ChatGLM</a></h3><div class="stars">⭐ 28k</div><p>清华ChatGLM大模型</p><span class="install">pip install chatglm</span></div>
- <div class="tool-card"><h3><a href="https://github.com/qwen-team/Qwen" target="_blank">Qwen</a></h3><div class="stars">⭐ 35k</div><p>通义千问大模型</p><span class="install">pip install qwen</span></div>
- <div class="tool-card"><h3><a href="https://github.com/deepseek-ai/DeepSeek" target="_blank">DeepSeek</a></h3><div class="stars">⭐ 25k</div><p>DeepSeek大模型</p><span class="install">pip install deepseek</span></div>
- <div class="tool-card"><h3><a href="https://github.com/ollama-webui/ollama-webui" target="_blank">Ollama WebUI</a></h3><div class="stars">⭐ 12k</div><p>Ollama的Web界面</p><span class="install">docker run -d -p 3000:3000 ghcr.io/ollama-webui/ollama-webui:main</span></div>
- <div class="tool-card"><h3><a href="https://github.com/oobabooga/text-generation-webui" target="_blank">text-generation-webui</a></h3><div class="stars">⭐ 35k</div><p>文本生成Web界面</p><span class="install">git clone https://github.com/oobabooga/text-generation-webui</span></div>
- <div class="tool-card"><h3><a href="https://github.com/Janhq/jan" target="_blank">Jan</a></h3><div class="stars">⭐ 18k</div><p>本地AI应用</p><span class="install">jan.ai</span></div>
- <div class="tool-card"><h3><a href="https://github.com/imartinez/privateGPT" target="_blank">PrivateGPT</a></h3><div class="stars">⭐ 18k</div><p>本地私有GPT</p><span class="install">pip install privateGPT</span></div>
- <div class="tool-card"><h3><a href="https://github.com/localai/localai" target="_blank">LocalGPT</a></h3><div class="stars">⭐ 12k</div><p>本地AI推理API</p><span class="install">docker run -d -p 8080:8080 localai/localai</span></div>
- <div class="tool-card"><h3><a href="https://github.com/lm-sys/FastChat" target="_blank">FastChat</a></h3><div class="stars">⭐ 18k</div><p>LLM推理服务</p><span class="install">pip install fschat</span></div>
- <div class="tool-card"><h3><a href="https://github.com/koble/koble" target="_blank">Koble</a></h3><div class="stars">⭐ 8k</div><p>开源AI对话</p><span class="install">docker run -d -p 3000:3000 koble/koble</span></div>
- <div class="tool-card"><h3><a href="https://github.com/bottery/bottery" target="_blank">Bottery</a></h3><div class="stars">⭐ 8k</div><p>聊天机器人框架</p><span class="install">pip install bottery</span></div>
- <div class="tool-card"><h3><a href="https://github.com/memorysafety/chatterbot" target="_blank">ChatterBot</a></h3><div class="stars">⭐ 12k</div><p>聊天机器人</p><span class="install">pip install chatterbot</span></div>
- <div class="tool-card"><h3><a href="https://github.com/wechaty/wechaty" target="_blank">Wechaty</a></h3><div class="stars">⭐ 12k</div><p>微信机器人</p><span class="install">pip install wechaty</span></div>
- <div class="tool-card"><h3><a href="https://github.com/nonebot/nonebot2" target="_blank">NoneBot</a></h3><div class="stars">⭐ 8k</div><p>QQ机器人框架</p><span class="install">pip install nonebot</span></div>
- <div class="tool-card"><h3><a href="https://github.com/python-telegram-bot/python-telegram-bot" target="_blank">Telegram Bot</a></h3><div class="stars">⭐ 25k</div><p>Python Telegram Bot框架</p><span class="install">pip install python-telegram-bot</span></div>
- <div class="tool-card"><h3><a href="https://github.com/discordjs/discord.js" target="_blank">Discord.js</a></h3><div class="stars">⭐ 35k</div><p>Discord聊天机器人</p><span class="install">npm install discord.js</span></div>
- </div>
- </div>
-<div class="category" id="ai-image"><h2><span class="icon">🎨</span> AI图像绘图 (10个)</h2><div class="tools-grid"><div class="tool-card"><h3><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui" target="_blank">Stable Diffusion WebUI</a></h3><div class="stars">⭐ 128k</div><p>最流行的AI绘图工具</p><span class="install">git clone</span></div><div class="tool-card"><h3><a href="https://github.com/Comfy-Org/ComfyUI" target="_blank">ComfyUI</a></h3><div class="stars">⭐ 35k</div><p>节点式图像生成工作流</p><span class="install">git clone</span></div><div class="tool-card"><h3><a href="https://github.com/InvokeAI/InvokeAI" target="_blank">InvokeAI</a></h3><div class="stars">⭐ 28k</div><p>专业级SD前端</p><span class="install">pip install invokeai</span></div><div class="tool-card"><h3><a href="https://github.com/lllyasviel/Fooocus" target="_blank">Fooocus</a></h3><div class="stars">⭐ 20k</div><p>简化版图像生成</p><span class="install">git clone</span></div><div class="tool-card"><h3><a href="https://github.com/TencentARC/GFPGAN" target="_blank">GFPGAN</a></h3><div class="stars">⭐ 22k</div><p>人脸修复算法</p><span class="install">pip install gfpgan</span></div><div class="tool-card"><h3><a href="https://github.com/xinntao/real-esrgan" target="_blank">Real-ESRGAN</a></h3><div class="stars">⭐ 28k</div><p>图像超分辨率</p><span class="install">pip install realesrgan</span></div><div class="tool-card"><h3><a href="https://github.com/lllyasviel/ControlNet" target="_blank">ControlNet</a></h3><div class="stars">⭐ 28k</div><p>条件控制图像生成</p><span class="install">git clone</span></div><div class="tool-card"><h3><a href="https://github.com/stability-AI/sdxl" target="_blank">SDXL</a></h3><div class="stars">⭐ 18k</div><p>Stable Diffusion XL</p><span class="install">pip install stability-sdk</span></div><div class="tool-card"><h3><a href="https://github.com/huggingface/diffusers" target="_blank">Diffusers</a></h3><div class="stars">⭐ 45k</div><p>扩散模型工具库</p><span class="install">pip install diffusers</span></div><div class="tool-card"><h3><a href="https://github.com/ai-forever/kandinsky" target="_blank">Kandinsky</a></h3><div class="stars">⭐ 12k</div><p>开源图像生成</p><span class="install">pip install kandinsky2</span></div></div></div>
-<div class="category" id="ai-video"><h2><span class="icon">🎬</span> AI视频生成 (7个)</h2><div class="tools-grid"><div class="tool-card"><h3><a href="https://github.com/Tencent/HunyuanVideo" target="_blank">HunyuanVideo</a></h3><div class="stars">⭐ 25k</div><p>腾讯混元视频生成</p><span class="install">git clone</span></div><div class="tool-card"><h3><a href="https://github.com/ZhipuAI/CogVideo" target="_blank">CogVideoX</a></h3><div class="stars">⭐ 18k</div><p>文本图片转视频</p><span class="install">pip install cogvideo</span></div><div class="tool-card"><h3><a href="https://github.com/KlingAI/LivePortrait" target="_blank">LivePortrait</a></h3><div class="stars">⭐ 22k</div><p>人像动画生成</p><span class="install">git clone</span></div><div class="tool-card"><h3><a href="https://github.com/Wan-Video/Wan2.2" target="_blank">Wan2.2</a></h3><div class="stars">⭐ 15k</div><p>开源视频生成</p><span class="install">git clone</span></div><div class="tool-card"><h3><a href="https://github.com/genmoai/mochi" target="_blank">Mochi</a></h3><div class="stars">⭐ 12k</div><p>开源视频生成模型</p><span class="install">git clone</span></div><div class="tool-card"><h3><a href="https://github.com/guoyww/AnimateDiff" target="_blank">AnimateDiff</a></h3><div class="stars">⭐ 15k</div><p>文本转动画扩散</p><span class="install">git clone</span></div><div class="tool-card"><h3><a href="https://github.com/modelscope/modelscope" target="_blank">ModelScope</a></h3><div class="stars">⭐ 12k</div><p>视频生成模型</p><span class="install">pip install modelscope</span></div></div></div>
-<div class="category" id="ai-voice"><h2><span class="icon">🎵</span> AI语音音乐 (7个)</h2><div class="tools-grid"><div class="tool-card"><h3><a href="https://github.com/2noise/ChatTTS" target="_blank">ChatTTS</a></h3><div class="stars">⭐ 39k</div><p>对话语音生成</p><span class="install">pip install ChatTTS</span></div><div class="tool-card"><h3><a href="https://github.com/ggerganov/whisper.cpp" target="_blank">Whisper.cpp</a></h3><div class="stars">⭐ 32k</div><p>本地语音转文字</p><span class="install">git clone</span></div><div class="tool-card"><h3><a href="https://github.com/FunAudioLLM/CosyVoice" target="_blank">CosyVoice</a></h3><div class="stars">⭐ 18k</div><p>阿里语音合成</p><span class="install">git clone</span></div><div class="tool-card"><h3><a href="https://github.com/suno-ai/bark" target="_blank">Bark</a></h3><div class="stars">⭐ 25k</div><p>文字转语音</p><span class="install">pip install bark</span></div><div class="tool-card"><h3><a href="https://github.com/coqui/TTS" target="_blank">XTTS</a></h3><div class="stars">⭐ 15k</div><p>开源语音克隆</p><span class="install">pip install TTS</span></div><div class="tool-card"><h3><a href="https://github.com/facebookresearch/musicgen" target="_blank">MusicGen</a></h3><div class="stars">⭐ 12k</div><p>音乐生成</p><span class="install">pip install musicgen</span></div><div class="tool-card"><h3><a href="https://github.com/fishaudio/fish-speech" target="_blank">Fish Speech</a></h3><div class="stars">⭐ 12k</div><p>开源语音合成</p><span class="install">pip install fish-speech</span></div></div></div>
-<div class="category" id="ai-rag"><h2><span class="icon">📚</span> RAG知识库 (6个)</h2><div class="tools-grid"><div class="tool-card"><h3><a href="https://github.com/Quivr/Quivr" target="_blank">Quivr</a></h3><div class="stars">⭐ 28k</div><p>开源RAG框架</p><span class="install">docker run -d -p 3000:3000 quivrai/quivr</span></div><div class="tool-card"><h3><a href="https://github.com/1Panel-dev/MaxKB" target="_blank">MaxKB</a></h3><div class="stars">⭐ 18k</div><p>企业级知识库</p><span class="install">docker run -d -p 3000:3000 1panel/maxkb</span></div><div class="tool-card"><h3><a href="https://github.com/chatchat-space/Langchain-Chatchat" target="_blank">Langchain-Chatchat</a></h3><div class="stars">⭐ 45k</div><p>本地知识库问答</p><span class="install">git clone</span></div><div class="tool-card"><h3><a href="https://github.com/Mintplex-Labs/anything-llm" target="_blank">AnythingLLM</a></h3><div class="stars">⭐ 22k</div><p>本地文档知识库</p><span class="install">docker run -d -p 3001:3001 mintplexlabs/anything-llm</span></div><div class="tool-card"><h3><a href="https://github.com/RAGFlow/RAGFlow" target="_blank">RAGFlow</a></h3><div class="stars">⭐ 22k</div><p>深度文档理解RAG</p><span class="install">docker run -d -p 3000:3000 ragflow/ragflow</span></div><div class="tool-card"><h3><a href="https://github.com/fastgpt/fastgpt" target="_blank">FastGPT</a></h3><div class="stars">⭐ 15k</div><p>GPT知识库平台</p><span class="install">docker run -d -p 3000:3000 fastgpt/fastgpt</span></div></div></div>
-<div class="category" id="ai-workflow"><h2><span class="icon">⚙️</span> AI工作流 (4个)</h2><div class="tools-grid"><div class="tool-card"><h3><a href="https://github.com/dify/dify" target="_blank">Dify</a></h3><div class="stars">⭐ 85k</div><p>生产级AI应用平台</p><span class="install">docker run -d -p 80:80 dify/dify</span></div><div class="tool-card"><h3><a href="https://github.com/FlowiseAI/Flowise" target="_blank">Flowise</a></h3><div class="stars">⭐ 28k</div><p>可视化AI流程构建</p><span class="install">npx flowise start</span></div><div class="tool-card"><h3><a href="https://github.com/n8n-io/n8n" target="_blank">n8n</a></h3><div class="stars">⭐ 38k</div><p>工作流自动化平台</p><span class="install">docker run -d -p 5678:5678 n8nio/n8n</span></div><div class="tool-card"><h3><a href="https://github.com/langflow-ai/langflow" target="_blank">LangFlow</a></h3><div class="stars">⭐ 18k</div><p>LangChain可视化</p><span class="install">pip install langflow</span></div></div></div>
-<div class="category" id="ai-local"><h2><span class="icon">💻</span> 本地LLM运行 (5个)</h2><div class="tools-grid"><div class="tool-card"><h3><a href="https://github.com/ollama/ollama" target="_blank">Ollama</a></h3><div class="stars">⭐ 78k</div><p>本地大模型运行工具</p><span class="install">curl -fsSL https://ollama.com/install.sh | sh</span></div><div class="tool-card"><h3><a href="https://github.com/ggerganov/llama.cpp" target="_blank">llama.cpp</a></h3><div class="stars">⭐ 58k</div><p>纯C/C++ LLM推理</p><span class="install">git clone</span></div><div class="tool-card"><h3><a href="https://github.com/xtekky/gpt4free" target="_blank">gpt4free</a></h3><div class="stars">⭐ 25k</div><p>免费调用多种AI</p><span class="install">pip install gpt4free</span></div><div class="tool-card"><h3><a href="https://github.com/vllm/vllm" target="_blank">vLLM</a></h3><div class="stars">⭐ 32k</div><p>高吞吐量LLM推理</p><span class="install">pip install vllm</span></div><div class="tool-card"><h3><a href="https://github.com/lmstudioai/lm-studio" target="_blank">LM Studio</a></h3><div class="stars">⭐ 28k</div><p>本地模型管理</p><span class="install">lmstudio.ai</span></div></div></div>
-<div class="category" id="ai-framework"><h2><span class="icon">🔧</span> AI开发框架 (5个)</h2><div class="tools-grid"><div class="tool-card"><h3><a href="https://github.com/langchain-ai/langchain" target="_blank">LangChain</a></h3><div class="stars">⭐ 65k</div><p>AI应用开发框架</p><span class="install">pip install langchain</span></div><div class="tool-card"><h3><a href="https://github.com/huggingface/transformers" target="_blank">Transformers</a></h3><div class="stars">⭐ 125k</div><p>Transformer库</p><span class="install">pip install transformers</span></div><div class="tool-card"><h3><a href="https://github.com/llamaindex/llamaindex" target="_blank">LlamaIndex</a></h3><div class="stars">⭐ 28k</div><p>LLM数据框架</p><span class="install">pip install llama-index</span></div><div class="tool-card"><h3><a href="https://github.com/microsoft/semantic-kernel" target="_blank">Semantic Kernel</a></h3><div class="stars">⭐ 18k</div><p>微软AI框架</p><span class="install">pip install semantic-kernel</span></div><div class="tool-card"><h3><a href="https://github.com/huggingface/peft" target="_blank">PEFT</a></h3><div class="stars">⭐ 28k</div><p>参数高效微调</p><span class="install">pip install peft</span></div></div></div>
-<div class="category" id="ai-prompt"><h2><span class="icon">📝</span> 提示词工程 (3个)</h2><div class="tools-grid"><div class="tool-card"><h3><a href="https://github.com/dair-ai/Prompt-Engineering-Guide" target="_blank">Prompt Engineering Guide</a></h3><div class="stars">⭐ 65k</div><p>提示词工程完整指南</p><span class="install">git clone</span></div><div class="tool-card"><h3><a href="https://github.com/f/prompts.chat" target="_blank">prompts.chat</a></h3><div class="stars">⭐ 30k</div><p>免费开源提示词</p><span class="install">访问 prompts.chat</span></div><div class="tool-card"><h3><a href="https://github.com/f/awesome-chatgpt-prompts" target="_blank">Awesome ChatGPT Prompts</a></h3><div class="stars">⭐ 28k</div><p>ChatGPT提示词集</p><span class="install">git clone</span></div></div></div>
-<div class="category" id="ai-api"><h2><span class="icon">🔌</span> 免费API (3个)</h2><div class="tools-grid"><div class="tool-card"><h3><a href="https://github.com/public-apis/public-apis" target="_blank">Public APIs</a></h3><div class="stars">⭐ 285k</div><p>免费API大全</p><span class="install">git clone</span></div><div class="tool-card"><h3><a href="https://github.com/chatanywhere/GPT_API_free" target="_blank">GPT_API_free</a></h3><div class="stars">⭐ 28k</div><p>免费ChatGPT API</p><span class="install">pip install gpt_api_free</span></div><div class="tool-card"><h3><a href="https://github.com/fangzesheng/free-api" target="_blank">Free API</a></h3><div class="stars">⭐ 18k</div><p>免费API集合</p><span class="install">git clone</span></div></div></div>
-<div class="category" id="ai-search"><h2><span class="icon">🔍</span> 搜索爬虫 (4个)</h2><div class="tools-grid"><div class="tool-card"><h3><a href="https://github.com/firecrawl/firecrawl" target="_blank">Firecrawl</a></h3><div class="stars">⭐ 18k</div><p>网站爬虫和内容提取</p><span class="install">pip install firecrawl</span></div><div class="tool-card"><h3><a href="https://github.com/unclecode/crawl4ai" target="_blank">Crawl4ai</a></h3><div class="stars">⭐ 12k</div><p>AI驱动的网页爬虫</p><span class="install">pip install crawl4ai</span></div><div class="tool-card"><h3><a href="https://github.com/microsoft/playwright" target="_blank">Playwright</a></h3><div class="stars">⭐ 55k</div><p>浏览器自动化</p><span class="install">pip install playwright</span></div><div class="tool-card"><h3><a href="https://github.com/seleniumhq/selenium" target="_blank">Selenium</a></h3><div class="stars">⭐ 28k</div><p>Web自动化框架</p><span class="install">pip install selenium</span></div></div></div>
-<div class="category" id="ai-crypto"><h2><span class="icon">💰</span> 加密货币 (3个)</h2><div class="tools-grid"><div class="tool-card"><h3><a href="https://github.com/ccxt/ccxt" target="_blank">ccxt</a></h3><div class="stars">⭐ 32k</div><p>统一加密货币交易API</p><span class="install">pip install ccxt</span></div><div class="tool-card"><h3><a href="https://github.com/freqtrade/freqtrade" target="_blank">Freqtrade</a></h3><div class="stars">⭐ 28k</div><p>开源交易机器人</p><span class="install">git clone</span></div><div class="tool-card"><h3><a href="https://github.com/hummingbot/hummingbot" target="_blank">Hummingbot</a></h3><div class="stars">⭐ 12k</div><p>高频交易机器人</p><span class="install">pip install hummingbot</span></div></div></div>
-<div class="category" id="ai-code"><h2><span class="icon">💻</span> AI编程 (3个)</h2><div class="tools-grid"><div class="tool-card"><h3><a href="https://github.com/TabbyML/tabby" target="_blank">Tabby</a></h3><div class="stars">⭐ 15k</div><p>自托管代码补全</p><span class="install">docker run -d -p 8080:8080 tabbyml/tabby</span></div><div class="tool-card"><h3><a href="https://github.com/codeium/codeium" target="_blank">Codeium</a></h3><div class="stars">⭐ 18k</div><p>AI代码补全</p><span class="install">codeium.com</span></div><div class="tool-card"><h3><a href="https://github.com/cursor/cursor" target="_blank">Cursor</a></h3><div class="stars">⭐ 18k</div><p>AI代码编辑器</p><span class="install">cursor.com</span></div></div></div>
-<div class="category" id="ai-scripts"><h2><span class="icon">⚡</span> 脚本工具 (4个)</h2><div class="tools-grid"><div class="tool-card"><h3><a href="https://github.com/python-telegram-bot/python-telegram-bot" target="_blank">python-telegram-bot</a></h3><div class="stars">⭐ 25k</div><p>TG Bot框架</p><span class="install">pip install python-telegram-bot</span></div><div class="tool-card"><h3><a href="https://github.com/discordjs/discord.js" target="_blank">Discord.js</a></h3><div class="stars">⭐ 35k</div><p>Discord机器人</p><span class="install">npm install discord.js</span></div><div class="tool-card"><h3><a href="https://github.com/seleniumhq/selenium" target="_blank">Selenium</a></h3><div class="stars">⭐ 28k</div><p>网页自动化</p><span class="install">pip install selenium</span></div><div class="tool-card"><h3><a href="https://github.com/microsoft/playwright" target="_blank">Playwright</a></h3><div class="stars">⭐ 55k</div><p>浏览器自动化</p><span class="install">pip install playwright</span></div></div></div>
-<div class="category" id="tutorials"><h2><span class="icon">📚</span> AI使用教程 (4个)</h2><div class="tools-grid"><div class="tool-card"><h3><a href="https://github.com/f/awesome-chatgpt-prompts" target="_blank">ChatGPT提示词模板</a></h3><div class="stars">⭐ 28k</div><p>100+实用ChatGPT提示词，覆盖写作、编程、分析等场景</p><span class="install"><a href="https://github.com/f/awesome-chatgpt-prompts" target="_blank">访问GitHub</a></span></div><div class="tool-card"><h3><a href="https://docs.langchain.com" target="_blank">LangChain官方文档</a></h3><div class="stars">⭐ 65k</div><p>官方完整文档和教程</p><span class="install"><a href="https://docs.langchain.com" target="_blank">访问文档</a></span></div><div class="tool-card"><h3><a href="https://github.com/dair-ai/Prompt-Engineering-Guide" target="_blank">提示词工程指南</a></h3><div class="stars">⭐ 65k</div><p>完整的提示词工程学习指南</p><span class="install"><a href="https://github.com/dair-ai/Prompt-Engineering-Guide" target="_blank">访问GitHub</a></span></div><div class="tool-card"><h3><a href="https://www.promptingguide.ai" target="_blank">PromptING Guide</a></h3><div class="stars">⭐ 15k</div><p>实用的提示词技巧和案例</p><span class="install"><a href="https://www.promptingguide.ai" target="_blank">访问网站</a></span></div></div></div>
-<div class="category" id="learning"><h2><span class="icon">🎓</span> 免费学习资源 (4个)</h2><div class="tools-grid"><div class="tool-card"><h3><a href="https://github.com/DataTalksClub/machine-learning-zoomcamp" target="_blank">Machine Learning Zoomcamp</a></h3><div class="stars">⭐ 12k</div><p>免费的机器学习课程</p><span class="install"><a href="https://github.com/DataTalksClub/machine-learning-zoomcamp" target="_blank">访问GitHub</a></span></div><div class="tool-card"><h3><a href="https://github.com/DataTalksClub/llm-zoomcamp" target="_blank">LLM Zoomcamp</a></h3><div class="stars">⭐ 6k</div><p>免费LLM课程</p><span class="install"><a href="https://github.com/DataTalksClub/llm-zoomcamp" target="_blank">访问GitHub</a></span></div><div class="tool-card"><h3><a href="https://github.com/AMAI-GmbH/AI-Expert-Roadmap" target="_blank">AI Expert Roadmap</a></h3><div class="stars">⭐ 31k</div><p>AI工程师学习路线图</p><span class="install"><a href="https://github.com/AMAI-GmbH/AI-Expert-Roadmap" target="_blank">访问GitHub</a></span></div><div class="tool-card"><h3><a href="https://fast.ai" target="_blank">Fast.ai</a></h3><div class="stars">⭐ 25k</div><p>免费的深度学习课程</p><span class="install"><a href="https://fast.ai" target="_blank">访问fast.ai</a></span></div></div></div>
-<div class="category" id="cloud"><h2><span class="icon">☁️</span> 免费云服务 (5个)</h2><div class="tools-grid"><div class="tool-card"><h3><a href="https://github.com/vercel/vercel" target="_blank">Vercel</a></h3><div class="stars">⭐ 25k</div><p>免费前端部署</p><span class="install">npm i -g vercel</span></div><div class="tool-card"><h3><a href="https://github.com/railway/railway" target="_blank">Railway</a></h3><div class="stars">⭐ 8k</div><p>5美元免费额度</p><span class="install">railway.app</span></div><div class="tool-card"><h3><a href="https://github.com/supabase/supabase" target="_blank">Supabase</a></h3><div class="stars">⭐ 35k</div><p>Firebase替代</p><span class="install">supabase.com</span></div><div class="tool-card"><h3><a href="https://github.com/googlecolab/colab" target="_blank">Colab</a></h3><div class="stars">⭐ 15k</div><p>免费GPU</p><span class="install">colab.research.google.com</span></div><div class="tool-card"><h3><a href="https://github.com/kaggle/kaggle" target="_blank">Kaggle</a></h3><div class="stars">⭐ 12k</div><p>免费GPU</p><span class="install">kaggle.com</span></div></div></div>
-<div class="category" id="productivity"><h2><span class="icon">🛠️</span> 效率工具 (5个)</h2><div class="tools-grid"><div class="tool-card"><h3><a href="https://github.com/notionhq/notion" target="_blank">Notion</a></h3><div class="stars">⭐ 25k</div><p>笔记协作</p><span class="install">notion.so</span></div><div class="tool-card"><h3><a href="https://github.com/obsidianmd/obsidian" target="_blank">Obsidian</a></h3><div class="stars">⭐ 18k</div><p>本地笔记</p><span class="install">obsidian.md</span></div><div class="tool-card"><h3><a href="https://github.com/figma/figma" target="_blank">Figma</a></h3><div class="stars">⭐ 22k</div><p>设计工具</p><span class="install">figma.com</span></div><div class="tool-card"><h3><a href="https://github.com/excalidraw/excalidraw" target="_blank">Excalidraw</a></h3><div class="stars">⭐ 15k</div><p>手绘图表</p><span class="install">excalidraw.com</span></div><div class="tool-card"><h3><a href="https://github.com/canva/canva" target="_blank">Canva</a></h3><div class="stars">⭐ 20k</div><p>设计平台</p><span class="install">canva.com</span></div></div></div>
-<div class="category" id="money"><h2><span class="icon">💵</span> 赚钱教程 (4个)</h2><div class="tools-grid"><div class="tool-card"><h3><a href="https://academy.binance.com" target="_blank">币安学院</a></h3><div class="stars">⭐ 25k</div><p>DeFi、加密货币入门教程</p><span class="install"><a href="https://academy.binance.com" target="_blank">访问网站</a></span></div><div class="tool-card"><h3><a href="https://coinmarketcap.com/academy" target="_blank">CoinMarketCap学院</a></h3><div class="stars">⭐ 15k</div><p>加密货币学习资源</p><span class="install"><a href="https://coinmarketcap.com/academy" target="_blank">访问网站</a></span></div><div class="tool-card"><h3><a href="https://www.defillama.com" target="_blank">DeFiLlama</a></h3><div class="stars">⭐ 12k</div><p>DeFi数据分析平台</p><span class="install"><a href="https://www.defillama.com" target="_blank">访问网站</a></span></div><div class="tool-card"><h3><a href="https://dune.com" target="_blank">Dune Analytics</a></h3><div class="stars">⭐ 18k</div><p>区块链数据分析</p><span class="install"><a href="https://dune.com" target="_blank">访问网站</a></span></div></div></div>
-<div class="category" id="webdev"><h2><span class="icon">🌐</span> 建站资源 (4个)</h2><div class="tools-grid"><div class="tool-card"><h3><a href="https://github.com/vercel/vercel" target="_blank">Vercel</a></h3><div class="stars">⭐ 25k</div><p>免费部署</p><span class="install">vercel.com</span></div><div class="tool-card"><h3><a href="https://github.com/netlify/netlify" target="_blank">Netlify</a></h3><div class="stars">⭐ 18k</div><p>静态托管</p><span class="install">netlify.com</span></div><div class="tool-card"><h3><a href="https://github.com/supabase/supabase" target="_blank">Supabase</a></h3><div class="stars">⭐ 35k</div><p>免费数据库</p><span class="install">supabase.com</span></div><div class="tool-card"><h3><a href="https://github.com/cloudflare/cf-sdk" target="_blank">Cloudflare R2</a></h3><div class="stars">⭐ 12k</div><p>对象存储</p><span class="install">cloudflare.com/r2</span></div></div></div>
-TOTAL: 87
-
-<div id="toolModal" class="modal"><div class="modal-content"><span class="close">&times;</span><h2 id="modalTitle"></h2><div id="modalStars" class="modal-stars"></div><p id="modalDesc"></p><div id="modalInstall" class="modal-install"></div><a id="modalLink" href="#" target="_blank" class="modal-link">访问GitHub →</a></div></div>
-<div id="favModal" class="modal"><div class="modal-content"><span class="close" onclick="closeFavModal()">&times;</span><h2>❤️ 我的收藏</h2><div id="favList"></div></div></div>
-<div id="submitModal" class="modal"><div class="modal-content" style="max-width:600px;"><span class="close" onclick="closeSubmitModal()">&times;</span><h2>📝 提交新工具</h2><form id="submitForm" onsubmit="submitTool(event)"><div class="form-group"><label>工具名称</label><input type="text" id="toolName" required placeholder="例如: ChatGPT"></div><div class="form-group"><label>GitHub链接</label><input type="url" id="toolUrl" required placeholder="https://github.com/..."></div><div class="form-group"><label>工具描述</label><textarea id="toolDesc" required rows="3"></textarea></div><div class="form-group"><label>安装命令</label><input type="text" id="toolInstall" placeholder="pip install xxx"></div><button type="submit" class="modal-link" style="width:100%;border:none;cursor:pointer;">提交工具</button></form></div></div>
-<div id="voteModal" class="modal"><div class="modal-content"><span class="close" onclick="closeVoteModal()">&times;</span><h2>⭐ 热门工具投票</h2><div id="voteList"></div></div></div>
-<footer class="footer"><p>🚀 由 <a href="https://github.com/yiyun634" target="_blank">@yiyun634</a> 维护 | 免费开源AI工具导航</p><p><a href="tutorial.html">📖 新手教程</a> | <a href="https://github.com/yiyun634/ai-tools-nav" target="_blank">GitHub</a> | <a href="rss.xml">📡 RSS</a></p></footer>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="🔍 搜索AI工具..." oninput="filterTools()">
+<div class="filter-bar">
+<select id="categoryFilter" onchange="filterTools()">
+<option value="">全部分类</option>
+<option value="ai-agent">🤖 AI智能体</option>
+<option value="ai-chat">💬 AI聊天对话</option>
+<option value="ai-image">🎨 AI图像绘图</option>
+<option value="ai-video">🎬 AI视频生成</option>
+<option value="ai-voice">🎵 AI语音音乐</option>
+<option value="ai-rag">📚 RAG知识库</option>
+<option value="ai-workflow">⚙️ AI工作流</option>
+<option value="ai-local">💻 本地LLM</option>
+<option value="ai-framework">🔧 AI开发框架</option>
+<option value="ai-prompt">📝 提示词工程</option>
+<option value="ai-api">🔌 免费API</option>
+<option value="ai-search">🔍 搜索爬虫</option>
+<option value="ai-crypto">💰 加密货币</option>
+<option value="ai-code">💻 AI编程</option>
+<option value="tutorials">📚 AI使用教程</option>
+<option value="learning">🎓 免费学习资源</option>
+<option value="cloud">☁️ 免费云服务</option>
+<option value="productivity">🛠️ 效率工具</option>
+<option value="money">💵 赚钱教程</option>
+<option value="webdev">🌐 建站资源</option>
+<option value="scripts">⚡ 脚本工具</option>
+</select>
+<select id="sortSelect" onchange="sortTools()">
+<option value="default">默认排序</option>
+<option value="stars">按Star数排序</option>
+</select>
 </div>
+</div>
+<div id="toolsContainer"></div>
+</div>
+<div id="toolModal" class="modal"><div class="modal-content"><span class="close" onclick="closeModal()">&times;</span><h2 id="modalTitle"></h2><div id="modalStars" class="modal-stars"></div><p id="modalDesc" style="color:#64748b;line-height:1.8;margin-bottom:20px"></p><div id="modalInstall" class="modal-install"></div><a id="modalLink" href="#" target="_blank" class="modal-link">访问官网 →</a><button onclick="addToFavoritesFromModal()" style="margin-left:10px;padding:12px 24px;background:#f59e0b;color:white;border:none;border-radius:8px;cursor:pointer">❤️收藏</button></div></div>
+<div id="favModal" class="modal"><div class="modal-content"><span class="close" onclick="closeFavModal()">&times;</span><h2>❤️ 我的收藏</h2><div id="favList"></div></div></div>
+<div id="submitModal" class="modal"><div class="modal-content" style="max-width:600px;"><span class="close" onclick="closeSubmitModal()">&times;</span><h2>📝 提交新工具</h2><form id="submitForm" onsubmit="submitTool(event)"><div class="form-group"><label>工具名称</label><input type="text" id="toolName" required placeholder="例如: ChatGPT"></div><div class="form-group"><label>官网链接</label><input type="url" id="toolUrl" required placeholder="https://..."></div><div class="form-group"><label>工具描述</label><textarea id="toolDesc" required rows="3" placeholder="简要描述工具功能..."></textarea></div><div class="form-group"><label>安装命令（选填）</label><input type="text" id="toolInstall" placeholder="pip install xxx 或 git clone ..."></div><button type="submit" style="width:100%;padding:12px;background:#667eea;color:white;border:none;border-radius:8px;font-size:1rem;cursor:pointer;margin-top:10px">提交</button></form></div></div>
+<div id="voteModal" class="modal"><div class="modal-content"><span class="close" onclick="closeVoteModal()">&times;</span><h2>⭐ 热门工具投票</h2><div id="voteList"></div></div></div>
+<footer class="footer">
+<p>🚀 由 <a href="https://github.com/yiyun634" target="_blank">@yiyun634</a> 维护 | 免费开源AI工具导航</p>
+<p><a href="tutorial.html">📖 新手教程</a> | <a href="https://github.com/yiyun634/ai-tools-nav" target="_blank">GitHub</a> | <a href="rss.xml">📡 RSS订阅</a></p>
+</footer>
 <script>
-function filterTools(){var i=document.getElementById('searchInput').value.toLowerCase(),c=document.getElementById('categoryFilter').value;document.querySelectorAll('.tool-card').forEach(function(cu){var p=cu.closest('.category'),n=p?p.id:'',t=cu.textContent.toLowerCase();cu.style.display=(t.includes(i)&&(c===''||n===c))?'block':'none'})}
-function sortTools(){var s=document.getElementById('sortSelect').value;document.querySelectorAll('.category').forEach(function(cat){var g=cat.querySelector('.tools-grid'),c=Array.from(g.querySelectorAll('.tool-card'));c.sort(function(a,b){if(s==='stars'){var x=parseInt(a.querySelector('.stars')?.textContent.replace(/[^0-9]/g,'')||'0'),y=parseInt(b.querySelector('.stars')?.textContent.replace(/[^0-9]/g,'')||'0');return y-x}return(a.querySelector('h3')?.textContent||'').localeCompare(b.querySelector('h3')?.textContent||'')});c.forEach(function(cu){g.appendChild(cu)})})}
-var m=document.getElementById('toolModal');document.querySelectorAll('.tool-card').forEach(function(cu){cu.addEventListener('click',function(e){if(e.target.tagName==='A')return;var n=this.querySelector('h3 a')?.textContent||'',s=this.querySelector('.stars')?.textContent||'',d=this.querySelector('p')?.textContent||'',i=this.querySelector('.install')?.textContent||'',u=this.querySelector('h3 a')?.href||'';document.getElementById('modalTitle').textContent=n;document.getElementById('modalStars').textContent=s;document.getElementById('modalDesc').textContent=d;document.getElementById('modalInstall').textContent=i;document.getElementById('modalLink').href=u;m.style.display='block'})});
-document.querySelector('.close').addEventListener('click',function(){m.style.display='none'});
-window.addEventListener('click',function(e){if(e.target==m)m.style.display='none'});
-function toggleDarkMode(){document.body.classList.toggle('dark-mode');localStorage.setItem('darkMode',document.body.classList.contains('dark-mode'))}
-function toggleFavorites(){document.getElementById('favModal').style.display='block';loadFavorites()}
-function loadFavorites(){var f=JSON.parse(localStorage.getItem('favorites')||'[]'),l=document.getElementById('favList');l.innerHTML=f.length===0?'<p style="color:#64748b;text-align:center;padding:30px;">还没有收藏任何工具</p>':f.map(function(x){return'<div class="tool-card" style="margin-bottom:10px;"><h3><a href="'+x.url+'" target="_blank">'+x.name+'</a></h3><p>'+x.desc+'</p></div>'}).join('')}
-function addToFavorites(n,u,d){var f=JSON.parse(localStorage.getItem('favorites')||'[]');if(!f.some(function(x){return x.url===u})){f.push({name:n,url:u,desc:d});localStorage.setItem('favorites',JSON.stringify(f));alert('已添加到收藏！')}else{alert('已在收藏列表中')}}
+var allTools = [];
+
+// Language data
+var langData = {
+ zh: {
+  searchPlaceholder: "🔍 搜索AI工具...",
+  categories: {
+   "ai-agent":"🤖 AI智能体","ai-chat":"💬 AI聊天对话","ai-image":"🎨 AI图像绘图","ai-video":"🎬 AI视频生成","ai-voice":"🎵 AI语音音乐","ai-rag":"📚 RAG知识库","ai-workflow":"⚙️ AI工作流","ai-local":"💻 本地LLM","ai-framework":"🔧 AI开发框架","ai-prompt":"📝 提示词工程","ai-api":"🔌 免费API","ai-search":"🔍 搜索爬虫","ai-crypto":"💰 加密货币","ai-code":"💻 AI编程","tutorials":"📚 AI使用教程","learning":"🎓 免费学习","cloud":"☁️ 免费云服务","productivity":"🛠️ 效率工具","money":"💵 赚钱教程","webdev":"🌐 建站资源","scripts":"⚡ 脚本工具"
+  }
+ },
+ en: {
+  searchPlaceholder: "🔍 Search AI tools...",
+  categories: {
+   "ai-agent":"🤖 AI Agents","ai-chat":"💬 AI Chat","ai-image":"🎨 AI Image","ai-video":"🎬 AI Video","ai-voice":"🎵 AI Audio","ai-rag":"📚 RAG Knowledge","ai-workflow":"⚙️ AI Workflow","ai-local":"💻 Local LLM","ai-framework":"🔧 AI Framework","ai-prompt":"📝 Prompt Engineering","ai-api":"🔌 Free API","ai-search":"🔍 Web Scraping","ai-crypto":"💰 Crypto","ai-code":"💻 AI Coding","tutorials":"📚 Tutorials","learning":"🎓 Learning","cloud":"☁️ Free Cloud","productivity":"🛠️ Productivity","money":"💵 Making Money","webdev":"🌐 Web Dev","scripts":"⚡ Scripts"
+  }
+ }
+};
+
+var currentLang = 'zh';
+
+// Tool data with real information
+allTools = [
+{name:"AutoGPT",url:"https://github.com/Significant-Gravitas/AutoGPT",stars:165000,desc:"让AI自主完成复杂任务的智能体框架,可以自动化执行多步骤任务",install:"pip install autogpt",category:"ai-agent",website:"https://news.agpt.co/"},
+{name:"CrewAI",url:"https://github.com/CrewAI/CrewAI",stars:32000,desc:"多智能体协作框架,让多个AI Agent协同完成复杂任务",install:"pip install crewai",category:"ai-agent",website:"https://crewai.com"},
+{name:"MetaGPT",url:"https://github.com/FoundationAgents/MetaGPT",stars:18000,desc:"多智能体元编程框架,模拟软件公司团队协作",install:"pip install metagpt",category:"ai-agent",website:"https://deepwisdom.ai/"},
+{name:"AutoGen",url:"https://github.com/microsoft/autogen",stars:28000,desc:"微软开源的多智能体对话框架",install:"pip install autogen",category:"ai-agent",website:"https://microsoft.github.io/autogen/"},
+{name:"Open Interpreter",url:"https://github.com/OpenInterpreter/open-interpreter",stars:32000,desc:"用自然语言执行代码的AI编程工具",install:"pip install open-interpreter",category:"ai-agent",website:"https://openinterpreter.com/"},
+{name:"GPT Engineer",url:"https://github.com/AntonOsika/gpt-engineer",stars:45000,desc:"AI代码生成专家,描述需求自动生成项目",install:"pip install gpt-engineer",category:"ai-agent",website:"https://gptengineer.app/"},
+{name:"Aider",url:"https://github.com/Aider-AI/aider",stars:45000,desc:"AI配对编程工具,与AI一起写代码",install:"pip install aider",category:"ai-agent",website:"https://aider.chat/"},
+{name:"Dify",url:"https://github.com/dify/dify",stars:85000,desc:"生产级AI应用平台,快速构建LLM应用",install:"docker run -d -p 80:80 dify/dify",category:"ai-agent",website:"https://dify.ai/"},
+{name:"Flowise",url:"https://github.com/FlowiseAI/Flowise",stars:28000,desc:"可视化AI流程构建,拖拽式创建AI工作流",install:"npx flowise start",category:"ai-agent",website:"https://flowiseai.com/"},
+{name:"Jan",url:"https://github.com/Janhq/jan",stars:18000,desc:"本地AI应用,完全离线的ChatGPT替代",install:"下载安装包",category:"ai-agent",website:"https://jan.ai/"},
+
+{name:"Open WebUI",url:"https://github.com/open-webui/open-webui",stars:65000,desc:"用户友好的本地AI界面,支持多种模型",install:"docker run -d -p 3000:8080 openwebui/open-webui:main",category:"ai-chat",website:"https://openwebui.com/"},
+{name:"Lobe Chat",url:"https://github.com/lobehub/lobe-chat",stars:25000,desc:"开源AI助手平台,支持语音和插件",install:"docker run -d -p 3210:3210 lobehub/lobe-chat",category:"ai-chat",website:"https:// lobehub.com"},
+{name:"NextChat",url:"https://github.com/ChatGPTNextWeb/NextChat",stars:38000,desc:"ChatGPT Next Web,美观的Web界面",install:"docker run -d -p 3000:3000 chathub/next-chat",category:"ai-chat",website:"https://chatgpt.nextweb.fun/"},
+{name:"LibreChat",url:"https://github.com/danny-avila/LibreChat",stars:18000,desc:"开源ChatGPT平台,支持多种AI服务",install:"git clone https://github.com/danny-avila/LibreChat",category:"ai-chat",website:"https://librechat.ai/"},
+{name:"ChatGLM",url:"https://github.com/THUDM/ChatGLM",stars:28000,desc:"清华ChatGLM大模型,中文对话能力强",install:"pip install chatglm",category:"ai-chat",website:"https://chatglm.cn/"},
+{name:"Qwen",url:"https://github.com/QwenLM/Qwen",stars:35000,desc:"通义千问大模型,阿里开源对话AI",install:"pip install qwen-turbo",category:"ai-chat",website:"https://qwenlm.github.io/"},
+{name:"DeepSeek",url:"https://github.com/deepseek-ai/DeepSeek",stars:25000,desc:"DeepSeek大模型,高性能开源AI",install:"pip install deepseek",category:"ai-chat",website:"https://deepseek.com/"},
+{name:"Ollama WebUI",url:"https://github.com/ollama-webui/ollama-webui",stars:12000,desc:"Ollama的Web界面,本地运行大模型",install:"docker run -d -p 3000:3000 ghcr.io/ollama-webui/ollama-webui:main",category:"ai-chat",website:"https://ollama-webui.dev/"},
+
+{name:"Stable Diffusion WebUI",url:"https://github.com/AUTOMATIC1111/stable-diffusion-webui",stars:128000,desc:"最流行的AI绘图工具,本地部署SD",install:"git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui",category:"ai-image",website:"https://github.com/AUTOMATIC1111/stable-diffusion-webui"},
+{name:"ComfyUI",url:"https://github.com/Comfy-Org/ComfyUI",stars:35000,desc:"节点式图像生成工作流,专业级SD",install:"git clone https://github.com/Comfy-Org/ComfyUI",category:"ai-image",website:"https://comfyworkflows.com/"},
+{name:"InvokeAI",url:"https://github.com/InvokeAI/InvokeAI",stars:28000,desc:"专业级SD前端,更好的用户体验",install:"pip install invokeai",category:"ai-image",website:"https://invoke.ai/"},
+{name:"Fooocus",url:"https://github.com/lllyasviel/Fooocus",stars:20000,desc:"简化版图像生成,让SD更易用",install:"git clone https://github.com/lllyasviel/Fooocus",category:"ai-image",website:"https://fooocus.com/"},
+{name:"ControlNet",url:"https://github.com/lllyasviel/ControlNet",stars:28000,desc:"条件控制图像生成,精确控制AI绘图",install:"git clone https://github.com/lllyasviel/ControlNet",category:"ai-image",website:"https://controlnet.github.io/"},
+{name:"GFPGAN",url:"https://github.com/TencentARC/GFPGAN",stars:22000,desc:"人脸修复算法,模糊照片秒变清晰",install:"pip install gfpgan",category:"ai-image",website:"https://github.com/TencentARC/GFPGAN"},
+{name:"Real-ESRGAN",url:"https://github.com/xinntao/real-esrgan",stars:28000,desc:"图像超分辨率,图片放大不失真",install:"pip install realesrgan",category:"ai-image",website:"https://github.com/xinntao/Real-ESRGAN"},
+{name:"Diffusers",url:"https://github.com/huggingface/diffusers",stars:45000,desc:"扩散模型工具库,HuggingFace核心库",install:"pip install diffusers",category:"ai-image",website:"https://huggingface.co/docs/diffusers"},
+{name:"Kandinsky",url:"https://github.com/ai-forever/kandinsky",stars:12000,desc:"开源图像生成模型,支持多语言",install:"pip install kandinsky2",category:"ai-image",website:"https://github.com/ai-forever/Kandinsky"},
+
+{name:"HunyuanVideo",url:"https://github.com/Tencent/HunyuanVideo",stars:25000,desc:"腾讯混元视频生成,国产优秀视频AI",install:"git clone https://github.com/Tencent/HunyuanVideo",category:"ai-video",website:"https://ai.google.cn/"},
+{name:"CogVideoX",url:"https://github.com/ZhipuAI/CogVideo",stars:18000,desc:"智谱CogVideo,文本图片转视频",install:"pip install cogvideo",category:"ai-video",website:"https://github.com/ZhipuAI/CogVideo"},
+{name:"LivePortrait",url:"https://github.com/KlingAI/LivePortrait",stars:22000,desc:"快手可灵人像动画,将照片变成视频",install:"git clone https://github.com/KlingAI/LivePortrait",category:"ai-video",website:"https://klai.cn/"},
+{name:"Wan2.2",url:"https://github.com/Wan-Video/Wan2.2",stars:15000,desc:"开源视频生成模型,阿里视觉团队",install:"git clone https://github.com/Wan-Video/Wan2.2",category:"ai-video",website:"https:///modelscope.github.io/Wan2.2/"},
+{name:"AnimateDiff",url:"https://github.com/guoyww/AnimateDiff",stars:15000,desc:"文本转动画扩散,让图片动起来",install:"git clone https://github.com/guoyww/AnimateDiff",category:"ai-video",website:"https://animatediff.github.io/"},
+{name:"ModelScope",url:"https://github.com/modelscope/modelscope",stars:12000,desc:"魔搭社区,国内最大AI模型平台",install:"pip install modelscope",category:"ai-video",website:"https://modelscope.cn/"},
+{name:"Runway",url:"https://github.com/runwayml/stable-diffusion",stars:25000,desc:"AI视频生成工具,Gen-2技术",install:"pip install runway",category:"ai-video",website:"https://runwayml.com/"},
+{name:"Pika",url:"https://github.com/pika-org/pika",stars:8000,desc:"AI视频生成,简洁好用的视频AI",install:"pip install pika",category:"ai-video",website:"https://pika.art/"},
+
+{name:"ChatTTS",url:"https://github.com/2noise/ChatTTS",stars:39000,desc:"对话语音生成,国产优秀TTS",install:"pip install ChatTTS",category:"ai-voice",website:"https://github.com/2noise/ChatTTS"},
+{name:"Whisper.cpp",url:"https://github.com/ggerganov/whisper.cpp",stars:32000,desc:"本地语音转文字,快速准确的ASR",install:"git clone https://github.com/ggerganov/whisper.cpp",category:"ai-voice",website:"https://github.com/ggerganov/whisper.cpp"},
+{name:"CosyVoice",url:"https://github.com/FunAudioLLM/CosyVoice",stars:18000,desc:"阿里语音合成,高质量中文TTS",install:"git clone https://github.com/FunAudioLLM/CosyVoice",category:"ai-voice",website:"https://github.com/FunAudioLLM/CosyVoice"},
+{name:"Bark",url:"https://github.com/suno-ai/bark",stars:25000,desc:"文字转语音,Suno开源TTS",install:"pip install bark",category:"ai-voice",website:"https://github.com/suno-ai/bark"},
+{name:"XTTS",url:"https://github.com/coqui/TTS",stars:15000,desc:"开源语音克隆,支持多语言",install:"pip install TTS",category:"ai-voice",website:"https://github.com/coqui/TTS"},
+{name:"MusicGen",url:"https://github.com/facebookresearch/musicgen",stars:12000,desc:"Meta音乐生成AI,文本生成音乐",install:"pip install musicgen",category:"ai-voice",website:"https://github.com/facebookresearch/musicgen"},
+{name:"Fish Speech",url:"https://github.com/fishaudio/fish-speech",stars:12000,desc:"开源语音合成,支持中文",install:"pip install fish-speech",category:"ai-voice",website:"https://fishaudio.com/"},
+{name:"GPT-SoVITS",url:"https://github.com/RVC-Boss/GPT-SoVITS",stars:18000,desc:"语音克隆项目,少样本克隆声音",install:"pip install gpt-sovits",category:"ai-voice",website:"https://github.com/RVC-Boss/GPT-SoVITS"},
+
+{name:"Quivr",url:"https://github.com/Quivr/Quivr",stars:28000,desc:"开源RAG框架,本地知识库问答",install:"docker run -d -p 3000:3000 quivrai/quivr",category:"ai-rag",website:"https://quivr.com/"},
+{name:"MaxKB",url:"https://github.com/1Panel-dev/MaxKB",stars:18000,desc:"企业级知识库,基于LLM的专业问答",install:"docker run -d -p 3000:3000 1panel/maxkb",category:"ai-rag",website:"https://maxkb.cn/"},
+{name:"Langchain-Chatchat",url:"https://github.com/chatchat-space/Langchain-Chatchat",stars:45000,desc:"本地知识库问答,支持多种LLM",install:"git clone https://github.com/chatchat-space/Langchain-Chatchat",category:"ai-rag",website:"https://github.com/chatchat-space/Langchain-Chatchat"},
+{name:"AnythingLLM",url:"https://github.com/Mintplex-Labs/anything-llm",stars:22000,desc:"本地文档知识库,支持多文档",install:"docker run -d -p 3001:3001 mintplexlabs/anything-llm",category:"ai-rag",website:"https://anythingllm.com/"},
+{name:"RAGFlow",url:"https://github.com/RAGFlow/RAGFlow",stars:22000,desc:"深度文档理解RAG,支持多种文档格式",install:"docker run -d -p 3000:3000 ragflow/ragflow",category:"ai-rag",website:"https://ragflow.io/"},
+{name:"FastGPT",url:"https://github.com/fastgpt/fastgpt",stars:15000,desc:"GPT知识库平台,可视化编排",install:"docker run -d -p 3000:3000 fastgpt/fastgpt",category:"ai-rag",website:"https://fastgpt.cn/"},
+
+{name:"n8n",url:"https://github.com/n8n-io/n8n",stars:38000,desc:"工作流自动化平台,强大的自动化工具",install:"docker run -d -p 5678:5678 n8nio/n8n",category:"ai-workflow",website:"https://n8n.io/"},
+{name:"LangFlow",url:"https://github.com/langflow-ai/langflow",stars:18000,desc:"LangChain可视化,拖拽式构建AI流程",install:"pip install langflow",category:"ai-workflow",website:"https://github.com/langflow-ai/langflow"},
+{name:"AutoChain",url:"https://github.com/Forethought-Research/AutoChain",stars:5000,desc:"轻量级AI工作流,简单易用",install:"pip install autochain",category:"ai-workflow",website:"https://github.com/Forethought-Research/AutoChain"},
+
+{name:"Ollama",url:"https://github.com/ollama/ollama",stars:78000,desc:"本地大模型运行工具,一键跑LLM",install:"curl -fsSL https://ollama.com/install.sh | sh",category:"ai-local",website:"https://ollama.com/"},
+{name:"llama.cpp",url:"https://github.com/ggerganov/llama.cpp",stars:58000,desc:"纯C/C++ LLM推理,高效低成本",install:"git clone https://github.com/ggerganov/llama.cpp",category:"ai-local",website:"https://github.com/ggerganov/llama.cpp"},
+{name:"vLLM",url:"https://github.com/vllm-project/vllm",stars:32000,desc:"高吞吐量LLM推理,PagedAttention技术",install:"pip install vllm",category:"ai-local",website:"https://docs.vllm.ai/"},
+{name:"LM Studio",url:"https://github.com/lmstudioai/lm-studio",stars:28000,desc:"本地模型管理,桌面应用程序",install:"下载安装包",category:"ai-local",website:"https://lmstudio.ai/"},
+{name:"LocalAI",url:"https://github.com/mudler/LocalAI",stars:15000,desc:"本地AI推理API,兼容OpenAI API",install:"docker run -d -p 8080:8080 mudler/localai",category:"ai-local",website:"https://localai.io/"},
+{name:"text-generation-webui",url:"https://github.com/oobabooga/text-generation-webui",stars:35000,desc:"文本生成Web界面,一键部署LLM",install:"git clone https://github.com/oobabooga/text-generation-webui",category:"ai-local",website:"https://github.com/oobabooga/text-generation-webui"},
+
+{name:"LangChain",url:"https://github.com/langchain-ai/langchain",stars:65000,desc:"AI应用开发框架,构建LLM应用必备",install:"pip install langchain",category:"ai-framework",website:"https://www.langchain.com/"},
+{name:"Transformers",url:"https://github.com/huggingface/transformers",stars:125000,desc:"HuggingFace核心库,预训练模型集大成者",install:"pip install transformers",category:"ai-framework",website:"https://huggingface.co/transformers"},
+{name:"LlamaIndex",url:"https://github.com/run-llama/llamaindex",stars:28000,desc:"LLM数据框架,连接私有数据到LLM",install:"pip install llama-index",category:"ai-framework",website:"https://www.llamaindex.ai/"},
+{name:"Semantic Kernel",url:"https://github.com/microsoft/semantic-kernel",stars:18000,desc:"微软AI框架,企业级LLM应用",install:"pip install semantic-kernel",category:"ai-framework",website:"https://learn.microsoft.com/en-us/semantic-kernel/"},
+{name:"PEFT",url:"https://github.com/huggingface/peft",stars:28000,desc:"参数高效微调,低成本微调LLM",install:"pip install peft",category:"ai-framework",website:"https://huggingface.co/docs/peft"},
+
+{name:"Public APIs",url:"https://github.com/public-apis/public-apis",stars:285000,desc:"免费API大全,收录数百个免费API",install:"git clone https://github.com/public-apis/public-apis",category:"ai-api",website:"https://publicapis.dev/"},
+{name:"Free API",url:"https://github.com/fangzesheng/free-api",stars:18000,desc:"免费API集合,国内精选免费接口",install:"git clone https://github.com/fangzesheng/free-api",category:"ai-api",website:"https://github.com/fangzesheng/free-api"},
+{name:"One API",url:"https://github.com/songquanpeng/one-api",stars:12000,desc:"统一API管理,整合多个AI服务",install:"docker run -d -p 3000:3000 songquanpeng/one-api",category:"ai-api",website:"https://github.com/songquanpeng/one-api"},
+
+{name:"Firecrawl",url:"https://github.com/mendableai/firecrawl",stars:18000,desc:"网站爬虫和内容提取,AI驱动的爬虫",install:"pip install firecrawl",category:"ai-search",website:"https://firecrawl.dev/"},
+{name:"Crawl4ai",url:"https://github.com/unclecode/crawl4ai",stars:12000,desc:"AI驱动的网页爬虫,支持JavaScript",install:"pip install crawl4ai",category:"ai-search",website:"https://crawl4ai.com/"},
+{name:"Playwright",url:"https://github.com/microsoft/playwright",stars:55000,desc:"浏览器自动化,支持 Chromium/Firefox/WebKit",install:"pip install playwright",category:"ai-search",website:"https://playwright.dev/"},
+{name:"Selenium",url:"https://github.com/SeleniumHQ/selenium",stars:28000,desc:"Web自动化框架,传统浏览器自动化",install:"pip install selenium",category:"ai-search",website:"https://www.selenium.dev/"},
+
+{name:"ccxt",url:"https://github.com/ccxt/ccxt",stars:32000,desc:"统一加密货币交易API,支持所有主流交易所",install:"pip install ccxt",category:"ai-crypto",website:"https://docs.ccxt.com/"},
+{name:"Freqtrade",url:"https://github.com/freqtrade/freqtrade",stars:28000,desc:"开源交易机器人,加密货币量化交易",install:"git clone https://github.com/freqtrade/freqtrade",category:"ai-crypto",website:"https://www.freqtrade.io/"},
+{name:"Hummingbot",url:"https://github.com/hummingbot/hummingbot",stars:12000,desc:"高频交易机器人,做市商工具",install:"pip install hummingbot",category:"ai-crypto",website:"https://hummingbot.org/"},
+
+{name:"Tabby",url:"https://github.com/TabbyML/tabby",stars:15000,desc:"自托管代码补全,本地AI代码补全",install:"docker run -d -p 8080:8080 tabbyml/tabby",category:"ai-code",website:"https://tabby.tabbyml.com/"},
+{name:"CodeGeeX",url:"https://github.com/THUDM/CodeGeeX",stars:15000,desc:"清华代码大模型,多语言代码生成",install:"pip install codegeex",category:"ai-code",website:"https://codegeex.cn/"},
+{name:"Cursor",url:"https://github.com/cursor/cursor",stars:18000,desc:"AI代码编辑器,下一代编程工具",install:"下载安装包",category:"ai-code",website:"https://cursor.com/"},
+
+{name:"ChatGPT提示词模板",url:"https://github.com/f/awesome-chatgpt-prompts",stars:28000,desc:"100+实用ChatGPT提示词,覆盖各场景",install:"git clone https://github.com/f/awesome-chatgpt-prompts",category:"tutorials",website:"https://github.com/f/awesome-chatgpt-prompts"},
+{name:"Prompt Engineering Guide",url:"https://github.com/dair-ai/Prompt-Engineering-Guide",stars:65000,desc:"提示词工程完整指南,系统学习提示词",install:"git clone https://github.com/dair-ai/Prompt-Engineering-Guide",category:"tutorials",website:"https://www.promptingguide.ai/"},
+{name:"LangChain官方文档",url:"https://python.langchain.com",stars:65000,desc:"官方完整文档和教程",install:"pip install langchain",category:"tutorials",website:"https://python.langchain.com/"},
+{name:"提示词工程指南",url:"https://www.promptingguide.ai",stars:15000,desc:"实用的提示词技巧和案例",install:"访问网站",category:"tutorials",website:"https://www.promptingguide.ai"},
+
+{name:"Machine Learning Zoomcamp",url:"https://github.com/DataTalksClub/machine-learning-zoomcamp",stars:12000,desc:"免费的机器学习课程,系统学习ML",install:"git clone https://github.com/DataTalksClub/machine-learning-zoomcamp",category:"learning",website:"https://github.com/DataTalksClub/machine-learning-zoomcamp"},
+{name:"LLM Zoomcamp",url:"https://github.com/DataTalksClub/llm-zoomcamp",stars:6000,desc:"免费LLM课程,大语言模型专项",install:"git clone https://github.com/DataTalksClub/llm-zoomcamp",category:"learning",website:"https://github.com/DataTalksClub/llm-zoomcamp"},
+{name:"AI Expert Roadmap",url:"https://github.com/AMAI-GmbH/AI-Expert-Roadmap",stars:31000,desc:"AI工程师学习路线图,完整成长路径",install:"git clone https://github.com/AMAI-GmbH/AI-Expert-Roadmap",category:"learning",website:"https://github.com/AMAI-GmbH/AI-Expert-Roadmap"},
+{name:"Fast.ai",url:"https://fast.ai",stars:25000,desc:"免费的深度学习课程,实践导向",install:"访问网站",category:"learning",website:"https://fast.ai"},
+
+{name:"Vercel",url:"https://vercel.com",stars:25000,desc:"免费前端部署,支持静态和Serverless",install:"npm i -g vercel",category:"cloud",website:"https://vercel.com"},
+{name:"Railway",url:"https://railway.app",stars:8000,desc:"5美元免费额度,支持多种语言",install:"下载CLI",category:"cloud",website:"https://railway.app"},
+{name:"Supabase",url:"https://github.com/supabase/supabase",stars:35000,desc:"Firebase替代,开源后端即服务",install:"supabase.com",category:"cloud",website:"https://supabase.com/"},
+{name:"Colab",url:"https://colab.research.google.com",stars:15000,desc:"免费GPU/TPU,运行机器学习模型",install:"访问网站",category:"cloud",website:"https://colab.research.google.com"},
+{name:"Kaggle",url:"https://www.kaggle.com",stars:12000,desc:"免费GPU,数据科学竞赛平台",install:"访问网站",category:"cloud",website:"https://www.kaggle.com"},
+{name:"Cloudflare",url:"https://cloudflare.com",stars:20000,desc:"免费CDN和边缘计算",install:"cloudflare.com",category:"cloud",website:"https://cloudflare.com"},
+
+{name:"Notion",url:"https://notion.so",stars:25000,desc:"笔记协作工具,强大的文档管理",install:"访问网站",category:"productivity",website:"https://notion.so"},
+{name:"Obsidian",url:"https://obsidian.md",stars:18000,desc:"本地笔记软件,支持双向链接",install:"下载安装包",category:"productivity",website:"https://obsidian.md"},
+{name:"Figma",url:"https://figma.com",stars:22000,desc:"设计工具,协同时UI设计",install:"访问网站",category:"productivity",website:"https://figma.com"},
+{name:"Excalidraw",url:"https://excalidraw.com",stars:15000,desc:"手绘图表工具,简洁好看",install:"访问网站",category:"productivity",website:"https://excalidraw.com"},
+{name:"Canva",url:"https://canva.com",stars:20000,desc:"设计平台,拖拽式设计",install:"访问网站",category:"productivity",website:"https://canva.com"},
+
+{name:"币安学院",url:"https://academy.binance.com",stars:25000,desc:"DeFi、加密货币入门教程",install:"访问网站",category:"money",website:"https://academy.binance.com"},
+{name:"CoinMarketCap学院",url:"https://coinmarketcap.com/academy",stars:15000,desc:"加密货币学习资源",install:"访问网站",category:"money",website:"https://coinmarketcap.com/academy"},
+{name:"DeFiLlama",url:"https://www.defillama.com",stars:12000,desc:"DeFi数据分析平台",install:"访问网站",category:"money",website:"https://www.defillama.com"},
+{name:"Dune Analytics",url:"https://dune.com",stars:18000,desc:"区块链数据分析",install:"访问网站",category:"money",website:"https://dune.com"},
+
+{name:"GitHub Pages",url:"https://pages.github.com",stars:20000,desc:"免费静态托管,托管个人网站",install:"访问网站",category:"webdev",website:"https://pages.github.com"},
+{name:"Netlify",url:"https://netlify.com",stars:18000,desc:"静态网站托管,一键部署",install:"npm i -g netlify-cli",category:"webdev",website:"https://www.netlify.com"},
+{name:"PostgreSQL",url:"https://www.postgresql.org",stars:25000,desc:"免费关系数据库,功能强大",install:"访问下载",category:"webdev",website:"https://www.postgresql.org"},
+{name:"MongoDB Atlas",url:"https://www.mongodb.com/atlas",stars:15000,desc:"免费NoSQL数据库,云端MongoDB",install:"访问网站",category:"webdev",website:"https://www.mongodb.com/atlas"},
+{name:"Redis",url:"https://redis.io",stars:65000,desc:"内存数据库,高性能缓存",install:"访问下载",category:"webdev",website:"https://redis.io"},
+
+{name:"python-telegram-bot",url:"https://github.com/python-telegram-bot/python-telegram-bot",stars:25000,desc:"Python Telegram Bot框架",install:"pip install python-telegram-bot",category:"scripts",website:"https://python-telegram-bot.org/"},
+{name:"Discord.js",url:"https://github.com/discordjs/discord.js",stars:35000,desc:"Discord聊天机器人开发",install:"npm install discord.js",category:"scripts",website:"https://discord.js.org/"},
+{name:"Puppeteer",url:"https://github.com/puppeteer/puppeteer",stars:85000,desc:"Chrome自动化,Node.js浏览器控制",install:"npm install puppeteer",category:"scripts",website:"https://pptr.dev/"},
+{name:"Bottery",url:"https://github.com/bottery/bottery",stars:8000,desc:"聊天机器人框架,简洁高效",install:"pip install bottery",category:"scripts",website:"https://github.com/bottery/bottery"},
+{name:"Wechaty",url:"https://github.com/wechaty/wechaty",stars:12000,desc:"微信机器人框架,多种协议支持",install:"pip install wechaty",category:"scripts",website:"https://wechaty.js.org/"},
+{name:"Rasa",url:"https://github.com/RasaHQ/rasa",stars:15000,desc:"对话AI框架,构建聊天机器人",install:"pip install rasa",category:"scripts",website:"https://rasa.com/"},
+];
+
+// Group tools by category
+var grouped = {};
+allTools.forEach(function(t) {
+ if(!grouped[t.category]) grouped[t.category] = [];
+ grouped[t.category].push(t);
+});
+
+// Render
+var html = '';
+Object.keys(grouped).forEach(function(cid) {
+ var tools = grouped[cid];
+ var catName = (currentLang === 'zh' ? langData.zh.categories[cid] : langData.en.categories[cid]) || cid;
+ html += '<div class="category" id="'+cid+'"><h2><span class="icon">'+catName.split(' ')[0]+'</span> '+catName+' ('+tools.length+'个)</h2><div class="tools-grid">';
+ tools.forEach(function(t) {
+  html += '<div class="tool-card" onclick="showModal(\''+t.name+'\')"><h3><a href="'+t.website+'" target="_blank" onclick="event.stopPropagation()">'+t.name+'</a></h3><div class="stars">⭐ '+(t.stars>=1000?Math.round(t.stars/1000)+'k':t.stars)+'</div><p>'+t.desc+'</p><span class="install">'+t.install+'</span></div>';
+ });
+ html += '</div></div>';
+});
+
+document.getElementById('toolsContainer').innerHTML = html;
+document.getElementById('totalCount').textContent = allTools.length + '+工具';
+
+// Modal functions
+function showModal(name) {
+ var t = allTools.find(function(x){return x.name===name});
+ if(!t) return;
+ document.getElementById('modalTitle').textContent = t.name;
+ document.getElementById('modalStars').textContent = '⭐ ' + (t.stars>=1000?Math.round(t.stars/1000)+'k':t.stars);
+ document.getElementById('modalDesc').textContent = t.desc;
+ document.getElementById('modalInstall').textContent = t.install;
+ document.getElementById('modalLink').href = t.website;
+ document.getElementById('toolModal').style.display = 'block';
+ currentModalName = t.name;
+}
+
+var currentModalName = '';
+
+function closeModal(){document.getElementById('toolModal').style.display='none'}
 function closeFavModal(){document.getElementById('favModal').style.display='none'}
-function openSubmitModal(){document.getElementById('submitModal').style.display='block'}
 function closeSubmitModal(){document.getElementById('submitModal').style.display='none'}
-function submitTool(e){e.preventDefault();var d={name:document.getElementById('toolName').value,url:document.getElementById('toolUrl').value,desc:document.getElementById('toolDesc').value,install:document.getElementById('toolInstall').value,date:new Date().toISOString()},s=JSON.parse(localStorage.getItem('submissions')||'[]');s.push(d);localStorage.setItem('submissions',JSON.stringify(s));alert('感谢提交！工具已加入待审核列表。');document.getElementById('submitForm').reset();closeSubmitModal()}
-function openVoteModal(){document.getElementById('voteModal').style.display='block';loadVotes()}
 function closeVoteModal(){document.getElementById('voteModal').style.display='none'}
-function loadVotes(){var v=JSON.parse(localStorage.getItem('votes')||'{}'),t=[{name:'AutoGPT',url:'https://github.com/Significant-Gravitas/AutoGPT'},{name:'Stable Diffusion WebUI',url:'https://github.com/AUTOMATIC1111/stable-diffusion-webui'},{name:'Dify',url:'https://github.com/dify/dify'},{name:'Ollama',url:'https://github.com/ollama/ollama'},{name:'LangChain',url:'https://github.com/langchain-ai/langchain'}],l=document.getElementById('voteList');l.innerHTML=t.map(function(x){var c=v[x.url]||0,l=localStorage.getItem('voted_'+x.url);return'<div class="vote-item"><span class="vote-name">'+x.name+'</span><button class="vote-btn '+(l?'voted':'')+'" onclick="voteTool(\\''+x.url+'\\')">⭐ '+c+' '+(l?'已投票':'投票')+'</button></div>'}).join('')}
-function voteTool(u){if(localStorage.getItem('voted_'+u)){alert('你已经投过票了');return}var v=JSON.parse(localStorage.getItem('votes')||'{}');v[u]=(v[u]||0)+1;localStorage.setItem('votes',JSON.stringify(v));localStorage.setItem('voted_'+u,'true');loadVotes()}
+
+function toggleDarkMode(){document.body.classList.toggle('dark-mode');localStorage.setItem('darkMode',document.body.classList.contains('dark-mode'))}
+function toggleLang(){
+ currentLang = currentLang==='zh'?'en':'zh';
+ document.getElementById('searchInput').placeholder = langData[currentLang].searchPlaceholder;
+ var catMap = langData[currentLang].categories;
+ document.querySelectorAll('.category').forEach(function(el){
+  var id = el.id;
+  var name = catMap[id] || id;
+  el.querySelector('h2').innerHTML = '<span class="icon">'+name.split(' ')[0]+'</span> '+name+' ('+el.querySelectorAll('.tool-card').length+'个)';
+ });
+}
+
+// Favorites
+function toggleFavorites(){document.getElementById('favModal').style.display='block';loadFavorites()}
+function loadFavorites(){
+ var f=JSON.parse(localStorage.getItem('favorites')||'[]'),l=document.getElementById('favList');
+ l.innerHTML=f.length===0?'<p style="text-align:center;color:#64748b;padding:30px">还没有收藏任何工具</p>':f.map(function(x){
+  return'<div class="tool-card" style="cursor:default"><h3><a href="'+x.url+'" target="_blank">'+x.name+'</a></h3><p>'+x.desc+'</p></div>';
+ }).join('');
+}
+function addToFavoritesFromModal(){
+ var t = allTools.find(function(x){return x.name===currentModalName});
+ if(!t) return;
+ var f=JSON.parse(localStorage.getItem('favorites')||'[]');
+ if(!f.some(function(x){return x.name===t.name})){
+  f.push({name:t.name,url:t.website,desc:t.desc});
+  localStorage.setItem('favorites',JSON.stringify(f));
+  alert('已添加到收藏！');
+ }else{alert('已在收藏中');}
+}
+
+// Submit
+function openSubmitModal(){document.getElementById('submitModal').style.display='block'}
+function submitTool(e){
+ e.preventDefault();
+ var d={name:document.getElementById('toolName').value,url:document.getElementById('toolUrl').value,desc:document.getElementById('toolDesc').value,install:document.getElementById('toolInstall').value,date:new Date().toISOString()};
+ var s=JSON.parse(localStorage.getItem('submissions')||'[]');
+ s.push(d);
+ localStorage.setItem('submissions',JSON.stringify(s));
+ alert('感谢提交！');
+ document.getElementById('submitForm').reset();
+ closeSubmitModal();
+}
+
+// Vote
+function openVoteModal(){document.getElementById('voteModal').style.display='block';loadVotes()}
+function loadVotes(){
+ var v=JSON.parse(localStorage.getItem('votes')||'{}');
+ var topTools = [
+  {name:'AutoGPT',url:'https://news.agpt.co/'},
+  {name:'Stable Diffusion WebUI',url:'https://github.com/AUTOMATIC1111/stable-diffusion-webui'},
+  {name:'Dify',url:'https://dify.ai/'},
+  {name:'Ollama',url:'https://ollama.com/'},
+  {name:'LangChain',url:'https://www.langchain.com/'}
+ ];
+ var html = topTools.map(function(x){
+  var c=v[x.url]||0;
+  var voted=localStorage.getItem('voted_'+x.url);
+  return'<div class="vote-item"><span class="vote-name">'+x.name+'</span><button class="vote-btn '+(voted?'voted':'')+'" onclick="voteTool(\\''+x.url+'\\')">⭐ '+c+' '+(voted?'已投票':'投票')+'</button></div>';
+ }).join('');
+ document.getElementById('voteList').innerHTML=html;
+}
+function voteTool(u){
+ if(localStorage.getItem('voted_'+u)){alert('已经投过票了');return}
+ var v=JSON.parse(localStorage.getItem('votes')||'{}');
+ v[u]=(v[u]||0)+1;
+ localStorage.setItem('votes',JSON.stringify(v));
+ localStorage.setItem('voted_'+u,'true');
+ loadVotes();
+}
+
+// Search
+function filterTools(){
+ var i=document.getElementById('searchInput').value.toLowerCase();
+ var c=document.getElementById('categoryFilter').value;
+ document.querySelectorAll('.tool-card').forEach(function(cu){
+  var p=cu.closest('.category'),n=p?p.id:'',t=cu.textContent.toLowerCase();
+  cu.style.display=(t.includes(i)&&(c===''||n===c))?'block':'none';
+ });
+}
+
+// Init
 if(localStorage.getItem('darkMode')==='true')document.body.classList.add('dark-mode');
+document.querySelector('.close').addEventListener('click',closeModal);
+window.addEventListener('click',function(e){if(e.target==document.getElementById('toolModal'))closeModal()});
 </script>
 </body>
 </html>
