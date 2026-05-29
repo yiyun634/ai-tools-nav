@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新手教程 - AI工具导航</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #0f0f0f; color: #fff; line-height: 1.8; }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .back { color: #667eea; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 30px; }
+        h1 { font-size: 2rem; margin-bottom: 10px; color: #667eea; }
+        .subtitle { color: #999; margin-bottom: 30px; }
+        h2 { font-size: 1.5rem; margin: 40px 0 20px; color: #fff; border-left: 4px solid #667eea; padding-left: 15px; }
+        h3 { font-size: 1.2rem; margin: 20px 0 10px; color: #667eea; }
+        .card { background: #1a1a1a; border-radius: 16px; padding: 30px; margin-bottom: 20px; }
+        .card p { color: #999; }
+        .step { margin: 30px 0; }
+        .step-num { background: #667eea; color: #fff; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9rem; margin-right: 10px; }
+        .code-block { background: #0d0d0d; border: 1px solid #333; border-radius: 8px; padding: 15px 20px; margin: 10px 0; font-family: monospace; color: #4ade80; font-size: 0.9rem; overflow-x: auto; white-space: pre-wrap; }
+        .code-block .comment { color: #666; }
+        .code-block .cmd { color: #f59e0b; }
+        .tip { background: rgba(102, 126, 234, 0.1); border-left: 3px solid #667eea; padding: 15px; margin: 15px 0; color: #b4c5ff; }
+        .warning { background: rgba(245, 158, 11, 0.1); border-left: 3px solid #f59e0b; padding: 15px; margin: 15px 0; color: #fcd34d; }
+        .important { background: rgba(239, 68, 68, 0.1); border-left: 3px solid #ef4444; padding: 15px; margin: 15px 0; color: #fca5a5; }
+        ul { list-style: none; padding-left: 0; }
+        ul li { padding: 8px 0; padding-left: 25px; position: relative; color: #999; }
+        ul li:before { content: "•"; color: #667eea; position: absolute; left: 0; }
+        .nav-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 15px; margin: 30px 0; }
+        .nav-card { background: #1a1a1a; border-radius: 12px; padding: 20px; text-decoration: none; color: #667eea; text-align: center; transition: transform 0.2s; }
+        .nav-card:hover { transform: translateY(-3px); }
+        .nav-card h3 { font-size: 1rem; margin-bottom: 5px; }
+        .nav-card p { color: #666; font-size: 0.8rem; }
+        .example-box { background: #0d0d0d; border-radius: 8px; padding: 20px; margin: 15px 0; }
+        .example-box h4 { color: #667eea; margin-bottom: 10px; }
+        .btn { display: inline-block; background: #667eea; color: #fff; padding: 12px 25px; border-radius: 8px; text-decoration: none; margin-top: 10px; }
+        .btn:hover { background: #5a70d4; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back">← 返回首页</a>
+        
+        <h1>📚 新手入门教程</h1>
+        <p class="subtitle">从零开始学习使用AI工具</p>
+        
+        <div class="nav-cards">
+            <a href="#chapter1" class="nav-card">
+                <h3>第一章</h3>
+                <p>认识命令行</p>
+            </a>
+            <a href="#chapter2" class="nav-card">
+                <h3>第二章</h3>
+                <p>安装Python</p>
+            </a>
+            <a href="#chapter3" class="nav-card">
+                <h3>第三章</h3>
+                <p>pip使用</p>
+            </a>
+            <a href="#chapter4" class="nav-card">
+                <h3>第四章</h3>
+                <p>Git克隆</p>
+            </a>
+            <a href="#chapter5" class="nav-card">
+                <h3>第五章</h3>
+                <p>实战案例</p>
+            </a>
+        </div>
+        
+        <!-- 第一章：认识命令行 -->
+        <div id="chapter1">
+            <h2>第一章：认识命令行</h2>
+            
+            <div class="card">
+                <h3>什么是命令行？</h3>
+                <p>命令行是一个文本界面，你输入命令，电脑执行。就像和电脑说话一样，只不过要用特定的"命令"。</p>
+                
+                <div class="tip">
+                    💡 Windows用户按 <strong>Win+R</strong>，输入 <strong>cmd</strong> 回车，打开命令提示符<br>
+                    Mac用户按 <strong>Command+空格</strong>，输入 <strong>terminal</strong> 回车，打开终端
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>常用命令（先认识一下）</h3>
+                
+                <div class="step">
+                    <span class="step-num">1</span>
+                    <div>
+                        <strong style="color:#667eea;">cd 路径</strong> - 进入某个文件夹
+                        <div class="code-block">cd Desktop          <span class="comment"># 进入桌面</span>
+cd ..              <span class="comment"># 返回上一级</span>
+cd /home/user/doc  <span class="comment"># 进入绝对路径</span></div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <span class="step-num">2</span>
+                    <div>
+                        <strong style="color:#667eea;">ls 或 dir</strong> - 查看当前文件夹内容
+                        <div class="code-block">ls                 <span class="comment"># Linux/Mac</span>
+dir                <span class="comment"># Windows</span></div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <span class="step-num">3</span>
+                    <div>
+                        <strong style="color:#667eea;">pwd</strong> - 查看当前在哪个文件夹
+                        <div class="code-block">pwd                 <span class="comment"># 显示当前路径</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第二章：安装Python -->
+        <div id="chapter2">
+            <h2>第二章：安装Python</h2>
+            
+            <div class="card">
+                <h3>为什么要装Python？</h3>
+                <p>大部分AI工具都是用Python写的，安装Python后才能运行它们。</p>
+            </div>
+            
+            <div class="card">
+                <h3>步骤1：下载Python</h3>
+                <p>访问官网下载：<strong style="color:#667eea;">https://www.python.org/downloads/</strong></p>
+                <div class="warning">⚠️ 一定要下载Python 3.8或更高版本！</div>
+            </div>
+            
+            <div class="card">
+                <h3>步骤2：安装（Windows）</h3>
+                <ul>
+                    <li>双击下载的安装包</li>
+                    <li>勾选 <strong>"Add Python to PATH"</strong>（重要！）</li>
+                    <li>点击 "Install Now"</li>
+                    <li>等待安装完成</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>步骤3：验证安装</h3>
+                <p>打开命令行，输入：</p>
+                <div class="code-block">python --version</div>
+                <p>应该显示类似 <strong>Python 3.11.0</strong> 的版本号</p>
+                
+                <div class="tip">
+                    💡 如果显示"不是内部命令"，尝试输入 <strong>python3 --version</strong>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第三章：pip使用 -->
+        <div id="chapter3">
+            <h2>第三章：pip使用方法</h2>
+            
+            <div class="card">
+                <h3>什么是pip？</h3>
+                <p>pip是Python的包管理器，相当于手机的应用商店，用来安装Python工具。</p>
+            </div>
+            
+            <div class="card">
+                <h3>基础命令</h3>
+                
+                <div class="step">
+                    <span class="step-num">1</span>
+                    <div>
+                        <strong style="color:#667eea;">安装包</strong>
+                        <div class="code-block">pip install 包名</div>
+                        <p style="color:#999;">例如：pip install gpt4free</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <span class="step-num">2</span>
+                    <div>
+                        <strong style="color:#667eea;">查看已安装的包</strong>
+                        <div class="code-block">pip list</div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <span class="step-num">3</span>
+                    <div>
+                        <strong style="color:#667eea;">卸载包</strong>
+                        <div class="code-block">pip uninstall 包名</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>常见问题</h3>
+                
+                <div class="warning">
+                    ⚠️ 如果安装很慢或失败，使用国内镜像：
+                </div>
+                <div class="code-block">pip install 包名 -i https://pypi.tuna.tsinghua.edu.cn/simple</div>
+                
+                <div class="tip">
+                    💡 可以把这行命令理解为"从清华大学镜像加速下载"
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第四章：Git克隆 -->
+        <div id="chapter4">
+            <h2>第四章：Git克隆项目</h2>
+            
+            <div class="card">
+                <h3>什么是Git？</h3>
+                <p>Git是一个版本控制工具，"克隆"就是下载的意思。很多开源AI项目放在GitHub上，用Git可以下载整个项目。</p>
+            </div>
+            
+            <div class="card">
+                <h3>步骤1：安装Git</h3>
+                <ul>
+                    <li><strong>Windows</strong>：https://git-scm.com 下载安装</li>
+                    <li><strong>Mac</strong>：打开终端，输入 git，系统会提示安装</li>
+                    <li><strong>Linux</strong>：sudo apt install git（Ubuntu）或 sudo yum install git（CentOS）</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>步骤2：克隆项目</h3>
+                <p>在网站上找到项目的链接（以 https://github.com/ 开头），复制。</p>
+                <div class="code-block"><span class="comment"># 格式</span>
+git clone 复制的链接
+
+<span class="comment"># 示例：克隆gpt4free</span>
+git clone https://github.com/xtekky/gpt4free</div>
+            </div>
+            
+            <div class="card">
+                <h3>步骤3：使用项目</h3>
+                <div class="code-block"><span class="comment"># 进入下载的文件夹</span>
+cd gpt4free
+
+<span class="comment"># 查看里面的内容</span>
+ls
+
+<span class="comment"># 查看安装说明（必读）</span>
+cat README.md</div>
+                <div class="tip">💡 README.md 文件里详细说明了怎么使用这个项目！</div>
+            </div>
+        </div>
+        
+        <!-- 第五章：实战案例 -->
+        <div id="chapter5">
+            <h2>第五章：实战案例</h2>
+            
+            <div class="example-box">
+                <h4>案例1：安装并使用gpt4free（免费调用GPT）</h4>
+                
+                <div class="step">
+                    <span class="step-num">1</span>
+                    <div>
+                        <strong style="color:#667eea;">安装</strong>
+                        <div class="code-block">pip install gpt4free</div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <span class="step-num">2</span>
+                    <div>
+                        <strong style="color:#667eea;">使用（创建文件 test.py）</strong>
+                        <div class="code-block">from gpt4free import use
+
+response = use.Completion.create('gpt-3.5-turbo', '你好，介绍一下你自己')
+print(response)</div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <span class="step-num">3</span>
+                    <div>
+                        <strong style="color:#667eea;">运行</strong>
+                        <div class="code-block">python test.py</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="example-box">
+                <h4>案例2：安装LangChain（AI应用开发框架）</h4>
+                
+                <div class="step">
+                    <span class="step-num">1</span>
+                    <div>
+                        <strong style="color:#667eea;">安装</strong>
+                        <div class="code-block">pip install langchain</div>
+                        <div class="warning">⚠️ 需要有OpenAI API Key才能使用</div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <span class="step-num">2</span>
+                    <div>
+                        <strong style="color:#667eea;">使用</strong>
+                        <div class="code-block">from langchain.llms import OpenAI
+
+llm = OpenAI(api_key="你的API Key")
+result = llm("写一首关于春天的诗")
+print(result)</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="example-box">
+                <h4>案例3：用Docker安装Dify（可视化AI工作流）</h4>
+                
+                <div class="step">
+                    <span class="step-num">1</span>
+                    <div>
+                        <strong style="color:#667eea;">安装Docker</strong>
+                        <p>访问 https://docs.docker.com/desktop/ 下载安装</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <span class="step-num">2</span>
+                    <div>
+                        <strong style="color:#667eea;">运行Dify</strong>
+                        <div class="code-block">docker run -d -p 80:80 public.ecr.aws/dify/dify-community</div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <span class="step-num">3</span>
+                    <div>
+                        <strong style="color:#667eea;">打开使用</strong>
+                        <p>浏览器打开 http://localhost （或你的服务器IP）</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 常见问题 -->
+        <h2>❓ 常见问题</h2>
+        
+        <div class="card">
+            <h3>Q: 遇到"command not found"错误？</h3>
+            <p>说明这个命令没找到，检查是否：</p>
+            <ul>
+                <li>命令拼写错误（注意大小写）</li>
+                <li>Python/Git没安装好</li>
+                <li>没把路径加入系统PATH</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h3>Q: 遇到"Permission denied"错误？</h3>
+            <p>权限不足，在命令前加 sudo（Linux/Mac）或以管理员身份运行（Windows）</p>
+            <div class="code-block">sudo pip install 包名</div>
+        </div>
+        
+        <div class="card">
+            <h3>Q: 不知道在哪里运行命令？</h3>
+            <ul>
+                <li><strong>Windows</strong>：开始菜单 → 输入"cmd" → 回车</li>
+                <li><strong>Mac</strong>：Command+空格 → 输入"terminal" → 回车</li>
+                <li><strong>Linux</strong>：Ctrl+Alt+T</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h3>Q: 想放弃？不要急！</h3>
+            <p>每个人都是从不会到会的。遇到问题可以：</p>
+            <ul>
+                <li>复制错误信息到搜索引擎搜索</li>
+                <li>查看项目的README.md文档</li>
+                <li>在GitHub项目页面提Issue问</li>
+            </ul>
+        </div>
+        
+        <a href="/" class="back" style="margin-top:40px;">← 返回首页</a>
+    </div>
+</body>
+</html>

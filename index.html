@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI工具导航 - 发现免费AI资源</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #0f0f0f; color: #fff; line-height: 1.6; }
+        
+        /* 固定导航栏 */
+        .nav-fixed {
+            position: sticky;
+            top: 0;
+            background: #1a1a1a;
+            border-bottom: 1px solid #333;
+            padding: 0 20px;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        .nav-item {
+            color: #999;
+            text-decoration: none;
+            padding: 15px 12px;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+            flex-shrink: 0;
+        }
+        .nav-item:hover { color: #667eea; }
+        .nav-item.active { color: #667eea; font-weight: bold; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        
+        header { text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 0 0 30px 30px; margin-bottom: 30px; }
+        h1 { font-size: 2rem; margin-bottom: 8px; }
+        .subtitle { opacity: 0.9; font-size: 1rem; }
+        
+        .search-box { max-width: 500px; margin: 20px auto 0; }
+        .search-box input { width: 100%; padding: 12px 20px; border-radius: 25px; border: none; font-size: 0.9rem; background: rgba(255,255,255,0.2); color: #fff; outline: none; }
+        
+        .stats { display: flex; justify-content: center; gap: 40px; margin: 30px 0; padding: 20px; background: #1a1a1a; border-radius: 12px; }
+        .stat { text-align: center; }
+        .stat-number { font-size: 1.5rem; color: #667eea; font-weight: bold; }
+        .stat-label { color: #666; font-size: 0.8rem; }
+        
+        /* 分类区块 */
+        .section { margin: 40px 0; }
+        .section-title { 
+            font-size: 1.3rem; 
+            margin-bottom: 20px; 
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 15px; }
+        
+        .card { background: #1a1a1a; border-radius: 12px; padding: 18px; transition: transform 0.2s; }
+        .card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(102,126,234,0.2); }
+        
+        .card-header { display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px; }
+        .card h3 { color: #667eea; font-size: 0.95rem; }
+        .card-badge { background: #2a2a2a; padding: 2px 8px; border-radius: 15px; font-size: 0.65rem; color: #888; }
+        
+        .card p { color: #999; font-size: 0.8rem; margin-bottom: 10px; line-height: 1.4; }
+        
+        .install-box { background: #0d0d0d; border: 1px solid #333; border-radius: 6px; padding: 8px; margin-bottom: 8px; }
+        .install-title { color: #667eea; font-size: 0.7rem; margin-bottom: 5px; }
+        .code { background: #1a1a1a; padding: 6px 8px; border-radius: 4px; font-family: monospace; color: #4ade80; font-size: 0.72rem; word-break: break-all; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        
+        .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }
+        .tag { background: #2a2a2a; padding: 2px 8px; border-radius: 15px; font-size: 0.6rem; color: #667eea; }
+        
+        .card-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 8px; border-top: 1px solid #333; }
+        .card-lang { font-size: 0.65rem; color: #666; }
+        .card-link { color: #667eea; font-size: 0.75rem; text-decoration: none; }
+        
+        footer { text-align: center; padding: 40px; color: #666; }
+        footer a { color: #667eea; text-decoration: none; }
+        
+        /* 快速跳转锚点 */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #667eea;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(102,126,234,0.4);
+        }
+        .back-to-top:hover { background: #5a70d4; }
+    </style>
+</head>
+<body>
+    
+    <!-- 固定导航栏 -->
+    <nav class="nav-fixed">
+        <a href="#video" class="nav-item">🎬 视频生成</a>
+        <a href="#image" class="nav-item">🖼️ 图片生成</a>
+        <a href="#music" class="nav-item">🎵 音乐生成</a>
+        <a href="#audio" class="nav-item">🗣️ 语音合成</a>
+        <a href="#ui" class="nav-item">🖥️ AI界面</a>
+        <a href="#agent" class="nav-item">🤖 AI智能体</a>
+        <a href="#rag" class="nav-item">📚 RAG知识库</a>
+        <a href="#workflow" class="nav-item">⚙️ AI工作流</a>
+        <a href="#dev" class="nav-item">🔧 开发框架</a>
+        <a href="#local" class="nav-item">💻 本地运行</a>
+        <a href="#prompt" class="nav-item">📝 提示词</a>
+        <a href="#tools" class="nav-item">🛠️ 实用工具</a>
+    </nav>
+    
+    <div class="container">
+        <header>
+            <h1>🚀 AI工具导航</h1>
+            <p class="subtitle">发现免费的AI工具、提示词与开源项目</p>
+            <div class="search-box">
+                <input type="text" placeholder="搜索AI工具..." id="search" onkeyup="filterCards()">
+            </div>
+        </header>
+        
+        <div class="stats">
+            <div class="stat"><div class="stat-number">45+</div><div class="stat-label">精选工具</div></div>
+            <div class="stat"><div class="stat-number">12</div><div class="stat-label">分类</div></div>
+            <div class="stat"><div class="stat-number">100%</div><div class="stat-label">免费</div></div>
+        </div>
+        
+        <!-- 视频生成 -->
+        <div class="section" id="video">
+            <div class="section-title">🎬 视频生成</div>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header"><h3>HunyuanVideo 混元视频</h3><span class="card-badge">⭐ 25k</span></div>
+                    <p>腾讯混元视频生成大模型</p>
+                    <div class="install-box"><div class="install-title">📦 GitHub克隆</div><div class="code">git clone https://github.com/Tencent-Hunyuan/HunyuanVideo</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">视频生成</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/Tencent-Hunyuan/HunyuanVideo" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>CogVideoX</h3><span class="card-badge">⭐ 18k</span></div>
+                    <p>文本/图片转视频生成</p>
+                    <div class="install-box"><div class="install-title">📦 GitHub克隆</div><div class="code">git clone https://github.com/zai-org/CogVideo</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">文生视频</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/zai-org/CogVideo" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>LivePortrait</h3><span class="card-badge">⭐ 22k</span></div>
+                    <p>让人像照片动起来</p>
+                    <div class="install-box"><div class="install-title">📦 GitHub克隆</div><div class="code">git clone https://github.com/KlingAIResearch/LivePortrait</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">人像动画</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/KlingAIResearch/LivePortrait" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>Wan2.2</h3><span class="card-badge">⭐ 15k</span></div>
+                    <p>开源大规模视频生成模型</p>
+                    <div class="install-box"><div class="install-title">📦 GitHub克隆</div><div class="code">git clone https://github.com/Wan-Video/Wan2.2</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">视频生成</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/Wan-Video/Wan2.2" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>EchoMimicV2</h3><span class="card-badge">⭐ 8k</span></div>
+                    <p>半身人像动画生成</p>
+                    <div class="install-box"><div class="install-title">📦 GitHub克隆</div><div class="code">git clone https://github.com/antgroup/echomimic_v2</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">人像动画</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/antgroup/echomimic_v2" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>Toonflow</h3><span class="card-badge">⭐ 6k</span></div>
+                    <p>AI短剧创作工具</p>
+                    <div class="install-box"><div class="install-title">📦 GitHub克隆</div><div class="code">git clone https://github.com/HBAI-Ltd/Toonflow-app</div></div>
+                    <div class="tags"><span class="tag">HTML</span><span class="tag">短剧</span></div>
+                    <div class="card-footer"><span class="card-lang">HTML</span><a href="https://github.com/HBAI-Ltd/Toonflow-app" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 图片生成 -->
+        <div class="section" id="image">
+            <div class="section-title">🖼️ 图片生成</div>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header"><h3>Stable Diffusion WebUI</h3><span class="card-badge">⭐ 128k</span></div>
+                    <p>最流行的AI绘图工具</p>
+                    <div class="install-box"><div class="install-title">📦 GitHub克隆</div><div class="code">git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">AI绘图</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>InvokeAI</h3><span class="card-badge">⭐ 28k</span></div>
+                    <p>专业级Stable Diffusion前端</p>
+                    <div class="install-box"><div class="install-title">📦 Docker部署</div><div class="code">docker run -p 9090:9090 invokeai/invokeai:latest</div></div>
+                    <div class="tags"><span class="tag">TypeScript</span><span class="tag">绘图</span></div>
+                    <div class="card-footer"><span class="card-lang">TypeScript</span><a href="https://github.com/invoke-ai/InvokeAI" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>Diffusers</h3><span class="card-badge">⭐ 45k</span></div>
+                    <p>HuggingFace图片/视频/音频生成库</p>
+                    <div class="install-box"><div class="install-title">📦 pip安装</div><div class="code">pip install diffusers</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">扩散模型</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/huggingface/diffusers" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>LocalAI</h3><span class="card-badge">⭐ 32k</span></div>
+                    <p>本地运行LLM/图片/语音/视频</p>
+                    <div class="install-box"><div class="install-title">📦 Docker部署</div><div class="code">docker run -p 8080:8080 quay.io/localai/localai:latest</div></div>
+                    <div class="tags"><span class="tag">Go</span><span class="tag">本地运行</span></div>
+                    <div class="card-footer"><span class="card-lang">Go</span><a href="https://github.com/mudler/LocalAI" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>PaddleGAN</h3><span class="card-badge">⭐ 22k</span></div>
+                    <p>百度PaddleGAN图像处理工具箱</p>
+                    <div class="install-box"><div class="install-title">📦 pip安装</div><div class="code">pip install paddlepaddle paddlegan</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">图像编辑</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/PaddlePaddle/PaddleGAN" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 音乐生成 -->
+        <div class="section" id="music">
+            <div class="section-title">🎵 音乐生成</div>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header"><h3>Amphion</h3><span class="card-badge">⭐ 18k</span></div>
+                    <p>音频/音乐/语音生成工具包</p>
+                    <div class="install-box"><div class="install-title">📦 GitHub克隆</div><div class="code">git clone https://github.com/open-mmlab/Amphion</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">音频生成</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/open-mmlab/Amphion" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>ACE-Step</h3><span class="card-badge">⭐ 12k</span></div>
+                    <p>开源Suno替代品</p>
+                    <div class="install-box"><div class="install-title">📦 GitHub克隆</div><div class="code">git clone https://github.com/fspecii/ace-step-ui</div></div>
+                    <div class="tags"><span class="tag">JavaScript</span><span class="tag">音乐</span></div>
+                    <div class="card-footer"><span class="card-lang">JavaScript</span><a href="https://github.com/fspecii/ace-step-ui" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>YuE</h3><span class="card-badge">⭐ 8k</span></div>
+                    <p>开源全曲音乐生成模型</p>
+                    <div class="install-box"><div class="install-title">📦 GitHub克隆</div><div class="code">git clone https://github.com/multimodal-art-projection/YuE</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">音乐生成</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/multimodal-art-projection/YuE" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>OpenMusic</h3><span class="card-badge">⭐ 6k</span></div>
+                    <p>最先进的文生音乐模型</p>
+                    <div class="install-box"><div class="install-title">📦 GitHub克隆</div><div class="code">git clone https://github.com/ivcylc/OpenMusic</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">文生音乐</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/ivcylc/OpenMusic" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 语音合成 -->
+        <div class="section" id="audio">
+            <div class="section-title">🗣️ 语音合成</div>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header"><h3>CosyVoice</h3><span class="card-badge">⭐ 18k</span></div>
+                    <p>阿里多语言大模型语音生成</p>
+                    <div class="install-box"><div class="install-title">📦 GitHub克隆</div><div class="code">git clone https://github.com/FunAudioLLM/CosyVoice</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">TTS</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/FunAudioLLM/CosyVoice" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>Bark</h3><span class="card-badge">⭐ 25k</span></div>
+                    <p>文字转语音和生成音乐</p>
+                    <div class="install-box"><div class="install-title">📦 pip安装</div><div class="code">pip install bark</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">TTS</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/suno-ai/bark" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>XTTS</h3><span class="card-badge">⭐ 15k</span></div>
+                    <p>Coqui开源语音克隆模型</p>
+                    <div class="install-box"><div class="install-title">📦 pip安装</div><div class="code">pip install TTS</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">语音克隆</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/coqui-ai/TTS" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>Whisper.cpp</h3><span class="card-badge">⭐ 32k</span></div>
+                    <p>本地语音转文字</p>
+                    <div class="install-box"><div class="install-title">📦 GitHub克隆</div><div class="code">git clone https://github.com/ggml-org/whisper.cpp</div></div>
+                    <div class="tags"><span class="tag">C++</span><span class="tag">语音识别</span></div>
+                    <div class="card-footer"><span class="card-lang">C++</span><a href="https://github.com/ggml-org/whisper.cpp" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- AI界面 -->
+        <div class="section" id="ui">
+            <div class="section-title">🖥️ AI界面</div>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header"><h3>Open WebUI</h3><span class="card-badge">⭐ 65k</span></div>
+                    <p>用户友好的本地AI界面</p>
+                    <div class="install-box"><div class="install-title">📦 Docker部署</div><div class="code">docker run -d -p 3000:8080 openwebui/open-webui:latest</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">界面</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/open-webui/open-webui" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>ChatBox</h3><span class="card-badge">⭐ 22k</span></div>
+                    <p>强大的AI客户端</p>
+                    <div class="install-box"><div class="install-title">📦 GitHub克隆</div><div class="code">git clone https://github.com/chatboxai/chatbox</div></div>
+                    <div class="tags"><span class="tag">TypeScript</span><span class="tag">客户端</span></div>
+                    <div class="card-footer"><span class="card-lang">TypeScript</span><a href="https://github.com/chatboxai/chatbox" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>LobeHub</h3><span class="card-badge">⭐ 8k</span></div>
+                    <p>AI智能体运营平台</p>
+                    <div class="install-box"><div class="install-title">📦 Docker部署</div><div class="code">docker run -d -p 3210:3210 lobehub/lobe-chat</div></div>
+                    <div class="tags"><span class="tag">TypeScript</span><span class="tag">智能体</span></div>
+                    <div class="card-footer"><span class="card-lang">TypeScript</span><a href="https://github.com/lobehub/lobehub" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- AI智能体 -->
+        <div class="section" id="agent">
+            <div class="section-title">🤖 AI智能体</div>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header"><h3>AutoGPT</h3><span class="card-badge">⭐ 165k</span></div>
+                    <p>让AI自主完成任务</p>
+                    <div class="install-box"><div class="install-title">📦 GitHub克隆</div><div class="code">git clone https://github.com/Significant-Gravitas/AutoGPT</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">Agent</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/Significant-Gravitas/AutoGPT" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>AstrBot</h3><span class="card-badge">⭐ 12k</span></div>
+                    <p>IM集成AI Agent框架</p>
+                    <div class="install-box"><div class="install-title">📦 pip安装</div><div class="code">pip install astrbot</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">Agent</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/AstrBotDevs/AstrBot" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>AgentScope</h3><span class="card-badge">⭐ 8k</span></div>
+                    <p>构建和运行可视化Agent</p>
+                    <div class="install-box"><div class="install-title">📦 pip安装</div><div class="code">pip install agentscope</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">Agent</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/agentscope-ai/agentscope" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- RAG与知识库 -->
+        <div class="section" id="rag">
+            <div class="section-title">📚 RAG与知识库</div>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header"><h3>Quivr</h3><span class="card-badge">⭐ 28k</span></div>
+                    <p>开源RAG框架</p>
+                    <div class="install-box"><div class="install-title">📦 Docker部署</div><div class="code">git clone https://github.com/QuivrHQ/quivr && cd quivr && docker compose up</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">RAG</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/QuivrHQ/quivr" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>MaxKB</h3><span class="card-badge">⭐ 18k</span></div>
+                    <p>企业级智能体平台</p>
+                    <div class="install-box"><div class="install-title">📦 Docker部署</div><div class="code">docker run -d -p 8080:8080 1panel/maxkb</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">企业级</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/1Panel-dev/MaxKB" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>Kotaemon</h3><span class="card-badge">⭐ 15k</span></div>
+                    <p>与文档对话的RAG工具</p>
+                    <div class="install-box"><div class="install-title">📦 Docker部署</div><div class="code">docker run -p 8501:8501 ghcr.io/cinnamon/kotaemon:latest</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">文档对话</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/cinnamon/kotaemon" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>Langchain-Chatchat</h3><span class="card-badge">⭐ 45k</span></div>
+                    <p>本地知识库问答</p>
+                    <div class="install-box"><div class="install-title">📦 GitHub克隆</div><div class="code">git clone https://github.com/chatchat-space/Langchain-Chatchat</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">本地部署</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/chatchat-space/Langchain-Chatchat" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- AI工作流 -->
+        <div class="section" id="workflow">
+            <div class="section-title">⚙️ AI工作流</div>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header"><h3>Dify</h3><span class="card-badge">⭐ 85k</span></div>
+                    <p>生产级AI应用开发平台</p>
+                    <div class="install-box"><div class="install-title">📦 Docker部署</div><div class="code">docker run -d -p 80:80 public.ecr.aws/dify/dify-community</div></div>
+                    <div class="tags"><span class="tag">TypeScript</span><span class="tag">工作流</span></div>
+                    <div class="card-footer"><span class="card-lang">TypeScript</span><a href="https://github.com/langgenius/dify" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>Flowise</h3><span class="card-badge">⭐ 28k</span></div>
+                    <p>可视化AI流程构建</p>
+                    <div class="install-box"><div class="install-title">📦 npm安装</div><div class="code">npx flowise start</div></div>
+                    <div class="tags"><span class="tag">TypeScript</span><span class="tag">可视化</span></div>
+                    <div class="card-footer"><span class="card-lang">TypeScript</span><a href="https://github.com/flowiseai/flowise" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>LangFlow</h3><span class="card-badge">⭐ 18k</span></div>
+                    <p>LangChain可视化GUI</p>
+                    <div class="install-box"><div class="install-title">📦 pip安装</div><div class="code">pip install langflow</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">可视化</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/langflow-ai/langflow" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 开发框架 -->
+        <div class="section" id="dev">
+            <div class="section-title">🔧 开发框架</div>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header"><h3>LangChain</h3><span class="card-badge">⭐ 65k</span></div>
+                    <p>AI应用开发框架</p>
+                    <div class="install-box"><div class="install-title">📦 pip安装</div><div class="code">pip install langchain</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">框架</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/langchain-ai/langchain" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>Wechaty</h3><span class="card-badge">⭐ 42k</span></div>
+                    <p>IM机器人SDK</p>
+                    <div class="install-box"><div class="install-title">📦 pip安装</div><div class="code">pip install wechaty</div></div>
+                    <div class="tags"><span class="tag">TypeScript</span><span class="tag">微信</span></div>
+                    <div class="card-footer"><span class="card-lang">TypeScript</span><a href="https://github.com/wechaty/wechaty" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>Python-Telegram-Bot</h3><span class="card-badge">⭐ 32k</span></div>
+                    <p>TG机器人框架</p>
+                    <div class="install-box"><div class="install-title">📦 pip安装</div><div class="code">pip install python-telegram-bot</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">Telegram</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/python-telegram-bot/python-telegram-bot" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 本地运行 -->
+        <div class="section" id="local">
+            <div class="section-title">💻 本地运行</div>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header"><h3>Ollama</h3><span class="card-badge">⭐ 78k</span></div>
+                    <p>本地运行大模型</p>
+                    <div class="install-box"><div class="install-title">📦 一键安装</div><div class="code">curl -fsSL https://ollama.com/install.sh | sh</div></div>
+                    <div class="tags"><span class="tag">Go</span><span class="tag">本地运行</span></div>
+                    <div class="card-footer"><span class="card-lang">Go</span><a href="https://github.com/ollama/ollama" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>gpt4free</h3><span class="card-badge">⭐ 25k</span></div>
+                    <p>免费调用多种AI模型</p>
+                    <div class="install-box"><div class="install-title">📦 pip安装</div><div class="code">pip install gpt4free</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">免费</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/xtekky/gpt4free" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>LLaVA</h3><span class="card-badge">⭐ 22k</span></div>
+                    <p>开源多模态模型</p>
+                    <div class="install-box"><div class="install-title">📦 GitHub克隆</div><div class="code">git clone https://github.com/haotian-liu/LLaVA</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">多模态</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/haotian-liu/LLaVA" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 提示词工程 -->
+        <div class="section" id="prompt">
+            <div class="section-title">📝 提示词工程</div>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header"><h3>prompts.chat</h3><span class="card-badge">⭐ 30k</span></div>
+                    <p>免费开源提示词分享</p>
+                    <div class="install-box"><div class="install-title">📦 GitHub克隆</div><div class="code">git clone https://github.com/f/prompts.chat</div></div>
+                    <div class="tags"><span class="tag">HTML</span><span class="tag">提示词</span></div>
+                    <div class="card-footer"><span class="card-lang">HTML</span><a href="https://github.com/f/prompts.chat" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>Prompt Engineering Guide</h3><span class="card-badge">⭐ 65k</span></div>
+                    <p>提示词工程完整指南</p>
+                    <div class="install-box"><div class="install-title">📦 GitHub克隆</div><div class="code">git clone https://github.com/dair-ai/Prompt-Engineering-Guide</div></div>
+                    <div class="tags"><span class="tag">MDX</span><span class="tag">教程</span></div>
+                    <div class="card-footer"><span class="card-lang">MDX</span><a href="https://github.com/dair-ai/Prompt-Engineering-Guide" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>System Prompts Leaks</h3><span class="card-badge">⭐ 18k</span></div>
+                    <p>收集各大AI系统提示词</p>
+                    <div class="install-box"><div class="install-title">📦 GitHub克隆</div><div class="code">git clone https://github.com/asgeirtj/system_prompts_leaks</div></div>
+                    <div class="tags"><span class="tag">收集</span><span class="tag">提示词</span></div>
+                    <div class="card-footer"><span class="card-lang">其他</span><a href="https://github.com/asgeirtj/system_prompts_leaks" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 实用工具 -->
+        <div class="section" id="tools">
+            <div class="section-title">🛠️ 实用工具</div>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header"><h3>Repomix</h3><span class="card-badge">⭐ 12k</span></div>
+                    <p>代码库打包成AI友好格式</p>
+                    <div class="install-box"><div class="install-title">📦 npm安装</div><div class="code">npx repomix</div></div>
+                    <div class="tags"><span class="tag">TypeScript</span><span class="tag">代码</span></div>
+                    <div class="card-footer"><span class="card-lang">TypeScript</span><a href="https://github.com/yamadashy/repomix" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>Markitdown</h3><span class="card-badge">⭐ 18k</span></div>
+                    <p>Office文档转Markdown</p>
+                    <div class="install-box"><div class="install-title">📦 pip安装</div><div class="code">pip install markitdown</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">文档</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/microsoft/markitdown" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>Khoj</h3><span class="card-badge">⭐ 15k</span></div>
+                    <p>AI第二大脑，自托管知识库</p>
+                    <div class="install-box"><div class="install-title">📦 Docker部署</div><div class="code">docker run -d -p 8000:8000 khojai/khoj:latest</div></div>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">知识库</span></div>
+                    <div class="card-footer"><span class="card-lang">Python</span><a href="https://github.com/khoj-ai/khoj" target="_blank" class="card-link">查看文档 →</a></div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <a href="#" class="back-to-top" title="回到顶部">↑</a>
+    
+    <footer>
+        <p><a href="/tutorial.html">📚 新手教程</a> | <a href="/">🏠 首页</a></p>
+        <p>🔗 所有项目均来自GitHub开源社区</p>
+        <p>© 2026 AI工具导航 - 发现AI，热爱AI</p>
+    </footer>
+    
+    <script>
+        function filterCards() {
+            const input = document.getElementById('search');
+            const filter = input.value.toLowerCase();
+            document.querySelectorAll('.card').forEach(card => {
+                const text = card.textContent.toLowerCase();
+                card.style.display = text.includes(filter) ? 'block' : 'none';
+            });
+        }
+        
+        // 高亮当前分类
+        const sections = document.querySelectorAll('.section');
+        const navItems = document.querySelectorAll('.nav-item');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === '#' + current) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
