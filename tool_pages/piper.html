@@ -3,20 +3,20 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Piper - 本地TTS... | AI工具导航</title>
- <meta name="description" content="Piper：本地TTS。⭐ 8k，免费使用，AI语音领域首选工具。">
+ <title>AutoGPT - 让AI自主完成复杂任务的智能体框架... | AI工具导航</title>
+ <meta name="description" content="AutoGPT：让AI自主完成复杂任务的智能体框架。⭐ 165k，免费使用，AI智能体领域首选工具。">
  <meta name="robots" content="index, follow">
- <link rel="canonical" href="https://ai-tools-nav-psi.vercel.app/tool_pages/piper.html">
- <meta property="og:title" content="Piper - AI工具导航">
- <meta property="og:description" content="本地TTS">
+ <link rel="canonical" href="https://ai-tools-nav-psi.vercel.app/tool_pages/autogpt.html">
+ <meta property="og:title" content="AutoGPT - AI工具导航">
+ <meta property="og:description" content="让AI自主完成复杂任务的智能体框架">
  <meta property="og:type" content="article">
  <script type="application/ld+json">
  {
    "@context": "https://schema.org",
    "@type": "SoftwareApplication",
-   "name": "Piper",
-   "description": "本地TTS",
-   "applicationCategory": "AI语音",
+   "name": "AutoGPT",
+   "description": "让AI自主完成复杂任务的智能体框架",
+   "applicationCategory": "AI智能体",
    "operatingSystem": "Any",
    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
  }
@@ -28,119 +28,65 @@
   .meta{color:#64748b;font-size:0.9rem;margin-bottom:20px}
   .breadcrumb{margin-bottom:20px;font-size:0.9rem}
   .breadcrumb a{color:#667eea;text-decoration:none}
-  .content-section{background:white;border-radius:12px;padding:25px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
+  .content-section{background:white;border-radius:12px;padding:25px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
   .content-section h2{color:#667eea;font-size:1.2rem;margin-bottom:15px;border-bottom:2px solid #667eea;padding-bottom:8px}
   .content-section p{margin:0 0 15px;line-height:1.8}
-  .back-link{display:inline-block;padding:10px 20px;background:#667eea;color:white;text-decoration:none;border-radius:8px;margin-top:15px;margin-right:10px}
-  .install-cmd{background:#1e293b;color:#10b981;padding:12px 18px;border-radius:8px;font-family:Monaco,monospace;margin:12px 0;word-break:break-all}
-  .stars-badge{background:#f59e0b;color:white;padding:3px 10px;border-radius:20px;font-size:0.85rem}
-  .tag{display:inline-block;padding:2px 8px;background:#667eea;color:white;border-radius:15px;font-size:0.75rem;margin-right:6px}
-  .feature-list{list-style:none;padding:0;margin:0}
-  .feature-list li{padding:8px 0;border-bottom:1px solid #eee}
-  .feature-list li:last-child{border-bottom:none}
-  .related-section{background:#f8fafc}
-  .related-list{list-style:none;padding:0;margin:0}
-  .related-list li{padding:6px 0}
-  .related-list a{color:#667eea;text-decoration:none}
-  .related-list a:hover{text-decoration:underline}
+  .content-section ul{margin:0;padding-left:20px}
+  .content-section li{margin-bottom:10px}
+  .faq-item{margin-bottom:15px;padding:15px;background:#f8fafc;border-radius:8px}
+  .faq-item strong{color:#667eea}
+  .back-link{display:inline-block;padding:12px 24px;background:#667eea;color:white;text-decoration:none;border-radius:8px;margin-top:20px;margin-right:10px}
+  .install-cmd{background:#1e293b;color:#10b981;padding:15px 20px;border-radius:8px;font-family:Monaco,monospace;margin:15px 0;word-break:break-all}
+  .stars-badge{background:#f59e0b;color:white;padding:4px 12px;border-radius:20px;font-size:0.85rem}
  </style>
 </head>
 <body>
  <div class="container">
-  <nav class="breadcrumb">
-   <a href="/">首页</a> &gt; <a href="/category/ai-voice.html">AI语音</a> &gt; Piper
-  </nav>
   
-  <h1>Piper <span class="stars-badge">⭐ 8k</span></h1>
-<div class="favorite-btn" style="margin:15px 0;">
-    <button onclick="toggleFavorite()" id="favBtn" style="padding:10px 20px;background:var(--primary);color:white;border:none;border-radius:8px;cursor:pointer;">⭐ 收藏此工具</button>
-</div>
-<style>
-.favorite-btn button:hover { opacity: 0.8; }
-</style>
-<script>
-function toggleFavorite() {
-    const tool = window.location.pathname.split('/').pop().replace('.html','');
-    let favs = JSON.parse(localStorage.getItem('favorites') || '[]');
-    if (favs.includes(tool)) {
-        favs = favs.filter(f => f !== tool);
-        document.getElementById('favBtn').textContent = '⭐ 收藏此工具';
-    } else {
-        favs.push(tool);
-        document.getElementById('favBtn').textContent = '✅ 已收藏';
-    }
-    localStorage.setItem('favorites', JSON.stringify(favs));
-}
-</script><div style="margin:15px 0">
-<button class="share-btn" onclick="shareTwitter()">🐦 分享</button>
-<button class="share-btn copy" onclick="copyLink()">📋 复制</button>
-</div>
-  <div class="meta">
-   <span class="tag">AI语音</span>
-   <span class="tag">进阶</span>
-  </div>
-  
-  <div class="content-section">
-   <h2>📖 工具简介</h2>
-   <p>本地TTS</p>
-  </div>
-  
-  <div class="content-section">
-   <h2>📚 详细介绍</h2>
-   <p>本地运行的TTS，资源占用少。</p>
-   <p>Piper是AI语音领域的优秀工具，帮助用户高效完成AI相关任务。它具有强大的功能、良好的用户体验和活跃的社区支持。</p>
-  </div>
-  
-  <div class="content-section">
-   <h2>📥 安装与使用</h2>
-   <div class="install-cmd">pip install piper-tts</div>
-  </div>
-  
-  <div class="content-section">
-   <h2>⭐ 核心特点</h2>
-   <ul class="feature-list">
-    <li>• 易于上手，适合各种用户群体</li>
-    <li>• 功能强大，效率提升显著</li>
-    <li>• 持续更新迭代</li>
-    <li>• 社区活跃，文档完善</li>
-   </ul>
-  </div>
-  
-  <div class="content-section">
-   <h2>🏷️ 相关信息</h2>
-   <p>难度等级：进阶</p>
-   <p>分类：AI语音</p>
-   <p>GitHub Stars：8k</p>
-  </div>
-  
-  <a href="/" class="back-link">← 返回首页</a>
-  <a href="/category/ai-voice.html" class="back-link" style="background:#10b981">← AI语音</a>
- </div>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9216965418818299"
- crossorigin="anonymous"></script>
-
-
-<!-- Ad 1: In-Article -->
-<ins class="adsbygoogle"
- style="display:block; text-align:center; margin:20px 0;"
- data-ad-layout="in-article"
- data-ad-format="fluid"
- data-ad-client="ca-pub-9216965418818299"
- data-ad-slot="5418074717"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<!-- Ad 2: Display -->
-<ins class="adsbygoogle"
- style="display:block;margin:20px 0;"
- data-ad-client="ca-pub-9216965418818299"
- data-ad-slot="2117123951"
- data-ad-format="auto"
- data-full-width-responsive="true"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-</body>
-</html>
+    
+    <nav class="breadcrumb">
+        <a href="/">首页</a> > <a href="/category/ai-voice.html">AI语音</a> > Piper
+    </nav>
+    
+    <div class="content-section">
+        <h1>Piper</h1>
+        <p class="tool-meta">
+            <span>⭐ 8k</span>
+            <span>AI语音</span>
+        </p>
+        <p>本地TTS</p>
+    </div>
+    
+    <div class="content-section">
+        <h2>🚀 在线体验</h2>
+        <p>这些工具支持以下使用方式：</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:15px;">
+            <a href="#" target="_blank" class="btn" style="background:#27ae60;">🌐 访问官网</a>
+            <a href="/playground.html" class="btn">🤖 AI Playground</a>
+            <a href="/tutorial.html" class="btn">📚 教程中心</a>
+        </div>
+    </div>
+    
+    <div class="content-section">
+        <h2>💡 使用场景</h2>
+        <ul>
+            <li>适合：进阶用户</li>
+            <li>平台：AI语音工具</li>
+            <li>免费额度：查看官网</li>
+        </ul>
+    </div>
+    
+    <div class="content-section">
+        <h2>📖 教程</h2>
+        <p>本地运行的TTS，资源占用少。</p>
+    </div>
+    
+    <div class="content-section">
+        <h2>🔗 相关工具</h2>
+        <ul class="related-list">
+            <li>• <a href="/playground.html">AI Playground</a> - 在线体验</li>
+            <li>• <a href="/tutorial.html">教程中心</a> - 学习资料</li>
+            <li>• <a href="/reviews.html">工具评测</a> - 用户评价</li>
+        </ul>
+    </div>
+>

@@ -3,20 +3,20 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>ComfyUI - 节点式图像生成工作流... | AI工具导航</title>
- <meta name="description" content="ComfyUI：节点式图像生成工作流。⭐ 35k，免费使用，AI图像生成领域首选工具。">
+ <title>AutoGPT - 让AI自主完成复杂任务的智能体框架... | AI工具导航</title>
+ <meta name="description" content="AutoGPT：让AI自主完成复杂任务的智能体框架。⭐ 165k，免费使用，AI智能体领域首选工具。">
  <meta name="robots" content="index, follow">
- <link rel="canonical" href="https://ai-tools-nav-psi.vercel.app/tool_pages/comfyui.html">
- <meta property="og:title" content="ComfyUI - AI工具导航">
- <meta property="og:description" content="节点式图像生成工作流">
+ <link rel="canonical" href="https://ai-tools-nav-psi.vercel.app/tool_pages/autogpt.html">
+ <meta property="og:title" content="AutoGPT - AI工具导航">
+ <meta property="og:description" content="让AI自主完成复杂任务的智能体框架">
  <meta property="og:type" content="article">
  <script type="application/ld+json">
  {
    "@context": "https://schema.org",
    "@type": "SoftwareApplication",
-   "name": "ComfyUI",
-   "description": "节点式图像生成工作流",
-   "applicationCategory": "AI图像生成",
+   "name": "AutoGPT",
+   "description": "让AI自主完成复杂任务的智能体框架",
+   "applicationCategory": "AI智能体",
    "operatingSystem": "Any",
    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
  }
@@ -28,122 +28,65 @@
   .meta{color:#64748b;font-size:0.9rem;margin-bottom:20px}
   .breadcrumb{margin-bottom:20px;font-size:0.9rem}
   .breadcrumb a{color:#667eea;text-decoration:none}
-  .content-section{background:white;border-radius:12px;padding:25px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
+  .content-section{background:white;border-radius:12px;padding:25px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
   .content-section h2{color:#667eea;font-size:1.2rem;margin-bottom:15px;border-bottom:2px solid #667eea;padding-bottom:8px}
   .content-section p{margin:0 0 15px;line-height:1.8}
-  .back-link{display:inline-block;padding:10px 20px;background:#667eea;color:white;text-decoration:none;border-radius:8px;margin-top:15px;margin-right:10px}
-  .install-cmd{background:#1e293b;color:#10b981;padding:12px 18px;border-radius:8px;font-family:Monaco,monospace;margin:12px 0;word-break:break-all}
-  .stars-badge{background:#f59e0b;color:white;padding:3px 10px;border-radius:20px;font-size:0.85rem}
-  .tag{display:inline-block;padding:2px 8px;background:#667eea;color:white;border-radius:15px;font-size:0.75rem;margin-right:6px}
+  .content-section ul{margin:0;padding-left:20px}
+  .content-section li{margin-bottom:10px}
+  .faq-item{margin-bottom:15px;padding:15px;background:#f8fafc;border-radius:8px}
+  .faq-item strong{color:#667eea}
+  .back-link{display:inline-block;padding:12px 24px;background:#667eea;color:white;text-decoration:none;border-radius:8px;margin-top:20px;margin-right:10px}
+  .install-cmd{background:#1e293b;color:#10b981;padding:15px 20px;border-radius:8px;font-family:Monaco,monospace;margin:15px 0;word-break:break-all}
+  .stars-badge{background:#f59e0b;color:white;padding:4px 12px;border-radius:20px;font-size:0.85rem}
  </style>
 </head>
 <body>
  <div class="container">
-  <nav class="breadcrumb">
-   <a href="/">首页</a> &gt; <a href="/category/ai-image.html">AI图像生成</a> &gt; ComfyUI
-  </nav>
   
-  <h1>ComfyUI <span class="stars-badge">⭐ 35k</span></h1>
-<div class="favorite-btn" style="margin:15px 0;">
-    <button onclick="toggleFavorite()" id="favBtn" style="padding:10px 20px;background:var(--primary);color:white;border:none;border-radius:8px;cursor:pointer;">⭐ 收藏此工具</button>
-</div>
-<style>
-.favorite-btn button:hover { opacity: 0.8; }
-</style>
-<script>
-function toggleFavorite() {
-    const tool = window.location.pathname.split('/').pop().replace('.html','');
-    let favs = JSON.parse(localStorage.getItem('favorites') || '[]');
-    if (favs.includes(tool)) {
-        favs = favs.filter(f => f !== tool);
-        document.getElementById('favBtn').textContent = '⭐ 收藏此工具';
-    } else {
-        favs.push(tool);
-        document.getElementById('favBtn').textContent = '✅ 已收藏';
-    }
-    localStorage.setItem('favorites', JSON.stringify(favs));
-}
-</script><div style="margin:15px 0">
-<button class="share-btn" onclick="shareTwitter()">🐦 分享</button>
-<button class="share-btn copy" onclick="copyLink()">📋 复制</button>
-</div>
-  <div class="meta">
-   <span class="tag">AI图像生成</span>
-   <span class="tag">入门</span>
-  </div>
-  
-  <div class="content-section">
-   <h2>📖 工具简介</h2>
-   <p>节点式图像生成工作流</p>
-   <p>专业级SD控制，支持复杂工作流搭建。适合进阶用户，业界广泛使用。</p>
-  </div>
-  
-  <div class="content-section">
-   <h2>📥 安装与使用</h2>
-   <div class="install-cmd">git clone https://github.com/Comfy-Org/ComfyUI</div>
-  </div>
-  
-  <div class="content-section">
-   <h2>🏷️ 相关信息</h2>
-   <p>难度等级：入门</p>
-   <p>分类：AI图像生成</p>
-  </div>
-  
-  
-  <div class="content-section">
-   <h2>🔗 相关推荐</h2>
-   <ul>
-    <li><a href="/tool_pages/stable-diffusion-webui.html">Stable Diffusion WebUI</a> ⭐ 128k</li><li><a href="/tool_pages/invokeai.html">InvokeAI</a> ⭐ 28k</li><li><a href="/tool_pages/fooocus.html">Fooocus</a> ⭐ 20k</li>
-   </ul>
-  
- 
-
-  <a href="/" class="back-link">← 返回首页</a>
-  <a href="/category/ai-image.html" class="back-link" style="background:#10b981">← AI图像生成</a>
- </div>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9216965418818299"
- crossorigin="anonymous"></script>
-
-
-<!-- Ad 1: In-Article -->
-<div class="content-section">
-<h2>🔗 相关推荐</h2>
-<ul class="related-list">
-<li>• <a href="/tool_pages/stable-diffusion-webui.html">Stable Diffusion WebUI</a></li>
-<li>• <a href="/tool_pages/invokeai.html">InvokeAI</a></li>
-<li>• <a href="/tool_pages/fooocus.html">Fooocus</a></li>
-<li>• <a href="/tool_pages/controlnet.html">ControlNet</a></li>
-</ul>
-</div>
-<ins class="adsbygoogle"
- style="display:block; text-align:center; margin:20px 0;"
- data-ad-layout="in-article"
- data-ad-format="fluid"
- data-ad-client="ca-pub-9216965418818299"
- data-ad-slot="5418074717"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<!-- Ad 2: Display -->
-<div class="content-section">
-<h2>🔗 相关推荐</h2>
-<ul class="related-list">
-<li>• <a href="/tool_pages/stable-diffusion-webui.html">Stable Diffusion WebUI</a></li>
-<li>• <a href="/tool_pages/invokeai.html">InvokeAI</a></li>
-<li>• <a href="/tool_pages/fooocus.html">Fooocus</a></li>
-<li>• <a href="/tool_pages/controlnet.html">ControlNet</a></li>
-</ul>
-</div>
-<ins class="adsbygoogle"
- style="display:block;margin:20px 0;"
- data-ad-client="ca-pub-9216965418818299"
- data-ad-slot="2117123951"
- data-ad-format="auto"
- data-full-width-responsive="true"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-</body>
-</html>
+    
+    <nav class="breadcrumb">
+        <a href="/">首页</a> > <a href="/category/ai-image.html">AI图像</a> > ComfyUI
+    </nav>
+    
+    <div class="content-section">
+        <h1>ComfyUI</h1>
+        <p class="tool-meta">
+            <span>⭐ 35k</span>
+            <span>AI图像</span>
+        </p>
+        <p>节点式图像生成工作流</p>
+    </div>
+    
+    <div class="content-section">
+        <h2>🚀 在线体验</h2>
+        <p>这些工具支持以下使用方式：</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:15px;">
+            <a href="#" target="_blank" class="btn" style="background:#27ae60;">🌐 访问官网</a>
+            <a href="/playground.html" class="btn">🤖 AI Playground</a>
+            <a href="/tutorial.html" class="btn">📚 教程中心</a>
+        </div>
+    </div>
+    
+    <div class="content-section">
+        <h2>💡 使用场景</h2>
+        <ul>
+            <li>适合：入门用户</li>
+            <li>平台：AI图像工具</li>
+            <li>免费额度：查看官网</li>
+        </ul>
+    </div>
+    
+    <div class="content-section">
+        <h2>📖 教程</h2>
+        <p>专业级SD控制，支持复杂工作流搭建。适合进阶用户，业界广泛使用。</p>
+    </div>
+    
+    <div class="content-section">
+        <h2>🔗 相关工具</h2>
+        <ul class="related-list">
+            <li>• <a href="/playground.html">AI Playground</a> - 在线体验</li>
+            <li>• <a href="/tutorial.html">教程中心</a> - 学习资料</li>
+            <li>• <a href="/reviews.html">工具评测</a> - 用户评价</li>
+        </ul>
+    </div>
+>
