@@ -373,6 +373,30 @@
     function openTool(tool) {
         alert('工具"' + tool + '"功能开发中，敬请期待！');
     }
-    </script>
+    
+// 处理从工具详情页跳转来的hash
+window.addEventListener('DOMContentLoaded', function() {
+    const hash = window.location.hash.slice(1); // 去掉#号
+    if (hash) {
+        // 找到对应的tab
+        const tabMap = {
+            'ai-chat': 'chat',
+            'ai-image': 'image', 
+            'ai-video': 'video',
+            'ai-voice': 'voice',
+            'ai-coding': 'code'
+        };
+        
+        const tab = tabMap[hash];
+        if (tab) {
+            // 延迟执行确保DOM加载完成
+            setTimeout(function() {
+                showTab(tab);
+            }, 300);
+        }
+    }
+});
+
+</script>
 </body>
 </html>

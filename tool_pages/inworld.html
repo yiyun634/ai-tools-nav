@@ -57,15 +57,25 @@
         <p>游戏AI角色</p>
     </div>
     
+    
     <div class="content-section">
-        <h2>🚀 在线体验</h2>
-        <p>这些工具支持以下使用方式：</p>
+        <h2>🎮 立即体验</h2>
+        <p>直接在网站上体验这个工具类型：</p>
         <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:15px;">
-            <a href="/playground.html" class="btn" style="background:#27ae60;">🎮 在线体验</a>
+            <button onclick="openExperience('ai-chat')" class="btn" style="background:linear-gradient(135deg,#667eea,#764ba2);color:white;padding:15px 25px;border:none;border-radius:10px;cursor:pointer;font-size:1rem;">
+                💬 体验AI对话
+            </button>
             <a href="/playground.html" class="btn">🤖 AI Playground</a>
-            <a href="/tutorial.html" class="btn">📚 教程中心</a>
         </div>
     </div>
+    
+    <script>
+    function openExperience(category) {
+        // 跳转到Playground并打开对应标签
+        window.location.href = '/playground.html#' + category;
+    }
+    </script>
+
     
     <div class="content-section">
         <h2>💡 使用场景</h2>
