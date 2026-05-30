@@ -402,5 +402,19 @@ window.addEventListener('click',function(e){if(e.target==document.getElementById
 
 initPage();
 </script>
+<!-- Cookie Consent Notice -->
+<div id="cookie-notice" style="position:fixed;bottom:0;left:0;right:0;background:#1e293b;color:white;padding:15px 20px;text-align:center;z-index:9999;display:none;">
+<div style="max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+<span style="flex:1;min-width:300px;">🍪 我们使用Cookie来改善您的体验。访问即表示您同意我们的<a href="/privacy.html" style="color:#667eea;">隐私政策</a>。</span>
+<div style="flex:0 0 auto;">
+<button onclick="acceptCookies()" style="background:#667eea;color:white;border:none;padding:8px 20px;border-radius:6px;cursor:pointer;margin-right:10px;">我知道了</button>
+</div>
+</div>
+</div>
+<script>
+function getCookie(cname){let name=cname+"=";let decodedCookie=decodeURIComponent(document.cookie);let ca=decodedCookie.split(';');for(let i=0;i<ca.length;i++){let c=ca[i];while(c.charAt(0)==' ')c=c.substring(1);if(c.indexOf(name)==0)return c.substring(name.length,c.length);}return "";}
+if(!getCookie("cookies_accepted")){document.getElementById("cookie-notice").style.display="block";}
+function acceptCookies(){document.cookie="cookies_accepted=1;expires=Fri, 31 Dec 9999 23:59:59 GMT;path=/";document.getElementById("cookie-notice").style.display="none";}
+</script>
 </body>
 </html>
