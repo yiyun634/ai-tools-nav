@@ -4,396 +4,264 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Playground - 免费在线AI工具</title>
-    <meta name="description" content="免费使用各种AI工具，无需注册，无需API Key">
+    <meta name="description" content="免费使用各种AI工具">
     <link rel="stylesheet" href="style.css">
     <style>
     .playground-container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-    .pg-header { text-align: center; margin-bottom: 30px; }
-    .pg-header h1 { font-size: 2.5em; color: #667eea; margin-bottom: 10px; }
-    .pg-header p { color: #666; font-size: 1.1em; }
-    
+    .pg-hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 30px;
+        border-radius: 16px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .pg-hero h1 { font-size: 2.5em; margin-bottom: 10px; }
+    .setup-box {
+        background: #fff3cd;
+        border: 2px solid #ffc107;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+    .setup-box h3 { margin-top: 0; color: #856404; }
+    .setup-box p { color: #856404; margin: 5px 0; }
+    .setup-box a { color: #667eea; }
     .pg-tabs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; justify-content: center; }
     .pg-tab {
         padding: 12px 24px;
         background: white;
-        border: 2px solid #eee;
+        border: 2px solid #e0e0e0;
         border-radius: 25px;
         cursor: pointer;
         font-weight: 600;
         transition: all 0.3s;
-        font-size: 0.95em;
     }
-    .pg-tab:hover { border-color: #667eea; transform: translateY(-2px); }
+    .pg-tab:hover { border-color: #667eea; }
     .pg-tab.active { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-color: #667eea; }
-    
-    .pg-panel { display: none; background: white; border-radius: 16px; padding: 25px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-    .pg-panel.active { display: block; animation: fadeIn 0.3s ease; }
-    
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-    
-    .pg-output {
-        min-height: 200px;
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        border-radius: 12px;
-        padding: 15px;
-        margin-top: 15px;
-        white-space: pre-wrap;
-        line-height: 1.8;
-        font-size: 15px;
-    }
-    
-    .pg-input-group { display: flex; gap: 10px; margin-bottom: 15px; }
-    .pg-input-group textarea {
-        flex: 1;
-        padding: 15px;
-        border: 2px solid #e0e0e0;
-        border-radius: 12px;
-        font-size: 15px;
-        resize: vertical;
-        min-height: 100px;
-        transition: border-color 0.3s;
-    }
-    .pg-input-group textarea:focus { border-color: #667eea; outline: none; }
-    
-    .pg-btn {
-        padding: 15px 40px;
+    .pg-panel { display: none; background: white; border-radius: 16px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .pg-panel.active { display: block; }
+    .chat-messages { min-height: 250px; max-height: 400px; overflow-y: auto; background: #f8fafc; border-radius: 12px; padding: 15px; margin-bottom: 15px; }
+    .chat-message { padding: 10px 15px; border-radius: 10px; margin-bottom: 10px; }
+    .chat-message.user { background: #667eea; color: white; margin-left: 20%; }
+    .chat-message.ai { background: white; border: 1px solid #e0e0e0; margin-right: 20%; }
+    .chat-message.loading { color: #999; font-style: italic; }
+    .input-row { display: flex; gap: 10px; }
+    .input-row textarea { flex: 1; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; resize: none; }
+    .input-row textarea:focus { border-color: #667eea; outline: none; }
+    .send-btn {
+        padding: 15px 30px;
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
         border: none;
-        border-radius: 25px;
-        cursor: pointer;
-        font-weight: 600;
-        font-size: 15px;
-        transition: all 0.3s;
-    }
-    .pg-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4); }
-    .pg-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-    
-    .pg-tools-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 15px;
-        margin-top: 20px;
-    }
-    .pg-tool-card {
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        padding: 20px;
         border-radius: 12px;
-        text-align: center;
+        font-weight: 600;
         cursor: pointer;
-        transition: all 0.3s;
-        border: 2px solid transparent;
     }
-    .pg-tool-card:hover { 
-        background: white; 
-        border-color: #667eea;
-        transform: translateY(-5px);
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-    .pg-tool-card h3 { margin: 10px 0 5px; font-size: 1em; color: #333; }
-    .pg-tool-card p { font-size: 0.85em; color: #666; }
-    
-    .free-ai-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 12px; margin: 20px 0; }
-    .free-ai-section h3 { color: white; margin-bottom: 15px; }
-    .free-ai-list { display: flex; gap: 15px; flex-wrap: wrap; }
-    .free-ai-item {
-        background: rgba(255,255,255,0.2);
-        padding: 10px 20px;
-        border-radius: 20px;
-        cursor: pointer;
-        transition: all 0.3s;
-    }
-    .free-ai-item:hover { background: rgba(255,255,255,0.3); }
-    
-    .result-success { color: #27ae60; font-weight: 600; }
-    .result-error { color: #e74c3c; }
-    .result-loading { color: #f39c12; font-style: italic; }
-    
-    .image-preview { max-width: 100%; border-radius: 12px; margin-top: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+    .send-btn:disabled { opacity: 0.5; }
     .code-output {
         background: #1e1e1e;
         color: #d4d4d4;
         padding: 15px;
         border-radius: 12px;
-        font-family: 'Courier New', monospace;
-        font-size: 13px;
-        overflow-x: auto;
+        font-family: monospace;
+        white-space: pre-wrap;
     }
+    .tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
+    .tool-card {
+        background: #f8fafc;
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    .tool-card:hover { background: #667eea; color: white; }
     </style>
 </head>
 <body>
     <header>
         <h1>🤖 AI Playground</h1>
-        <p>直接在浏览器中使用AI工具，所有功能完全免费</p>
+        <p>直接在浏览器中使用AI工具</p>
     </header>
-    
     <main>
         <div class="playground-container">
-            <div class="pg-header">
-                <h1>🎮 AI Playground - 免费在线AI</h1>
-                <p>无需注册！无需API Key！直接使用！</p>
+            <div class="pg-hero">
+                <h1>🎮 AI Playground</h1>
+                <p>免费使用各种AI工具</p>
             </div>
             
-            <!-- 免费AI快速入口 -->
-            <div class="free-ai-section">
-                <h3>⚡ 免费AI快速使用 (无需API Key)</h3>
-                <div class="free-ai-list">
-                    <div class="free-ai-item" onclick="quickUse(\'chatgpt\')">🤖 HuggingChat</div>
-                    <div class="free-ai-item" onclick="quickUse(\'claude\')">📝 Claude AI</div>
-                    <div class="free-ai-item" onclick="quickUse(\'gemini\')">✨ Gemini</div>
-                    <div class="free-ai-item" onclick="quickUse(\'perplexity\')">🔍 Perplexity</div>
-                    <div class="free-ai-item" onclick="quickUse(\'groq\')">🚀 Groq Chat</div>
-                </div>
+            <div class="setup-box">
+                <h3>⚙️ 首次使用请先设置API Key</h3>
+                <p>1. 点击右下角💬图标</p>
+                <p>2. 输入你的OpenRouter API Key（<a href="https://openrouter.ai" target="_blank">免费注册</a>）</p>
+                <p>3. 保存后即可使用所有AI功能</p>
             </div>
             
             <div class="pg-tabs">
-                <button class="pg-tab active" onclick="showTab(\'chat\')">💬 AI对话</button>
-                <button class="pg-tab" onclick="showTab(\'image\')">🎨 图像生成</button>
-                <button class="pg-tab" onclick="showTab(\'code\')">💻 代码助手</button>
-                <button class="pg-tab" onclick="showTab(\'translate\')">🌐 翻译助手</button>
-                <button class="pg-tab" onclick="showTab(\'tools\')">🛠️ 实用工具</button>
+                <button class="pg-tab active" data-tab="chat">💬 AI对话</button>
+                <button class="pg-tab" data-tab="image">🎨 AI绘图</button>
+                <button class="pg-tab" data-tab="code">💻 代码</button>
+                <button class="pg-tab" data-tab="translate">🌐 翻译</button>
+                <button class="pg-tab" data-tab="tools">🛠️ 工具</button>
             </div>
             
-            <!-- AI对话 -->
             <div id="chat-panel" class="pg-panel active">
-                <h2>💬 AI对话 (免费无需登录)</h2>
-                <p>使用免费开源AI模型，无需API Key直接对话</p>
-                <div class="pg-input-group">
-                    <textarea id="chat-input" placeholder="问我任何问题，例如：帮我解释什么是GPT"></textarea>
+                <h2>💬 AI对话</h2>
+                <div class="chat-messages" id="chat-messages">
+                    <div class="chat-message ai">👋 你好！我是AI助手。请先在右下角设置API Key，然后问我任何问题！</div>
                 </div>
-                <button class="pg-btn" onclick="chatWithAI()" id="chat-btn">🚀 发送消息</button>
-                <div class="pg-output" id="chat-output">AI的回答将显示在这里...</div>
+                <div class="input-row">
+                    <textarea id="chat-input" placeholder="输入问题..." rows="2"></textarea>
+                    <button class="send-btn" onclick="sendChat()">发送</button>
+                </div>
             </div>
             
-            <!-- 图像生成 -->
             <div id="image-panel" class="pg-panel">
-                <h2>🎨 AI图像生成 (免费)</h2>
-                <p>使用免费的AI图像生成工具</p>
-                <div class="pg-input-group">
-                    <textarea id="image-prompt" placeholder="描述你想要生成的图片，例如：一只可爱的蓝色猫咪在草地上玩耍"></textarea>
+                <h2>🎨 AI绘图（跳转免费工具）</h2>
+                <p>点击下方按钮跳转到免费AI绘图工具</p>
+                <div class="tool-grid">
+                    <div class="tool-card" onclick="window.open(\'https://playground.com\')">
+                        <h3>🎨 Playground</h3>
+                        <p>每天100张免费</p>
+                    </div>
+                    <div class="tool-card" onclick="window.open(\'https://ideogram.ai\')">
+                        <h3>✨ Ideogram</h3>
+                        <p>每天100张免费</p>
+                    </div>
+                    <div class="tool-card" onclick="window.open(\'https://www.bing.com/create\')">
+                        <h3>🔍 Bing</h3>
+                        <p>免费DALL-E</p>
+                    </div>
+                    <div class="tool-card" onclick="window.open(\'https://huggingface.co/spaces\')">
+                        <h3>🤗 HuggingFace</h3>
+                        <p>大量免费SD</p>
+                    </div>
                 </div>
-                <button class="pg-btn" onclick="generateImage()">🎨 生成图片</button>
-                <div id="image-output"></div>
             </div>
             
-            <!-- 代码助手 -->
             <div id="code-panel" class="pg-panel">
-                <h2>💻 代码助手 (免费)</h2>
-                <p>描述你想要的功能，AI帮你写代码</p>
-                <div class="pg-input-group">
-                    <textarea id="code-input" placeholder="描述你想要的功能，例如：写一个Python函数计算斐波那契数列"></textarea>
+                <h2>💻 代码助手</h2>
+                <div class="input-row">
+                    <textarea id="code-input" placeholder="描述你想要的功能..." rows="2"></textarea>
+                    <button class="send-btn" onclick="helpCode()">生成</button>
                 </div>
-                <button class="pg-btn" onclick="helpWithCode()">💻 生成代码</button>
-                <div class="pg-output code-output" id="code-output"></div>
+                <div id="code-output" class="code-output" style="margin-top:15px;"></div>
             </div>
             
-            <!-- 翻译 -->
             <div id="translate-panel" class="pg-panel">
                 <h2>🌐 翻译助手</h2>
-                <p>输入中文，AI帮你翻译成英文（或其他语言）</p>
-                <div class="pg-input-group">
-                    <textarea id="trans-input" placeholder="输入要翻译的中文内容"></textarea>
+                <div class="input-row">
+                    <textarea id="trans-input" placeholder="输入要翻译的文字..." rows="2"></textarea>
+                    <button class="send-btn" onclick="doTranslate()">翻译</button>
                 </div>
-                <button class="pg-btn" onclick="translateText()">🌐 翻译成英文</button>
-                <div class="pg-output" id="trans-output"></div>
+                <div id="trans-output" style="margin-top:15px;padding:15px;background:#f8fafc;border-radius:12px;min-height:60px;"></div>
             </div>
             
-            <!-- 实用工具 -->
             <div id="tools-panel" class="pg-panel">
                 <h2>🛠️ 实用工具</h2>
-                <p>免费的在线小工具，无需AI</p>
-                <div class="pg-tools-grid">
-                    <div class="pg-tool-card" onclick="openTool(\'json\')">
-                        <div style="font-size:2em;">📋</div>
-                        <h3>JSON格式化</h3>
-                        <p>格式化并验证JSON</p>
+                <p>更多工具开发中...</p>
+                <div class="tool-grid">
+                    <div class="tool-card">
+                        <h3>📋 JSON</h3>
+                        <p>格式化工具</p>
                     </div>
-                    <div class="pg-tool-card" onclick="openTool(\'color\')">
-                        <div style="font-size:2em;">🎨</div>
-                        <h3>颜色转换</h3>
-                        <p>HEX/RGB/HSL互转</p>
-                    </div>
-                    <div class="pg-tool-card" onclick="openTool(\'base64\')">
-                        <div style="font-size:2em;">📝</div>
-                        <h3>Base64</h3>
-                        <p>编码/解码工具</p>
-                    </div>
-                    <div class="pg-tool-card" onclick="openTool(\'qr\')">
-                        <div style="font-size:2em;">📱</div>
-                        <h3>二维码生成</h3>
-                        <p>生成二维码图片</p>
-                    </div>
-                    <div class="pg-tool-card" onclick="openTool(\'hash\')">
-                        <div style="font-size:2em;">🔐</div>
-                        <h3>Hash生成</h3>
-                        <p>MD5/SHA加密</p>
-                    </div>
-                    <div class="pg-tool-card" onclick="openTool(\'regex\')">
-                        <div style="font-size:2em;">🔍</div>
-                        <h3>正则测试</h3>
-                        <p>实时测试正则表达式</p>
+                    <div class="tool-card">
+                        <h3>🎨 颜色</h3>
+                        <p>颜色转换</p>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    
     <footer class="footer">
         <p>© 2026 AI Tools Navigator | <a href="/">返回首页</a></p>
     </footer>
-    
     <script>
-    const API_KEY_STORAGE = \'openrouter_api_key\';
-    
-    // 快速使用免费AI (新窗口打开)
-    function quickUse(tool) {
-        const urls = {
-            \'chatgpt\': \'https://huggingface.co/chat/\',
-            \'claude\': \'https://claude.ai/\',
-            \'gemini\': \'https://gemini.google.com/\',
-            \'perplexity\': \'https://www.perplexity.ai/\',
-            \'groq\': \'https://console.groq.com/chat\'
-        };
-        window.open(urls[tool], \'_blank\');
-    }
-    
-    function showTab(tab) {
-        document.querySelectorAll(\'\.pg-panel\').forEach(p => p.classList.remove(\'active\'));
-        document.querySelectorAll(\'\.pg-tab\').forEach(t => t.classList.remove(\'active\'));
-        document.getElementById(tab + \'-panel\').classList.add(\'active\');
-        event.target.classList.add(\'active\');
-        
-        // 处理hash
-        window.location.hash = tab;
-    }
-    
-    // 处理从详情页跳转来的hash
-    window.addEventListener(\'DOMContentLoaded\', function() {
-        const hash = window.location.hash.slice(1);
-        if (hash) {
-            const tabMap = {
-                \'ai-chat\': \'chat\',
-                \'ai-image\': \'image\',
-                \'ai-video\': \'video\',
-                \'ai-voice\': \'voice\',
-                \'ai-coding\': \'code\'
-            };
-            const tab = tabMap[hash];
-            if (tab) {
-                setTimeout(function() {
-                    document.querySelectorAll(\'\.pg-tab\')[Object.values(tabMap).indexOf(tab)].click();
-                }, 300);
-            }
-        }
+    // Tab切换
+    document.querySelectorAll(\'\.pg-tab\').forEach(tab => {
+        tab.addEventListener(\'click\', () => {
+            document.querySelectorAll(\'\.pg-tab\').forEach(t => t.classList.remove(\'active\'));
+            document.querySelectorAll(\'\.pg-panel\').forEach(p => p.classList.remove(\'active\'));
+            tab.classList.add(\'active\');
+            document.getElementById(tab.dataset.tab + \'-panel\').classList.add(\'active\');
+        });
     });
     
-    async function callOpenRouter(prompt, systemPrompt) {
-        const apiKey = localStorage.getItem(API_KEY_STORAGE);
+    async function callAI(messages) {
+        const apiKey = localStorage.getItem(\'openrouter_api_key');
         if (!apiKey) {
-            return \'⚠️ 请先在右下角💬设置API Key\n\n或者使用上方的免费AI快速入口！\';
+            alert(\'请先在右下角💬设置API Key\');
+            return null;
         }
-        
-        try {
-            const response = await fetch(\'https://openrouter.ai/api/v1/chat/completions\', {
-                method: \'POST\',
-                headers: {
-                    \'Authorization\': \'Bearer \' + apiKey,
-                    \'Content-Type\': \'application/json\'
-                },
-                body: JSON.stringify({
-                    model: \'openrouter/free\',
-                    messages: [
-                        {role: \'system\', content: systemPrompt},
-                        {role: \'user\', content: prompt}
-                    ],
-                    max_tokens: 500
-                })
-            });
-            
-            if (response.ok) {
-                const data = await response.json();
-                return data.choices[0].message.content;
-            } else {
-                const err = await response.json();
-                return \'⚠️ 服务繁忙，请稍后重试或使用上方免费AI快速入口\';
-            }
-        } catch (error) {
-            return \'⚠️ 网络错误，请使用免费AI快速入口\';
-        }
+        const response = await fetch(\'https://openrouter.ai/api/v1/chat/completions\', {
+            method: \'POST\',
+            headers: {
+                \'Authorization\': \'Bearer \' + apiKey,
+                \'Content-Type\': \'application/json\'
+            },
+            body: JSON.stringify({
+                model: \'openrouter/free\',
+                messages: messages,
+                max_tokens: 300
+            })
+        });
+        if (!response.ok) throw new Error(\'API Error\');
+        const data = await response.json();
+        return data.choices[0].message.content;
     }
     
-    async function chatWithAI() {
+    async function sendChat() {
         const input = document.getElementById(\'chat-input\');
-        const output = document.getElementById(\'chat-output\');
-        const btn = document.getElementById(\'chat-btn\');
-        
-        if (!input.value.trim()) return;
-        
-        btn.disabled = true;
-        output.innerHTML = \'<span class="result-loading">思考中...</span>\';
-        
-        const reply = await callOpenRouter(
-            input.value,
-            \'你是AI工具导航助手，帮助用户找到合适的AI工具。回答简洁、有用，150字以内。\'
-        );
-        
-        output.textContent = reply;
-        btn.disabled = false;
+        const messages = document.getElementById(\'chat-messages\');
+        const text = input.value.trim();
+        if (!text) return;
+        messages.innerHTML += `<div class="chat-message user">${text}</div>`;
+        messages.innerHTML += `<div class="chat-message loading">思考中...</div>`;
+        input.value = \'\';
+        try {
+            const reply = await callAI([{role: \'user\', content: text}]);
+            document.querySelector(\'.chat-message.loading\')?.remove();
+            if (reply) messages.innerHTML += `<div class="chat-message ai">${reply}</div>`;
+        } catch (e) {
+            document.querySelector(\'.chat-message.loading\')?.remove();
+            messages.innerHTML += `<div class="chat-message ai">出错: 请先设置API Key</div>`;
+        }
+        messages.scrollTop = messages.scrollHeight;
     }
     
-    async function helpWithCode() {
+    async function helpCode() {
         const input = document.getElementById(\'code-input\');
         const output = document.getElementById(\'code-output\');
-        const btn = event.target;
-        
-        if (!input.value.trim()) return;
-        
-        btn.disabled = true;
+        const text = input.value.trim();
+        if (!text) return;
         output.textContent = \'生成中...\';
-        
-        const reply = await callOpenRouter(
-            input.value,
-            \'你是代码助手，根据用户需求生成代码。只输出代码，用中文注释。\'
-        );
-        
-        output.textContent = reply;
-        btn.disabled = false;
+        try {
+            const reply = await callAI([{role: \'user\', content: \'为以下需求生成代码，只输出代码：\' + text}]);
+            output.textContent = reply || \'生成失败\';
+        } catch (e) {
+            output.textContent = \'出错：请先设置API Key\';
+        }
     }
     
-    async function translateText() {
+    async function doTranslate() {
         const input = document.getElementById(\'trans-input\');
         const output = document.getElementById(\'trans-output\');
-        const btn = event.target;
-        
-        if (!input.value.trim()) return;
-        
-        btn.disabled = true;
+        const text = input.value.trim();
+        if (!text) return;
         output.textContent = \'翻译中...\';
-        
-        const reply = await callOpenRouter(
-            \'将以下中文翻译成英文，只输出英文翻译结果：\' + input.value,
-            \'你是一个翻译助手，将中文翻译成英文。只输出翻译结果。\'
-        );
-        
-        output.textContent = reply;
-        btn.disabled = false;
+        try {
+            const reply = await callAI([{role: \'user\', content: \'翻译成英文，只输出结果：\' + text}]);
+            output.textContent = reply || \'翻译失败\';
+        } catch (e) {
+            output.textContent = \'出错：请先设置API Key\';
+        }
     }
     
-    async function generateImage() {
-        const input = document.getElementById(\'image-prompt\');
-        const output = document.getElementById(\'image-output\');
-        const btn = event.target;
-        
-        if (!input.value.trim()) return;
-        
-        btn.disabled = true;
-        output.innerHTML = \'<p>生成中...</p><p>推荐使用以下免费工具：</p><ul><li><a href="https://playground.com" target="_blank">Playground AI</a></li><li><a href="https://ideogram.ai" target="_blank">Ideogram</a></li><li><a href="https://www.bing.com/create" target="_blank">Bing Image Creator</a></li></ul>\';
-        btn.disabled = false;
-    }
-    
-    function openTool(tool) {
-        alert(\'工具\' + tool + \'功能开发中\');
-    }
+    document.getElementById(\'chat-input\').addEventListener(\'keypress\', e => {
+        if (e.key === \'Enter\' && !e.shiftKey) { e.preventDefault(); sendChat(); }
+    });
     </script>
 </body>
 </html>
