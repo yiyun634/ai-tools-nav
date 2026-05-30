@@ -42,116 +42,50 @@
 </head>
 <body>
  <div class="container">
-  <nav class="breadcrumb">
-   <a href="/">首页</a> &gt; <a href="/category/ai-agent.html">AI智能体</a> &gt; AutoGPT
-  </nav>
   
-  <h1>AutoGPT <span class="stars-badge">⭐ 165k</span></h1>
-<div class="favorite-btn" style="margin:15px 0;">
-        <button onclick="toggleFavorite()" id="favBtn" style="padding:10px 20px;background:var(--primary);color:white;border:none;border-radius:8px;cursor:pointer;">⭐ 收藏此工具</button>
+    <nav class="breadcrumb">
+        <a href="/">首页</a> > <a href="/category/ai-agent.html">AI智能体</a> > AutoGPT
+    </nav>
+    
+    <div class="content-section">
+        <h1>AutoGPT</h1>
+        <p class="tool-meta">
+            <span>⭐ 165k</span>
+            <span>AI智能体</span>
+        </p>
+        <p>让AI自主完成复杂任务的智能体框架</p>
     </div>
-    <style>
-    .favorite-btn button:hover { opacity: 0.8; }
-    </style>
-    <script>
-    function toggleFavorite() {
-        const tool = window.location.pathname.split('/').pop().replace('.html','');
-        let favs = JSON.parse(localStorage.getItem('favorites') || '[]');
-        if (favs.includes(tool)) {
-            favs = favs.filter(f => f !== tool);
-            document.getElementById('favBtn').textContent = '⭐ 收藏此工具';
-        } else {
-            favs.push(tool);
-            document.getElementById('favBtn').textContent = '✅ 已收藏';
-        }
-        localStorage.setItem('favorites', JSON.stringify(favs));
-    }
-    </script><div style="margin:15px 0">
-<button class="share-btn" onclick="shareTwitter()">🐦 分享</button>
-<button class="share-btn copy" onclick="copyLink()">📋 复制</button>
-</div>
-  <div class="meta">
-   📂 AI智能体 | 📊 入门级 | ⭐ GitHub 165k
-  </div>
-  
-  <div class="content-section">
-   <h2>📖 工具简介</h2>
-   <p>AutoGPT 是让 AI 自主完成复杂任务的智能体框架，代表了 AI Agent 的重要方向。让AI自主完成复杂任务的智能体框架</p>
-  </div>
-  
-  <div class="content-section">
-   <h2>⚡ 核心功能</h2>
-   <ul>
-    <li>核心功能：基于 AI 技术提供智能化的任务处理能力</li><li>集成能力：支持多种 API 和外部工具集成</li><li>易用性：简洁的用户界面，便于快速上手</li><li>扩展性：支持自定义配置和二次开发</li><li>性能优化：经过优化的算法保证高效运行</li><li>文档完善：提供详细的使用文档和示例</li>
-   </ul>
-  </div>
-  
-  <div class="content-section">
-   <h2>📥 安装与使用</h2>
-   <div class="install-cmd">pip install autogpt</div>
-   <p>更多详细教程请访问工具官网或参考官方文档。</p>
-  </div>
-  
-  <div class="content-section">
-   <h2>❓ 常见问题</h2>
-   <div class="faq-item"><strong>Q: AutoGPT 是什么？</strong><p>AutoGPT 是让 AI 自主完成复杂任务的智能体框架，代表了 AI Agent 的重要方向。让AI自主完成复杂任务的智能体框架...</p></div><div class="faq-item"><strong>Q: 如何开始使用 AutoGPT？</strong><p>安装命令：pip install autogpt。详细教程请参考官方文档。</p></div><div class="faq-item"><strong>Q: AutoGPT 支持哪些使用场景？</strong><p>适合需要 AI 辅助的各种场景，包括办公、学习、开发等。</p></div><div class="faq-item"><strong>Q: AutoGPT 的定价方式？</strong><p>基础功能免费使用，高级功能按订阅或用量收费。</p></div>
-  </div>
-  
-  
-  <div class="content-section">
-   <h2>🔗 相关推荐</h2>
-   <ul>
-    <li><a href="/tool_pages/crewai.html">CrewAI</a> ⭐ 32k</li><li><a href="/tool_pages/metagpt.html">MetaGPT</a> ⭐ 18k</li><li><a href="/tool_pages/autogen.html">AutoGen</a> ⭐ 28k</li>
-   </ul>
-  
- 
-
-  <a href="/" class="back-link">← 返回首页</a>
-  <a href="/category/ai-agent.html" class="back-link" style="background:#10b981">← AI智能体</a>
- </div>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9216965418818299"
- crossorigin="anonymous"></script>
-
-
-<!-- Ad 1: In-Article -->
-<div class="content-section">
-<h2>🔗 相关推荐</h2>
-<ul class="related-list">
-<li>• <a href="/tool_pages/crewai.html">CrewAI</a></li>
-<li>• <a href="/tool_pages/metagpt.html">MetaGPT</a></li>
-<li>• <a href="/tool_pages/autogen.html">AutoGen</a></li>
-<li>• <a href="/tool_pages/open-interpreter.html">Open Interpreter</a></li>
-</ul>
-</div>
-<ins class="adsbygoogle"
- style="display:block; text-align:center; margin:20px 0;"
- data-ad-layout="in-article"
- data-ad-format="fluid"
- data-ad-client="ca-pub-9216965418818299"
- data-ad-slot="5418074717"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<!-- Ad 2: Display -->
-<div class="content-section">
-<h2>🔗 相关推荐</h2>
-<ul class="related-list">
-<li>• <a href="/tool_pages/crewai.html">CrewAI</a></li>
-<li>• <a href="/tool_pages/metagpt.html">MetaGPT</a></li>
-<li>• <a href="/tool_pages/autogen.html">AutoGen</a></li>
-<li>• <a href="/tool_pages/open-interpreter.html">Open Interpreter</a></li>
-</ul>
-</div>
-<ins class="adsbygoogle"
- style="display:block;margin:20px 0;"
- data-ad-client="ca-pub-9216965418818299"
- data-ad-slot="2117123951"
- data-ad-format="auto"
- data-full-width-responsive="true"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-</body>
-</html>
+    
+    <div class="content-section">
+        <h2>🚀 在线体验</h2>
+        <p>这些工具支持以下使用方式：</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:15px;">
+            <a href="#" target="_blank" class="btn" style="background:#27ae60;">🌐 访问官网</a>
+            <a href="/playground.html" class="btn">🤖 AI Playground</a>
+            <a href="/tutorial.html" class="btn">📚 教程中心</a>
+        </div>
+    </div>
+    
+    <div class="content-section">
+        <h2>💡 使用场景</h2>
+        <ul>
+            <li>适合：入门用户</li>
+            <li>平台：AI智能体工具</li>
+            <li>免费额度：查看官网</li>
+        </ul>
+    </div>
+    
+    <div class="content-section">
+        <h2>📖 教程</h2>
+        <p>能根据目标自主规划、分解任务、调用工具，实现完全无人干预的AI自动化。适用于自动化办公、数据处理、内容创作等场景。</p>
+    </div>
+    
+    <div class="content-section">
+        <h2>🔗 相关工具</h2>
+        <ul class="related-list">
+            <li>• <a href="/playground.html">AI Playground</a> - 在线体验</li>
+            <li>• <a href="/tutorial.html">教程中心</a> - 学习资料</li>
+            <li>• <a href="/reviews.html">工具评测</a> - 用户评价</li>
+        </ul>
+    </div>
+>
