@@ -745,7 +745,7 @@ async function sendMessage() {
                 'X-Title': 'AI Tools Navigator'
             },
             body: JSON.stringify({
-                model: 'deepseek/deepseek-v4-flash:free',
+                model: 'openrouter/free',
                 messages: [
                     {role: 'system', content: '你是一个AI工具导航助手，帮助用户找到合适的AI工具。你的回答要简洁、有用，控制在100字以内。'},
                     {role: 'user', content: text}
