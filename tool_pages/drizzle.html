@@ -109,7 +109,10 @@
   <a href="/category/webdev.html" class="back-link" style="background:#10b981">← Web开发</a>
  </div>
  <script>
- function copyLink(){navigator.clipboard.writeText(window.location.href);alert('链接已复制！');}
+ function shareTwitter(){
+    window.open('https://twitter.com/intent/tweet?text='+document.title+'&url='+window.location.href,'_blank');
+}
+function copyLink(){navigator.clipboard.writeText(window.location.href);alert('链接已复制！');}
  </script>
 </body>
 </html>
