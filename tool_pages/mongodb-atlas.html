@@ -58,6 +58,26 @@
   </nav>
   
   <h1>MongoDB Atlas <span class="stars-badge">⭐ 15k</span></h1>
+<div class="favorite-btn" style="margin:15px 0;">
+    <button onclick="toggleFavorite()" id="favBtn" style="padding:10px 20px;background:var(--primary);color:white;border:none;border-radius:8px;cursor:pointer;">⭐ 收藏此工具</button>
+</div>
+<style>
+.favorite-btn button:hover { opacity: 0.8; }
+</style>
+<script>
+function toggleFavorite() {
+    const tool = window.location.pathname.split('/').pop().replace('.html','');
+    let favs = JSON.parse(localStorage.getItem('favorites') || '[]');
+    if (favs.includes(tool)) {
+        favs = favs.filter(f => f !== tool);
+        document.getElementById('favBtn').textContent = '⭐ 收藏此工具';
+    } else {
+        favs.push(tool);
+        document.getElementById('favBtn').textContent = '✅ 已收藏';
+    }
+    localStorage.setItem('favorites', JSON.stringify(favs));
+}
+</script>
   <div class="meta">
    <span class="tag">Web开发</span>
    <span class="tag">进阶</span>

@@ -127,6 +127,50 @@
  body.dark-mode .footer{background:#16213e}
  @media(max-width:768px){.nav-content{flex-direction:column}.nav-links{justify-content:flex-start}.tools-grid{grid-template-columns:1fr}.filter-bar{flex-direction:column}.modal-content{margin:10% auto}.stats{display:none}}
  
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+    .container { padding: 0 10px; }
+    .header { padding: 15px 10px; }
+    .header h1 { font-size: 1.5em; }
+    
+    .search-box { flex-direction: column; gap: 10px; }
+    .search-box input { width: 100%; }
+    .search-box select { width: 100%; }
+    
+    .categories { 
+        display: grid; 
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); 
+        gap: 10px;
+    }
+    
+    .category-card { padding: 10px; }
+    
+    .tool-grid { 
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
+        gap: 10px;
+    }
+    
+    .tool-card { padding: 10px; }
+    .tool-card h3 { font-size: 0.9em; }
+    .tool-card .desc { font-size: 0.8em; }
+    
+    .footer { padding: 15px; font-size: 0.8em; }
+}
+
+/* 超小屏幕优化 */
+@media (max-width: 480px) {
+    .categories { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    
+    .tool-grid { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .social-links { font-size: 0.8em; }
+}
+
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9216965418818299"
  crossorigin="anonymous"></script>
