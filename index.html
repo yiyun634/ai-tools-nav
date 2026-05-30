@@ -275,6 +275,10 @@ function showModal(name) {
  document.getElementById('modalTutorial').textContent = t.tutorial;
  document.getElementById('modalTags').innerHTML = '<span class=\"tag\">'+t.difficulty+'</span><span class=\"tag\">'+t.category+'</span>';
  
+ // Set link to tool detail page
+ var slug = t.name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-');
+ document.getElementById('modalToolPage').href = '/tool_pages/' + slug + '.html';
+
  document.getElementById('toolModal').style.display = 'block';
 }
 
