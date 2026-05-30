@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /submitModal
+Disallow: /favModal
+Disallow: /voteModal
+
+# Sitemap
+Sitemap: https://ai-tools-nav-psi.vercel.app/sitemap.xml
+
+# Crawl delay for polite crawling
+Crawl-delay: 1
