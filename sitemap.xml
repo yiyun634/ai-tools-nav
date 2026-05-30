@@ -12,1091 +12,111 @@
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/rss.xml</loc>
-    <changefreq>daily</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/privacy.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/category/ai-agent.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/category/ai-chat.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/category/ai-image.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/category/ai-video.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/category/ai-voice.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/category/ai-rag.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/category/ai-workflow.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/category/ai-local.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/category/ai-coding.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/category/ai-framework.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/category/ai-prompt.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/category/ai-api.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/category/ai-search.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/category/ai-crypto.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/category/cloud.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/category/productivity.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/category/tutorials.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/category/scripts.html</loc>
+    <loc>https://ai-tools-nav-psi.vercel.app/category/cloud.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/agentfactory.html</loc>
+    <loc>https://ai-tools-nav-psi.vercel.app/category/productivity.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/agentgpt.html</loc>
+    <loc>https://ai-tools-nav-psi.vercel.app/category/webdev.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/agentgrid.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/agentos.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/agentsdk.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/agentverse.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/aider.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/analystagent.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/anthropic.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/autochain.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/autogen.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/autogpt.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/babyagi.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/camel.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/character-ai.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/chatbot-kit.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/chatdev.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/chatglm.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/chatgpt.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/claude.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/codeagent.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/coderunner.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/crewai.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/cursor.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/dataagent.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/deepseek.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/dify.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/docagent.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/eduagent.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/flowise.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/gemini.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/github-copilot.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/gpt-engineer.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/jan.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/langchain.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/langflow.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/librechat.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/llama-agent.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/lobe-chat.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/magentic.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/metaagent.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/metagpt.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/midjourney.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/miniagi.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/nextchat.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/ollama.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/ollama-webui.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/open-interpreter.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/open-webui.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/openagi.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/openpilot.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/perplexity.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/plangpt.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/promptengine.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/qwen.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/researchagent.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/superagi.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/taskmatrix.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/thinkagent.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/vercel.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/agentfactory.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/agentgpt.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/agentgrid.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/agentos.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/agentsdk.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/agentverse.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/ai21.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/aider.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/alpaca.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/analystagent.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/anthropic.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/autochain.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/autogen.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/autogpt.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/babyagi.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/camel.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/chai.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/chai-ml.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/charactable.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/character-ai.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/chatbot-kit.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/chatdev.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/chatglm.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/chatgpt.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/claude.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/cleverbot.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/codeagent.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/coderunner.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/cohere.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/comfyui.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/controlnet.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/convai.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/crewai.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/cursor.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/dall-e.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/dataagent.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/deepseek.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/diffusers.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/dify.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/docagent.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/eduagent.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/falcon.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/flowise.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/flux.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/fooocus.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/gemini.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/gfpgan.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/github-copilot.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/gpt-engineer.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/groq.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/ideogram.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/imagen.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/invokeai.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/inworld.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/jan.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/kandinsky.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/koala.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/kuki.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/langchain.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/langflow.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/leonardo.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/librechat.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/llama-agent.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/lobe-chat.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/magentic.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/metaagent.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/metagpt.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/midjourney.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/miniagi.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/mistral.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/mitsuku.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/mpt.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/nextchat.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/ollama.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/ollama-webui.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/open-interpreter.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/open-webui.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/openagi.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/openpilot.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/parler.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/parti.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/perplexity.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/phind.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/pi.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/plangpt.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/playground.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/promptengine.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/qwen.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/real-esrgan.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/replika.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/researchagent.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/stable-diffusion-webui.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/stable-diffusion-xl.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/stable-video.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/superagi.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/taskmatrix.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/thinkagent.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/vercel.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/vicuna.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/youchat.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/3d-diffusion.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/animatediff.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/cine.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/cogvideox.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/d-id.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/deepfloyd-if.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/depth3d.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/dreamgaussian.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/dreamphot.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/gen-2.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/heygen.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/hunyuanvideo.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/instantngp.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/kiri.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/lavis.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/leiapix.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/liveportrait.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/luma-dream.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/luma-ray.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/magic3d.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/make-a-video.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/meshy.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/modelscope.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/modelscopet2v.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/neus.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/omnizero.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/openvideo.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/pika.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/point-e.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/runway.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/scenario.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/show-1.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/synthesia.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/tripo3d.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/tuneavideo.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/videoldm.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/wan2-2.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/zero123.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/zeroscope.html</loc>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/-.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1136,6 +156,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/agno.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/ai21.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -1146,7 +171,22 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/airplane.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/alpaca.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/alphacode.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/amazon-codewhisperer.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1167,6 +207,21 @@
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/anthropic.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/anthropic-cook-book.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/anythingllm.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/askbob.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1196,6 +251,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/babel.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/babyagi.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -1206,7 +266,27 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/bknd.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/black.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/bloop.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/brainy.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/buildship.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1217,6 +297,16 @@
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/candle.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/canopy.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/censys.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1261,7 +351,22 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/chatgpt-.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/chatpdf.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/chattts.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/chroma.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1276,7 +381,17 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/clearbit.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/cleverbot.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/cloudflare.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1286,7 +401,42 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/codebo.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/codegeex.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/codegen.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/codeium.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/coderunner.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/codex.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/codspeed.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/cody.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1297,6 +447,16 @@
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/cohere.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/cohere-tutorials.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/colab.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1321,6 +481,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/convex.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/coqui-tts.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -1337,6 +502,11 @@
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/cursor.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/d-answer.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1391,6 +561,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/docquery.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/dreamgaussian.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -1421,12 +596,27 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/embedchain.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/eslint.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/exllamav2.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/falcon.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/fastgpt.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1446,7 +636,22 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/fly-io.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/fooocus.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/forge.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/free-api.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1466,7 +671,17 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/github-actions.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/github-copilot.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/glitch.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1491,6 +706,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/griptape.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/groq.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -1501,7 +721,27 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/haystack.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/helicone.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/heygen.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/humata.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/hunter.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1526,7 +766,22 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/incoder.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/inngest.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/instantngp.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/instructor.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1551,7 +806,22 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/jina.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/kaggle.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/kandinsky.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/khoj.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1577,6 +847,16 @@
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/langchain.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/langchain-.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/langchain-chatchat.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1626,7 +906,17 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/llama-rs.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/llamafile.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/llamaindex.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1666,6 +956,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/logfire.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/luma-dream.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -1687,6 +982,26 @@
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/make-a-video.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/marvin.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/maxkb.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/mclc.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/memgpt.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1761,6 +1076,21 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/n8n.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/narrativa.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/netlify.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/neus.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -1796,6 +1126,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/one-api.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/open-interpreter.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -1807,6 +1142,11 @@
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/openagi.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/openai-cookbook.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1846,7 +1186,17 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/peft.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/perplexity.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/phidata.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1862,6 +1212,11 @@
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/pika.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/pinecone.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1891,7 +1246,22 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/polycoder.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/prettier.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/privategpt.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/prompt-engineering-guide.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1901,7 +1271,42 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/promptlayer.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/public-apis.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/qdrant.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/quivr.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/qwen.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/ragflow.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/railway.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/rapidapi.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1911,7 +1316,17 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/render.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/replika.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/replit.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1926,6 +1341,16 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/rome.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/ruff.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/runway.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -1936,12 +1361,27 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/santacoder.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/scenario.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/semantic-kernel.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/sglang.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/shodan.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1952,6 +1392,11 @@
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/sonantic.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/sourcegraph.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1971,7 +1416,27 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/stack.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/stork.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/supabase.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/superagi.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/swimm.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1981,7 +1446,17 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/tabby.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/taskmatrix.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/temporal.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2006,6 +1481,21 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/transformers.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/treesitter.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/trigger.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/tripo3d.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -2016,12 +1506,22 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/txtai.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/uberduck.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/vall-e.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/vectara.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2071,12 +1571,27 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/weave.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/weaviate.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/wellsaid.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/whisper-cpp.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai-tools-nav-psi.vercel.app/tool_pages/windmill.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

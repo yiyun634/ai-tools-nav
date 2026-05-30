@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /privacy.html
+Disallow: /about.html
 Disallow: /api/
 Disallow: /submitModal
 Disallow: /favModal
