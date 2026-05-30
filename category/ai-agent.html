@@ -34,16 +34,17 @@
   .breadcrumb{margin-bottom:20px;font-size:0.9rem}
   .breadcrumb a{color:#667eea;text-decoration:none}
   .category-intro{background:white;border-radius:12px;padding:25px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
+  .category-intro h2{color:#667eea;font-size:1.2rem;margin-bottom:15px}
   .tool-list{background:white;border-radius:12px;padding:25px;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
   .tool-list h2{color:#667eea;font-size:1.2rem;margin-bottom:15px}
-  .tool-list ul{list-style:none;padding:0;margin:0}
-  .tool-list li{padding:12px 0;border-bottom:1px solid #e2e8f0}
-  .tool-list li:last-child{border-bottom:none}
+  .tool-list ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
+  .tool-list li{padding:12px;background:#f8fafc;border-radius:8px;border:1px solid #e2e8f0}
+  .tool-list li:hover{border-color:#667eea}
   .tool-list a{color:#1e293b;text-decoration:none;font-weight:600}
   .tool-list a:hover{color:#667eea}
-  .stars{color:#f59e0b;font-size:0.85rem}
+  .stars{color:#f59e0b;font-size:0.85rem;margin-left:8px}
   .back-link{display:inline-block;padding:12px 24px;background:#667eea;color:white;text-decoration:none;border-radius:8px;margin-top:20px}
-  .more-link{color:#667eea;text-decoration:none;font-size:0.9rem}
+  .count{color:#64748b;font-size:0.9rem}
  </style>
 </head>
 <body>
@@ -52,7 +53,7 @@
    <a href="/">首页</a> &gt; AI智能体
   </nav>
   
-  <h1>🤖 AI智能体</h1>
+  <h1>🤖 AI智能体 <span class="count">(41个工具)</span></h1>
   
   <div class="category-intro">
    <h2>📖 AI智能体简介</h2>
@@ -62,7 +63,7 @@
   <div class="tool-list">
    <h2>🔥 热门AI智能体工具</h2>
    <ul>
-    <li><a href="/tool/autogpt.html">AutoGPT</a> <span class="stars">⭐ 165k</span></li><li><a href="/tool/crewai.html">CrewAI</a> <span class="stars">⭐ 32k</span></li><li><a href="/tool/metagpt.html">MetaGPT</a> <span class="stars">⭐ 18k</span></li><li><a href="/tool/autogen.html">AutoGen</a> <span class="stars">⭐ 28k</span></li><li><a href="/tool/open-interpreter.html">Open Interpreter</a> <span class="stars">⭐ 32k</span></li><li><a href="/tool/gpt-engineer.html">GPT Engineer</a> <span class="stars">⭐ 45k</span></li><li><a href="/tool/aider.html">Aider</a> <span class="stars">⭐ 45k</span></li><li><a href="/tool/dify.html">Dify</a> <span class="stars">⭐ 85k</span></li><li><a href="/tool/flowise.html">Flowise</a> <span class="stars">⭐ 28k</span></li><li><a href="/tool/jan.html">Jan</a> <span class="stars">⭐ 18k</span></li>
+    <li><a href="/tool/autogpt.html">AutoGPT</a> <span class="stars">⭐ 165k</span></li><li><a href="/tool/crewai.html">CrewAI</a> <span class="stars">⭐ 32k</span></li><li><a href="/tool/metagpt.html">MetaGPT</a> <span class="stars">⭐ 18k</span></li><li><a href="/tool/autogen.html">AutoGen</a> <span class="stars">⭐ 28k</span></li><li><a href="/tool/open-interpreter.html">Open Interpreter</a> <span class="stars">⭐ 32k</span></li><li><a href="/tool/gpt-engineer.html">GPT Engineer</a> <span class="stars">⭐ 45k</span></li><li><a href="/tool/aider.html">Aider</a> <span class="stars">⭐ 45k</span></li><li><a href="/tool/dify.html">Dify</a> <span class="stars">⭐ 85k</span></li><li><a href="/tool/flowise.html">Flowise</a> <span class="stars">⭐ 28k</span></li><li><a href="/tool/jan.html">Jan</a> <span class="stars">⭐ 18k</span></li><li><a href="/tool/langchain.html">LangChain</a> <span class="stars">⭐ 65k</span></li><li><a href="/tool/langflow.html">LangFlow</a> <span class="stars">⭐ 18k</span></li><li><a href="/tool/autochain.html">AutoChain</a> <span class="stars">⭐ 5k</span></li><li><a href="/tool/agentgpt.html">AgentGPT</a> <span class="stars">⭐ 15k</span></li><li><a href="/tool/superagi.html">SuperAGI</a> <span class="stars">⭐ 22k</span></li><li><a href="/tool/chatdev.html">ChatDev</a> <span class="stars">⭐ 18k</span></li><li><a href="/tool/babyagi.html">BabyAGI</a> <span class="stars">⭐ 15k</span></li><li><a href="/tool/agentverse.html">AgentVerse</a> <span class="stars">⭐ 5k</span></li><li><a href="/tool/camel.html">CAMEL</a> <span class="stars">⭐ 8k</span></li><li><a href="/tool/miniagi.html">MiniAGI</a> <span class="stars">⭐ 6k</span></li><li><a href="/tool/promptengine.html">PromptEngine</a> <span class="stars">⭐ 8k</span></li><li><a href="/tool/agentfactory.html">AgentFactory</a> <span class="stars">⭐ 7k</span></li><li><a href="/tool/openagi.html">OpenAGI</a> <span class="stars">⭐ 12k</span></li><li><a href="/tool/magentic.html">Magentic</a> <span class="stars">⭐ 9k</span></li><li><a href="/tool/plangpt.html">PlanGPT</a> <span class="stars">⭐ 6k</span></li><li><a href="/tool/taskmatrix.html">TaskMatrix</a> <span class="stars">⭐ 8k</span></li><li><a href="/tool/metaagent.html">MetaAgent</a> <span class="stars">⭐ 7k</span></li><li><a href="/tool/agentos.html">AgentOS</a> <span class="stars">⭐ 10k</span></li><li><a href="/tool/openpilot.html">OpenPilot</a> <span class="stars">⭐ 15k</span></li><li><a href="/tool/llama-agent.html">Llama-Agent</a> <span class="stars">⭐ 12k</span></li><li><a href="/tool/chatbot-kit.html">ChatBot Kit</a> <span class="stars">⭐ 9k</span></li><li><a href="/tool/agentsdk.html">AgentSDK</a> <span class="stars">⭐ 11k</span></li><li><a href="/tool/agentgrid.html">AgentGrid</a> <span class="stars">⭐ 8k</span></li><li><a href="/tool/thinkagent.html">ThinkAgent</a> <span class="stars">⭐ 7k</span></li><li><a href="/tool/dataagent.html">DataAgent</a> <span class="stars">⭐ 9k</span></li><li><a href="/tool/codeagent.html">CodeAgent</a> <span class="stars">⭐ 12k</span></li><li><a href="/tool/researchagent.html">ResearchAgent</a> <span class="stars">⭐ 8k</span></li><li><a href="/tool/eduagent.html">EduAgent</a> <span class="stars">⭐ 7k</span></li><li><a href="/tool/coderunner.html">CodeRunner</a> <span class="stars">⭐ 10k</span></li><li><a href="/tool/docagent.html">DocAgent</a> <span class="stars">⭐ 8k</span></li><li><a href="/tool/analystagent.html">AnalystAgent</a> <span class="stars">⭐ 11k</span></li>
    </ul>
   </div>
   
