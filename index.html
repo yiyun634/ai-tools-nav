@@ -711,6 +711,7 @@ function saveApiKey() {
     }
 }
 
+
 async function sendMessage() {
     if (isLoading) return;
     
@@ -748,7 +749,7 @@ async function sendMessage() {
             body: JSON.stringify({
                 model: 'openrouter/free',
                 messages: [
-                    {role: 'system', content: '你是一个AI工具导航助手，帮助用户找到合适的AI工具。你的回答要简洁、有用，控制在100字以内。'},
+                    {role: 'system', content: '你是一个AI工具导航助手，帮助用户找到合适的AI工具。回答要简洁、有用，控制在100字以内。'},
                     {role: 'user', content: text}
                 ],
                 max_tokens: 200,
@@ -761,24 +762,30 @@ async function sendMessage() {
         
         if (response.ok) {
             const data = await response.json();
-            const reply = data.choices[0].message.content;
-            messages.innerHTML += '<div class="ai-chat-message ai">' + escapeHtml(reply) + '</div>';
+            if (data.choices && data.choices[0]) {
+                const reply = data.choices[0].message.content;
+                messages.innerHTML += '<div class="ai-chat-message ai">' + escapeHtml(reply) + '</div>';
+            } else {
+                messages.innerHTML += '<div class="ai-chat-message ai">服务暂时不可用，请稍后重试。</div>';
+            }
         } else {
-            const err = await response.json();
-            messages.innerHTML += '<div class="ai-chat-message ai">抱歉：' + (err.error?.message || '服务暂时不可用') + '</div>';
+            const errData = await response.json();
+            messages.innerHTML += '<div class="ai-chat-message ai">⚠️ ' + (errData.error?.message || '请求失败') + '</div>';
         }
     } catch (error) {
         const msgs = document.querySelectorAll('.ai-chat-message.loading');
         msgs.forEach(function(m) { m.remove(); });
-        messages.innerHTML += '<div class="ai-chat-message ai">网络错误，请检查网络连接。</div>';
+        let errMsg = '网络错误，请检查网络连接';
+        if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
+            errMsg = '⚠️ 无法连接到AI服务。请确认：\n1. API Key有效\n2. 网络正常\n3. 稍后重试';
+        }
+        messages.innerHTML += '<div class="ai-chat-message ai">' + errMsg + '</div>';
     }
     
     isLoading = false;
     sendBtn.disabled = false;
     messages.scrollTop = messages.scrollHeight;
-}
-
-function escapeHtml(text) {
+}function escapeHtml(text) {
     var div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
